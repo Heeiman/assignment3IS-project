@@ -5,7 +5,7 @@ public class Kund {
 	private String name;
 	private String address;
 	
-	private Hashmap<orderlista>();
+	private Hashmap<String, String> orderlist = new Hashmap<String, String>();
 	
 
 }
