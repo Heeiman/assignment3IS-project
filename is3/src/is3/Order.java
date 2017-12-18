@@ -1,11 +1,13 @@
 package is3;
 
+import java.util.HashMap;
+
 public class Order {
 	private String orderId;
 	private String leveransdatum;
 	public Kund kund;
 	
-	Hashmap<String, String> orderradlista = new Hashmap<String, String> ();
+	HashMap<String, Orderrad> orderradlista = new HashMap<String, Orderrad> ();
 	
 	public void setOrderId (String orderId){
 		this.orderId = orderId;
@@ -24,5 +26,11 @@ public class Order {
 	}
 	public Kund getKund (){
 		return kund;
+	}
+	public void setOrderradlista(HashMap<String, Orderrad> orderradlista){
+		this.orderradlista = orderradlista;
+	}
+	public HashMap<String, Orderrad> getOrderradlista (){
+		return orderradlista;
 	}
 }
