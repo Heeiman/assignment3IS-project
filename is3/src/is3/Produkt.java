@@ -32,7 +32,6 @@ public class Produkt {
 	}
 	public HashMap<String, Exemplar> getExemplarlista () {
 		return exemplarlista;
-		
 	}
 	
 	
