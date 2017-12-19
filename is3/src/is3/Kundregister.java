@@ -24,9 +24,13 @@ public class Kundregister {
 		
 	}
 	
-	public HashMap<String, Kund> findKund (String kundnummer) {
-		kundMap.get(kundnummer);
-	
+	public Kund findKund (String kundnummer) {
+		for (Kund k : this.kundMap.values()) {
+			if (k.getKundnummer().equals(kundnummer)) {
+				return k;
+			}
+		}
+		return null;
 	}
 
 }
