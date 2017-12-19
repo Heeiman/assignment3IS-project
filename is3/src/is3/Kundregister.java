@@ -32,5 +32,9 @@ public class Kundregister {
 		}
 		return null;
 	}
+	
+	public void changeKund (String kundnummer) {
+		kundMap.put(kundnummer, kundMap.get(kundnummer));
+	}
 
 }
