@@ -20,7 +20,7 @@ public class Kundregister {
 	}
 	
 	public void removeKund (String kundnummer) {
-		kundMap.entrySet().removeIf(entry -> !kundMap.containsKey(kundnummer));
+		kundMap.entrySet().removeIf(entry -> kundMap.containsKey(kundnummer));
 		
 	}
 	
@@ -33,8 +33,8 @@ public class Kundregister {
 		return null;
 	}
 	
-	public void changeKund (String kundnummer) {
-		kundMap.put(kundnummer, kundMap.get(kundnummer));
+	public void changeKund (String kundnummer, Kund k) {
+		kundMap.put(kundnummer, kundMap.get(k));
 	}
 
 }
