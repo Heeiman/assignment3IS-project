@@ -16,25 +16,25 @@ public class Kundregister {
 	}
 	
 	public void addKund (Kund k) {
-		this.kundMap.put(k.getKundnummer(), k);
+		this.kundMap.put(k.getcNumber(), k);
 	}
 	
-	public void removeKund (String kundnummer) {
-		kundMap.entrySet().removeIf(entry -> kundMap.containsKey(kundnummer));
+	public void removeKund (String cNumber) {
+		kundMap.entrySet().removeIf(entry -> kundMap.containsKey(cNumber));
 		
 	}
 	
-	public Kund findKund (String kundnummer) {
+	public Kund findKund (String cNumber) {
 		for (Kund k : this.kundMap.values()) {
-			if (k.getKundnummer().equals(kundnummer)) {
+			if (k.getcNumber().equals(cNumber)) {
 				return k;
 			}
 		}
 		return null;
 	}
 	
-	public void changeKund (String kundnummer, Kund k) {
-		kundMap.put(kundnummer, kundMap.get(k));
+	public void changeKund (String cNumber, Kund k) {
+		kundMap.put(cNumber, kundMap.get(k));
 	}
 
 }
