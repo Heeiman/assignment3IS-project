@@ -7,11 +7,11 @@ public class Kundregister {
 	
 	private HashMap<String, Kund> kundMap = new HashMap<String, Kund>();
 	
-	public void setKundlista (HashMap<String, Kund> kundMap) {
+	public void setKundMap (HashMap<String, Kund> kundMap) {
 		this.kundMap = kundMap;
 	}
 	
-	public HashMap<String, Kund> getKundlista () {
+	public HashMap<String, Kund> getKundMap () {
 		return this.kundMap;
 	}
 	
@@ -31,6 +31,10 @@ public class Kundregister {
 			}
 		}
 		return null;
+	}
+	
+	public void changeKund (String kundnummer) {
+		kundMap.put(kundnummer, kundMap.get(kundnummer));
 	}
 
 }
