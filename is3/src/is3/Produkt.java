@@ -3,35 +3,35 @@ package is3;
 import java.util.HashMap;
 
 public class Produkt {
-	private String namn;
-	private String kategori;
-	private String pris;
+	private String name;
+	private String category;
+	private String price;
 	
-	private HashMap<String, Exemplar> exemplarlista = new HashMap<String, Exemplar>();
+	private HashMap<String, Exemplar> itemList = new HashMap<String, Exemplar>();
 	
-	public void setNamn(String namn) {
-		this.namn = namn;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getNamn() {
-		return this.namn;
+	public String getName() {
+		return this.name;
 	}
-	public void setKategori(String kategori) {
-		this.kategori = kategori;
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	public String getKategori() {
-		return this.kategori;
+	public String getCategory() {
+		return this.category;
 	}
-	public void setPris(String pris) {
-		this.pris = pris;
+	public void setPrice(String price) {
+		this.price = price;
 	}
-	public String getPris() {
-		return this.pris;
+	public String getPrice() {
+		return this.price;
 	}
-	public void setExemplarlista (HashMap<String, Exemplar> exemplarlista) {
-		this.exemplarlista = exemplarlista;
+	public void setItemList (HashMap<String, Exemplar> itemList) {
+		this.itemList = itemList;
 	}
-	public HashMap<String, Exemplar> getExemplarlista () {
-		return this.exemplarlista;
+	public HashMap<String, Exemplar> getItemList () {
+		return this.itemList;
 	}
 	
 	

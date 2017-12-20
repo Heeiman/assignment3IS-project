@@ -4,27 +4,27 @@ import java.util.HashMap;
 
 public class Produktregister {
 	
-	private HashMap<String, Produkt> produktMap = new HashMap<String, Produkt>();
+	private HashMap<String, Produkt> productMap = new HashMap<String, Produkt>();
 	
-	public void setKundMap (HashMap<String, Produkt> produktMap) {
-		this.produktMap = produktMap;
+	public void setKundMap (HashMap<String, Produkt> productMap) {
+		this.productMap = productMap;
 	}
 	
-	public HashMap<String, Produkt> getProduktMap () {
-		return this.produktMap;
+	public HashMap<String, Produkt> getProductMap () {
+		return this.productMap;
 	}
 	
-	public void addProdukt (Produkt p) {
-		this.produktMap.put(p.getNamn(), p);
+	public void addProduct (Produkt p) {
+		this.productMap.put(p.getName(), p);
 	}
 	
-	public void removeProdukt (String produktnr) {
-		this.produktMap.entrySet().removeIf(entry -> this.produktMap.containsKey(produktnr));
+	public void removeProduct (String productnr) {
+		this.productMap.entrySet().removeIf(entry -> this.productMap.containsKey(productnr));
 	}
 	
-	public Produkt findProdukt (String produktnamn) {
-		for (Produkt p : this.produktMap.values()) {
-			if (p.getNamn().equals(produktnamn)) {
+	public Produkt findProduct (String productname) {
+		for (Produkt p : this.productMap.values()) {
+			if (p.getName().equals(productname)) {
 				return p;
 			}
 		}
