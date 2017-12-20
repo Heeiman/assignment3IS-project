@@ -24,6 +24,37 @@ public class App {
 	private JTextField textField_8;
 	private JTextField textField_9;
 	private JTextField textField_11;
+	private JLabel lblKund;
+	private JLabel lblProdukt;
+	private JLabel lblOrder;
+	private JLabel lblOrderrad;
+	private JLabel lblExemplar;
+	private JLabel lblTotalbelopp;
+	private JLabel lblKundnummer;
+	private JLabel lblNamn;
+	private JLabel lblAdress;
+	private JButton btnSkapa;
+	private JButton btnndra;
+	private JButton btnHitta;
+	private JButton btnTaBort;
+	private JLabel lblNamn_1;
+	private JLabel lblKategori;
+	private JLabel lblPris;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
+	private JButton button_3;
+	private JLabel lblOrderid;
+	private JLabel lblLeveransdatum;
+	private JButton button_4;
+	private JButton button_5;
+	private JLabel lblNummer;
+	private JLabel lblAntal;
+	private JButton button_6;
+	private JButton button_7;
+	private JLabel lblSerienummer;
+	private JButton button_8;
+	private JButton button_9;
 
 	/**
 	 * Launch the application.
@@ -57,44 +88,44 @@ public class App {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblKund = new JLabel("Kund");
+		lblKund = new JLabel("Kund");
 		lblKund.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblKund.setBounds(74, 11, 88, 29);
 		frame.getContentPane().add(lblKund);
 		
-		JLabel lblProdukt = new JLabel("Produkt");
+		lblProdukt = new JLabel("Produkt");
 		lblProdukt.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblProdukt.setBounds(74, 207, 97, 14);
 		frame.getContentPane().add(lblProdukt);
 		
-		JLabel lblOrder = new JLabel("Order");
+		lblOrder = new JLabel("Order");
 		lblOrder.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblOrder.setBounds(312, 18, 46, 14);
 		frame.getContentPane().add(lblOrder);
 		
-		JLabel lblOrderrad = new JLabel("Orderrad");
+		lblOrderrad = new JLabel("Orderrad");
 		lblOrderrad.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblOrderrad.setBounds(509, 14, 79, 14);
 		frame.getContentPane().add(lblOrderrad);
 		
-		JLabel lblExemplar = new JLabel("Exemplar");
+		lblExemplar = new JLabel("Exemplar");
 		lblExemplar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblExemplar.setBounds(290, 207, 79, 14);
 		frame.getContentPane().add(lblExemplar);
 		
-		JLabel lblTotalbelopp = new JLabel("Totalbelopp f\u00F6r samtliga produkter:");
+		lblTotalbelopp = new JLabel("Totalbelopp f\u00F6r samtliga produkter:");
 		lblTotalbelopp.setBounds(530, 234, 205, 14);
 		frame.getContentPane().add(lblTotalbelopp);
 		
-		JLabel lblKundnummer = new JLabel("Kundnummer:");
+		lblKundnummer = new JLabel("Kundnummer:");
 		lblKundnummer.setBounds(10, 42, 79, 14);
 		frame.getContentPane().add(lblKundnummer);
 		
-		JLabel lblNamn = new JLabel("Namn:");
+		lblNamn = new JLabel("Namn:");
 		lblNamn.setBounds(10, 67, 46, 14);
 		frame.getContentPane().add(lblNamn);
 		
-		JLabel lblAdress = new JLabel("Adress:");
+		lblAdress = new JLabel("Adress:");
 		lblAdress.setBounds(10, 92, 46, 14);
 		frame.getContentPane().add(lblAdress);
 		
@@ -113,31 +144,31 @@ public class App {
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
-		JButton btnSkapa = new JButton("Skapa");
+		btnSkapa = new JButton("Skapa");
 		btnSkapa.setBounds(18, 120, 71, 23);
 		frame.getContentPane().add(btnSkapa);
 		
-		JButton btnndra = new JButton("\u00C4ndra");
+		btnndra = new JButton("\u00C4ndra");
 		btnndra.setBounds(99, 120, 86, 23);
 		frame.getContentPane().add(btnndra);
 		
-		JButton btnHitta = new JButton("Hitta");
+		btnHitta = new JButton("Hitta");
 		btnHitta.setBounds(18, 154, 71, 23);
 		frame.getContentPane().add(btnHitta);
 		
-		JButton btnTaBort = new JButton("Ta bort");
+		btnTaBort = new JButton("Ta bort");
 		btnTaBort.setBounds(99, 154, 86, 23);
 		frame.getContentPane().add(btnTaBort);
 		
-		JLabel lblNamn_1 = new JLabel("Namn:");
+		lblNamn_1 = new JLabel("Namn:");
 		lblNamn_1.setBounds(10, 234, 46, 14);
 		frame.getContentPane().add(lblNamn_1);
 		
-		JLabel lblKategori = new JLabel("Kategori:");
+		lblKategori = new JLabel("Kategori:");
 		lblKategori.setBounds(10, 259, 46, 14);
 		frame.getContentPane().add(lblKategori);
 		
-		JLabel lblPris = new JLabel("Pris:");
+		lblPris = new JLabel("Pris:");
 		lblPris.setBounds(10, 284, 46, 14);
 		frame.getContentPane().add(lblPris);
 		
@@ -156,27 +187,27 @@ public class App {
 		frame.getContentPane().add(textField_5);
 		textField_5.setColumns(10);
 		
-		JButton button = new JButton("Skapa");
+		button = new JButton("Skapa");
 		button.setBounds(18, 309, 71, 23);
 		frame.getContentPane().add(button);
 		
-		JButton button_1 = new JButton("\u00C4ndra");
+		button_1 = new JButton("\u00C4ndra");
 		button_1.setBounds(99, 309, 86, 23);
 		frame.getContentPane().add(button_1);
 		
-		JButton button_2 = new JButton("Hitta");
+		button_2 = new JButton("Hitta");
 		button_2.setBounds(18, 336, 71, 23);
 		frame.getContentPane().add(button_2);
 		
-		JButton button_3 = new JButton("Ta bort");
+		button_3 = new JButton("Ta bort");
 		button_3.setBounds(99, 336, 86, 23);
 		frame.getContentPane().add(button_3);
 		
-		JLabel lblOrderid = new JLabel("OrderID:");
+		lblOrderid = new JLabel("OrderID:");
 		lblOrderid.setBounds(231, 42, 46, 14);
 		frame.getContentPane().add(lblOrderid);
 		
-		JLabel lblLeveransdatum = new JLabel("Leveransdatum:");
+		lblLeveransdatum = new JLabel("Leveransdatum:");
 		lblLeveransdatum.setBounds(231, 67, 98, 14);
 		frame.getContentPane().add(lblLeveransdatum);
 		
@@ -190,19 +221,19 @@ public class App {
 		frame.getContentPane().add(textField_7);
 		textField_7.setColumns(10);
 		
-		JButton button_4 = new JButton("Skapa");
+		button_4 = new JButton("Skapa");
 		button_4.setBounds(254, 92, 71, 23);
 		frame.getContentPane().add(button_4);
 		
-		JButton button_5 = new JButton("Ta bort");
+		button_5 = new JButton("Ta bort");
 		button_5.setBounds(332, 92, 86, 23);
 		frame.getContentPane().add(button_5);
 		
-		JLabel lblNummer = new JLabel("Nummer:");
+		lblNummer = new JLabel("Nummer:");
 		lblNummer.setBounds(462, 42, 46, 14);
 		frame.getContentPane().add(lblNummer);
 		
-		JLabel lblAntal = new JLabel("Antal:");
+		lblAntal = new JLabel("Antal:");
 		lblAntal.setBounds(462, 67, 46, 14);
 		frame.getContentPane().add(lblAntal);
 		
@@ -216,11 +247,11 @@ public class App {
 		textField_9.setBounds(530, 64, 86, 20);
 		frame.getContentPane().add(textField_9);
 		
-		JButton button_6 = new JButton("Skapa");
+		button_6 = new JButton("Skapa");
 		button_6.setBounds(462, 92, 71, 23);
 		frame.getContentPane().add(button_6);
 		
-		JButton button_7 = new JButton("Ta bort");
+		button_7 = new JButton("Ta bort");
 		button_7.setBounds(540, 92, 86, 23);
 		frame.getContentPane().add(button_7);
 		
@@ -229,15 +260,15 @@ public class App {
 		textField_11.setBounds(322, 232, 86, 20);
 		frame.getContentPane().add(textField_11);
 		
-		JLabel lblSerienummer = new JLabel("Serienummer:");
+		lblSerienummer = new JLabel("Serienummer:");
 		lblSerienummer.setBounds(231, 232, 98, 14);
 		frame.getContentPane().add(lblSerienummer);
 		
-		JButton button_8 = new JButton("Skapa");
+		button_8 = new JButton("Skapa");
 		button_8.setBounds(254, 260, 71, 23);
 		frame.getContentPane().add(button_8);
 		
-		JButton button_9 = new JButton("Ta bort");
+		button_9 = new JButton("Ta bort");
 		button_9.setBounds(332, 260, 86, 23);
 		frame.getContentPane().add(button_9);
 	}
