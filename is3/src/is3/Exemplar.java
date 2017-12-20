@@ -1,20 +1,20 @@
 package is3;
 
 public class Exemplar {
-	private String serienummer;
+	private String serNumber;
 	
-	private Produkt produkt;
+	private Produkt product;
 	
-	public void setSerienummer (String serienummer) {
-		this.serienummer = serienummer;
+	public void setSerNumber (String serNumber) {
+		this.serNumber = serNumber;
 	}
-	public String getSerienummer () {
-		return serienummer;
+	public String getSerNumber () {
+		return this.serNumber;
 	}
-	public void setProdukt (Produkt produkt) {
-		this.produkt = produkt;
+	public void setProdukt (Produkt product) {
+		this.product = product;
 	}
-	public Produkt getProdukt () {
-		return produkt;
+	public Produkt getProduct () {
+		return this.product;
 	}
 }

@@ -12,6 +12,7 @@ public class Kund {
 	public void setcNumber (String cNumber){
 		this.cNumber = cNumber;
 	}
+
 	public String getcNumber (){
 		return cNumber;
 	}
@@ -25,13 +26,13 @@ public class Kund {
 		this.adress = adress;
 	}
 	public String getAdress (){
-		return adress;
+		return this.adress;
 	}
 	public void setOrderlista (HashMap<String, Order> orderlista){
 		this.orderlista = orderlista;
 	}
 	public HashMap<String,Order> getOrderlista (){
-		return orderlista;
+		return this.orderlista;
 	}
 	
 	

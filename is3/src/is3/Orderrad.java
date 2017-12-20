@@ -1,23 +1,23 @@
 package is3;
 
 public class Orderrad {
-	private String nummer;
-	private String antal;
+	private String number;
+	private String amount;
 	
 	private Order order;
-	private Produkt produkt;
+	private Produkt product;
 	
 	public void setNumber (String number){
-		this.nummer = number;
+		this.number = number;
 	}
 	public String getNumber (){
-		return nummer;
+		return this.number;
 	}
-	public void setAntal (String antal){
-		this.antal = antal;
+	public void setAmount (String amount){
+		this.amount = amount;
 	}
-	public String getAntal (){
-		return antal;
+	public String getAmount (){
+		return this.amount;
 	}
 	public void setOrder (Order order){
 		this.order = order;
@@ -25,10 +25,10 @@ public class Orderrad {
 	public Order getOrder (){
 		return this.order;
 	}
-	public void setProdukt (Produkt produkt){
-		this.produkt = produkt;
+	public void setProduct (Produkt product){
+		this.product = product;
 	}
-	public Produkt getProdukt (){
-		return produkt;
+	public Produkt getProduct (){
+		return this.product;
 	}
 }
