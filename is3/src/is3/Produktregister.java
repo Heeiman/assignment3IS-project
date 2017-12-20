@@ -19,7 +19,7 @@ public class Produktregister {
 	}
 	
 	public void removeProdukt (String produktnr) {
-		produktMap.entrySet().removeIf(entry -> produktMap.containsKey(produktnr));
+		this.produktMap.entrySet().removeIf(entry -> this.produktMap.containsKey(produktnr));
 	}
 	
 	public Produkt findProdukt (String produktnamn) {
