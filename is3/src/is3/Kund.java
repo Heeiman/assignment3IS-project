@@ -12,24 +12,15 @@ public class Kund {
 	public void setcNumber (String cNumber){
 		this.cNumber = cNumber;
 	}
-<<<<<<< HEAD
-	public String getKundnummer (){
-		return this.kundnummer;
-=======
+
 	public String getcNumber (){
 		return cNumber;
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 	}
 	public void setName (String cName){
 		this.cName = cName;
 	}
-<<<<<<< HEAD
-	public String getNamn (){
-		return this.namn;
-=======
 	public String getName (){
 		return cName;
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 	}
 	public void setAdress (String adress){
 		this.adress = adress;
