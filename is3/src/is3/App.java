@@ -91,11 +91,11 @@ public class App {
 		frame.getContentPane().add(lblKundnummer);
 		
 		JLabel lblNamn = new JLabel("Namn:");
-		lblNamn.setBounds(43, 67, 46, 14);
+		lblNamn.setBounds(10, 67, 46, 14);
 		frame.getContentPane().add(lblNamn);
 		
 		JLabel lblAdress = new JLabel("Adress:");
-		lblAdress.setBounds(43, 92, 46, 14);
+		lblAdress.setBounds(10, 92, 46, 14);
 		frame.getContentPane().add(lblAdress);
 		
 		textField = new JTextField();
@@ -114,7 +114,7 @@ public class App {
 		textField_2.setColumns(10);
 		
 		JButton btnSkapa = new JButton("Skapa");
-		btnSkapa.setBounds(23, 120, 71, 23);
+		btnSkapa.setBounds(18, 120, 71, 23);
 		frame.getContentPane().add(btnSkapa);
 		
 		JButton btnndra = new JButton("\u00C4ndra");
@@ -122,7 +122,7 @@ public class App {
 		frame.getContentPane().add(btnndra);
 		
 		JButton btnHitta = new JButton("Hitta");
-		btnHitta.setBounds(23, 154, 71, 23);
+		btnHitta.setBounds(18, 154, 71, 23);
 		frame.getContentPane().add(btnHitta);
 		
 		JButton btnTaBort = new JButton("Ta bort");
@@ -130,7 +130,7 @@ public class App {
 		frame.getContentPane().add(btnTaBort);
 		
 		JLabel lblNamn_1 = new JLabel("Namn:");
-		lblNamn_1.setBounds(23, 234, 46, 14);
+		lblNamn_1.setBounds(10, 234, 46, 14);
 		frame.getContentPane().add(lblNamn_1);
 		
 		JLabel lblKategori = new JLabel("Kategori:");
@@ -138,7 +138,7 @@ public class App {
 		frame.getContentPane().add(lblKategori);
 		
 		JLabel lblPris = new JLabel("Pris:");
-		lblPris.setBounds(23, 284, 46, 14);
+		lblPris.setBounds(10, 284, 46, 14);
 		frame.getContentPane().add(lblPris);
 		
 		textField_3 = new JTextField();
@@ -173,7 +173,7 @@ public class App {
 		frame.getContentPane().add(button_3);
 		
 		JLabel lblOrderid = new JLabel("OrderID:");
-		lblOrderid.setBounds(265, 42, 46, 14);
+		lblOrderid.setBounds(231, 42, 46, 14);
 		frame.getContentPane().add(lblOrderid);
 		
 		JLabel lblLeveransdatum = new JLabel("Leveransdatum:");
@@ -199,11 +199,11 @@ public class App {
 		frame.getContentPane().add(button_5);
 		
 		JLabel lblNummer = new JLabel("Nummer:");
-		lblNummer.setBounds(473, 43, 46, 14);
+		lblNummer.setBounds(462, 42, 46, 14);
 		frame.getContentPane().add(lblNummer);
 		
 		JLabel lblAntal = new JLabel("Antal:");
-		lblAntal.setBounds(473, 73, 46, 14);
+		lblAntal.setBounds(462, 67, 46, 14);
 		frame.getContentPane().add(lblAntal);
 		
 		textField_8 = new JTextField();
@@ -230,7 +230,7 @@ public class App {
 		frame.getContentPane().add(textField_11);
 		
 		JLabel lblSerienummer = new JLabel("Serienummer:");
-		lblSerienummer.setBounds(247, 234, 98, 14);
+		lblSerienummer.setBounds(231, 232, 98, 14);
 		frame.getContentPane().add(lblSerienummer);
 		
 		JButton button_8 = new JButton("Skapa");
