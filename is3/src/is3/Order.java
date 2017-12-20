@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 public class Order {
 	private String orderId;
-	private String leveransdatum;
-	public Kund kund;
+	private String dDate;
+	public Kund customer;
 	
-	HashMap<String, Orderrad> orderradlista = new HashMap<String, Orderrad> ();
+	HashMap<String, Orderrad> ordRowList = new HashMap<String, Orderrad> ();
 	
 	public void setOrderId (String orderId){
 		this.orderId = orderId;
@@ -15,22 +15,22 @@ public class Order {
 	public String getOrderId (){
 		return this.orderId;
 	}
-	public void setLeveransdatum (String leveransdatum){
-		this.leveransdatum = leveransdatum;
+	public void setDDate (String dDate){
+		this.dDate = dDate;
 	}
-	public String getleveransdatum (){
-		return this.leveransdatum;
+	public String getdDate (){
+		return this.dDate;
 	}
-	public void setKund (Kund kund){
-		this.kund = kund;
+	public void setCustomer (Kund customer){
+		this.customer = customer;
 	}
-	public Kund getKund (){
-		return this.kund;
+	public Kund getCustomer (){
+		return this.customer;
 	}
-	public void setOrderradlista(HashMap<String, Orderrad> orderradlista){
-		this.orderradlista = orderradlista;
+	public void setOrdRowList(HashMap<String, Orderrad> ordRowList){
+		this.ordRowList = ordRowList;
 	}
-	public HashMap<String, Orderrad> getOrderradlista (){
-		return this.orderradlista;
+	public HashMap<String, Orderrad> getOrdRowList (){
+		return this.ordRowList;
 	}
 }
