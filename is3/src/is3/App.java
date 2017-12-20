@@ -213,7 +213,7 @@ public class App {
 		
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
-		textField_9.setBounds(530, 70, 86, 20);
+		textField_9.setBounds(530, 64, 86, 20);
 		frame.getContentPane().add(textField_9);
 		
 		JButton button_6 = new JButton("Skapa");
@@ -221,7 +221,7 @@ public class App {
 		frame.getContentPane().add(button_6);
 		
 		JButton button_7 = new JButton("Ta bort");
-		button_7.setBounds(540, 90, 86, 23);
+		button_7.setBounds(540, 92, 86, 23);
 		frame.getContentPane().add(button_7);
 		
 		textField_11 = new JTextField();
