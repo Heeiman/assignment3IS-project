@@ -9,12 +9,12 @@ public class Exemplar {
 		this.serienummer = serienummer;
 	}
 	public String getSerienummer () {
-		return serienummer;
+		return this.serienummer;
 	}
 	public void setProdukt (Produkt produkt) {
 		this.produkt = produkt;
 	}
 	public Produkt getProdukt () {
-		return produkt;
+		return this.produkt;
 	}
 }

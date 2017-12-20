@@ -13,24 +13,24 @@ public class Order {
 		this.orderId = orderId;
 	}
 	public String getOrderId (){
-		return orderId;
+		return this.orderId;
 	}
 	public void setLeveransdatum (String leveransdatum){
 		this.leveransdatum = leveransdatum;
 	}
 	public String getleveransdatum (){
-		return leveransdatum;
+		return this.leveransdatum;
 	}
 	public void setKund (Kund kund){
 		this.kund = kund;
 	}
 	public Kund getKund (){
-		return kund;
+		return this.kund;
 	}
 	public void setOrderradlista(HashMap<String, Orderrad> orderradlista){
 		this.orderradlista = orderradlista;
 	}
 	public HashMap<String, Orderrad> getOrderradlista (){
-		return orderradlista;
+		return this.orderradlista;
 	}
 }

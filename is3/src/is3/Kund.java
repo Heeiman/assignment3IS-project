@@ -13,25 +13,25 @@ public class Kund {
 		this.kundnummer = kundnummer;
 	}
 	public String getKundnummer (){
-		return kundnummer;
+		return this.kundnummer;
 	}
 	public void setNamn (String namn){
 		this.namn = namn;
 	}
 	public String getNamn (){
-		return namn;
+		return this.namn;
 	}
 	public void setAdress (String adress){
 		this.adress = adress;
 	}
 	public String getAdress (){
-		return adress;
+		return this.adress;
 	}
 	public void setOrderlista (HashMap<String, Order> orderlista){
 		this.orderlista = orderlista;
 	}
 	public HashMap<String,Order> getOrderlista (){
-		return orderlista;
+		return this.orderlista;
 	}
 	
 	

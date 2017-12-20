@@ -11,13 +11,13 @@ public class Orderrad {
 		this.nummer = number;
 	}
 	public String getNumber (){
-		return nummer;
+		return this.nummer;
 	}
 	public void setAntal (String antal){
 		this.antal = antal;
 	}
 	public String getAntal (){
-		return antal;
+		return this.antal;
 	}
 	public void setOrder (Order order){
 		this.order = order;
@@ -29,6 +29,6 @@ public class Orderrad {
 		this.produkt = produkt;
 	}
 	public Produkt getProdukt (){
-		return produkt;
+		return this.produkt;
 	}
 }

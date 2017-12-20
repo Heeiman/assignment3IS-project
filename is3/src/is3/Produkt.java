@@ -19,7 +19,7 @@ public class Produkt {
 		this.kategori = kategori;
 	}
 	public String getKategori() {
-		return kategori;
+		return this.kategori;
 	}
 	public void setPris(String pris) {
 		this.pris = pris;
@@ -31,7 +31,7 @@ public class Produkt {
 		this.exemplarlista = exemplarlista;
 	}
 	public HashMap<String, Exemplar> getExemplarlista () {
-		return exemplarlista;
+		return this.exemplarlista;
 	}
 	
 	
