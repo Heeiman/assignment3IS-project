@@ -56,6 +56,8 @@ public class App {
 	private JButton button_8;
 	private JButton button_9;
 
+	private Controller controller;
+	private Kundregister customerReg;
 	/**
 	 * Launch the application.
 	 */
