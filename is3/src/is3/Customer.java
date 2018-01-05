@@ -2,12 +2,12 @@ package is3;
 
 import java.util.HashMap;
 
-public class Kund {
+public class Customer {
 	private String cNumber;
 	private String cName;
 	private String adress;
 	
-	private HashMap <String, Order> orderlista = new HashMap<String, Order>();
+	private HashMap <String, Order> orderlist = new HashMap<String, Order>();
 	
 	public void setcNumber (String cNumber){
 		this.cNumber = cNumber;
@@ -29,16 +29,16 @@ public class Kund {
 		return this.adress;
 	}
 	public void setOrderlista (HashMap<String, Order> orderlista){
-		this.orderlista = orderlista;
+		this.orderlist = orderlista;
 	}
 	public HashMap<String,Order> getOrderlista (){
-		return this.orderlista;
+		return this.orderlist;
 	}
     public void addOrder(Order anOrder) {
-        this.orderlista.put(anOrder.getOrderId(), anOrder);
+        this.orderlist.put(anOrder.getOrderId(), anOrder);
     }
 
-	public Kund(String cNumber2, String cName2, String adress2) {
+	public Customer(String cNumber2, String cName2, String adress2) {
 		this.setcNumber(cNumber2);
 		this.setName(cName2);
 		this.setAdress(adress2);

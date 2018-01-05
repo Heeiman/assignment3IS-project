@@ -13,12 +13,12 @@ public class Controller {
 		this.appFrame = appFrame;
 	}
 	public void addCustomer(String cNumber, String cName, String adress) {
-        Kund newCustomer = new Kund (cNumber, cName, adress);
+        Customer newCustomer = new Customer (cNumber, cName, adress);
             this.customers.addKund(newCustomer);
 	}
-	public void addCustomerOrder (String orderID, String delDate, String dDate, Kund customer, String cNumber) {
-		Kund newCustomer = customers.findKund(cNumber);
-		Order order = new Order (orderID, delDate, dDate, customer);
+	public void addCustomerOrder (String orderID, String delDate, Customer customer, String cNumber) {
+		Customer newCustomer = customers.findKund(cNumber);
+		Order order = new Order (orderID, delDate, customer);
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
 		customers.addKund(newCustomer);
@@ -27,8 +27,12 @@ public class Controller {
 	 customers.removeKund(cNumberRemove);
 	}
 	public HashMap<String, Kund> findKund (String cNumber) {
-		Kund newCustomer = customers.findKund(cNumber);
+		Customer newCustomer = customers.findKund(cNumber);
 	}
+	public void updateCustomer(String cNumber, String newCName, String adress) {
+	 customers.setCustomerName(cNumber, newCName);
+	}
+
 	
 	public void addOrderlist
 	

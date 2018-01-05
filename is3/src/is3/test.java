@@ -3,7 +3,7 @@ package is3;
 public class test {
 
 	public static void main(String[] args) {
-		Kund k = new Kund();
+		Customer k = new Customer();
 		Kundregister kr = new Kundregister();
 		
 		k.setKundnummer("1");
