@@ -2,8 +2,8 @@ package is3;
 
 import javax.swing.JFrame;
 
-import inl.Account;
-import inl.Person;
+import is3.Produktregister;
+import is3.Kundregister;;
 
 public class Controller {
 	Kundregister customers;
@@ -21,7 +21,7 @@ public class Controller {
 	public void addCustomerOrder (String orderID, String delDate, String dDate) {
 		Kund newCustomer = customers.findKund(cNumber);
 		Order order = new Order(orderID);
-		newCustomer.setOrderlista(order);
+		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
 		customers.addKund(newCustomer);
 	}

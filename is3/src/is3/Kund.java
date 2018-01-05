@@ -2,6 +2,8 @@ package is3;
 
 import java.util.HashMap;
 
+import inl.Account;
+
 public class Kund {
 	private String cNumber;
 	private String cName;
@@ -34,7 +36,9 @@ public class Kund {
 	public HashMap<String,Order> getOrderlista (){
 		return this.orderlista;
 	}
-	
+    public void addOrder(Order anOrder) {
+        this.orderlista.add(anOrder);
+    }
 	
 
 }
