@@ -4,11 +4,11 @@ import javax.swing.JFrame;
 import java.util.HashMap;
 
 public class Controller {
-	Kundregister customers;
+	CustomerRegister customers;
 	Produktregister products;
 	JFrame appFrame;
 	
-	public Controller(Kundregister customerReg, JFrame appFrame) {
+	public Controller(CustomerRegister customerReg, JFrame appFrame) {
 		this.customers = customerReg;
 		this.appFrame = appFrame;
 	}
@@ -26,15 +26,15 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeKund(cNumberRemove);
 	}
-	public HashMap<String, Customer> findKund (String cNumber) {
-		Customer newCustomer = customers.findKund(cNumber);
-	}
+	//public HashMap<String, Customer> findKund (String cNumber) {
+		//Customer newCustomer = customers.findKund(cNumber);
+		//return newCustomer;
+	//}
 	public void updateCustomer(String cNumber, String newCName, String adress) {
-	 customers.setCustomerName(cNumber, newCName);
+	 //customers.setCustomerName(cNumber, newCName);
 	}
 
 	
-	public void addOrderlist
 	
 	
 }
