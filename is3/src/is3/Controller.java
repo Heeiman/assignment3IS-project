@@ -2,11 +2,9 @@ package is3;
 
 import javax.swing.JFrame;
 
-<<<<<<< HEAD
-=======
 import is3.Produktregister;
 import is3.Kundregister;
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
+
 
 public class Controller {
 	Kundregister customers;
