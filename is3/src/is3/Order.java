@@ -10,6 +10,9 @@ public class Order {
 	
 	HashMap<String, Orderrad> ordRowList = new HashMap<String, Orderrad> ();
 	
+	public Order(String orderId) {
+		this.orderId = orderId;
+	}
 	public void setOrderId (String orderId){
 		this.orderId = orderId;
 	}
