@@ -15,6 +15,8 @@ public class Order {
 		this.setLevDate(delDate);
 		this.setCustomer(customer);
 	}
+	public Order(String orderId) {
+	}
 	public void setOrderId (String orderId){
 		this.orderId = orderId;
 	}
