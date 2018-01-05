@@ -1,6 +1,6 @@
 package is3;
 
-public class Exemplar {
+public class Item {
 	private String serNumber;
 	private Product product;
 	

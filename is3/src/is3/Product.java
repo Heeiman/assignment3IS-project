@@ -7,7 +7,7 @@ public class Product {
 	private String category;
 	private String price;
 	
-	private HashMap<String, Exemplar> itemList = new HashMap<String, Exemplar>();
+	private HashMap<String, Item> itemList = new HashMap<String, Item>();
 	
 	public void setName(String name) {
 		this.name = name;
@@ -27,12 +27,14 @@ public class Product {
 	public String getPrice() {
 		return this.price;
 	}
-	public void setItemList (HashMap<String, Exemplar> itemList) {
+	public void setItemList (HashMap<String, Item> itemList) {
 		this.itemList = itemList;
 	}
-	public HashMap<String, Exemplar> getItemList () {
+	public HashMap<String, Item> getItemList () {
 		return this.itemList;
 	}
-	
+    public void addProduct(Product aProduct) {
+        this.itemList.put(aProduct.getName(), aProduct);
+    }
 	
 }

@@ -43,7 +43,7 @@ public class Controller {
 		//return newCustomer;
 	//}
 	public void updateCustomer(String cNumber, String newCName, String adress) {
-	 //customers.setCustomerName(cNumber, newCName);
+	//customers.setCustomerName(cNumber, newCName);
 	}
 
 	
