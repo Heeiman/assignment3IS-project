@@ -40,4 +40,5 @@ public class Order {
 	public HashMap<String, Orderrad> getOrdRowList (){
 		return this.ordRowList;
 	}
+	//HEJ
 }
