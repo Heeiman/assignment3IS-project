@@ -2,8 +2,6 @@ package is3;
 
 import javax.swing.JFrame;
 
-import is3.Produktregister;
-import is3.Kundregister;;
 
 public class Controller {
 	Kundregister customers;

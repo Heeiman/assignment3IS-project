@@ -37,6 +37,11 @@ public class Kund {
     public void addOrder(Order anOrder) {
         this.orderlista.add(anOrder);
     }
-	
 
-}
+	public Kund(String cNumber2, String cName2, String adress2) {
+		this.setcNumber(cNumber2);
+		this.setName(cName2);
+		this.setAdress(adress2);
+	}
+	
+	}
