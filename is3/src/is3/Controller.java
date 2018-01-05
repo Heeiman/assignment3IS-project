@@ -11,6 +11,7 @@ public class Controller {
 	public Controller(CustomerRegister customerReg, JFrame appFrame) {
 		this.customers = customerReg;
 		this.appFrame = appFrame;
+
 	}
 	public void addCustomer(String cNumber, String cName, String adress) {
         Customer newCustomer = new Customer (cNumber, cName, adress);
@@ -33,9 +34,9 @@ public class Controller {
 		newCustomer.addOrder(newOrder);
 		newOrder.setCustomer(newCustomer);
 	}
-	public void addOrderrad(String number, String amount) {
-		Order newOrder = orderList.
-	}
+	//public void addOrderRow(String number, String amount) {
+		//Order newOrder = orderList.
+	//}
 		
 	//public HashMap<String, Customer> findKund (String cNumber) {
 		//Customer newCustomer = customers.findKund(cNumber);
@@ -44,6 +45,6 @@ public class Controller {
 	public void updateCustomer(String cNumber, String newCName, String adress) {
 	//customers.setCustomerName(cNumber, newCName);
 	}
-
+	
 	
 }
