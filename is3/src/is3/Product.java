@@ -33,8 +33,8 @@ public class Product {
 	public HashMap<String, Item> getItemList () {
 		return this.itemList;
 	}
-    public void addProduct(Product aProduct) {
-        this.itemList.put(aProduct.getName(), aProduct);
+    public void addProduct(Item anItem) {
+        this.itemList.put(anItem.getSerNumber(), anItem);
     }
 	
 }
