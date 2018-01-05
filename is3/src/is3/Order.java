@@ -6,13 +6,12 @@ public class Order {
 	private String orderId;
 	private String delDate;
 	private String dDate;
-	public Kund customer;
+	public Customer customer;
 	
-	HashMap<String, Orderrad> ordRowList = new HashMap<String, Orderrad> ();
+	HashMap<String, Orderrow> ordRowList = new HashMap<String, Orderrow> ();
 	
-	public Order(String orderId, String delDate, String dDate,  Kund customer) {
+	public Order(String orderId, String delDate, Customer customer) {
 		this.setOrderId(orderId);
-		this.setDDate(dDate);
 		this.setLevDate(delDate);
 		this.setCustomer(customer);
 	}
@@ -36,16 +35,16 @@ public class Order {
 	public String getdDate (){
 		return this.dDate;
 	}
-	public void setCustomer (Kund customer){
+	public void setCustomer (Customer customer){
 		this.customer = customer;
 	}
-	public Kund getCustomer (){
+	public Customer getCustomer (){
 		return this.customer;
 	}
-	public void setOrdRowList(HashMap<String, Orderrad> ordRowList){
+	public void setOrdRowList(HashMap<String, Orderrow> ordRowList){
 		this.ordRowList = ordRowList;
 	}
-	public HashMap<String, Orderrad> getOrdRowList (){
+	public HashMap<String, Orderrow> getOrdRowList (){
 		return this.ordRowList;
 	}
 	//HEJ

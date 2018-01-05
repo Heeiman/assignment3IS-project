@@ -3,8 +3,8 @@ package is3;
 public class test {
 
 	public static void main(String[] args) {
-		Kund k = new Kund();
-		Kundregister kr = new Kundregister();
+		Customer k = new Customer();
+		CustomerRegister kr = new CustomerRegister();
 		
 		k.setKundnummer("1");
 		k.setAdress("Hejsvej");

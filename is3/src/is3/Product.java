@@ -2,7 +2,7 @@ package is3;
 
 import java.util.HashMap;
 
-public class Produkt {
+public class Product {
 	private String name;
 	private String category;
 	private String price;
