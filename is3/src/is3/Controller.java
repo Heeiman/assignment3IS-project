@@ -14,28 +14,27 @@ public class Controller {
 	}
 	public void addCustomer(String cNumber, String cName, String adress) {
         Customer newCustomer = new Customer (cNumber, cName, adress);
-            this.customers.addKund(newCustomer);
+            this.customers.addCustomer(newCustomer);
 	}
 	public void addCustomerOrder (String orderID, String delDate, Customer customer, String cNumber) {
-		Customer newCustomer = customers.findKund(cNumber);
+		Customer newCustomer = customers.findCustomer(cNumber);
 		Order order = new Order (orderID, delDate, customer);
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
-		customers.addKund(newCustomer);
+		customers.addCustomer(newCustomer);
 	}
 	public void removeCustomer(String cNumberRemove) {
-	 customers.removeKund(cNumberRemove);
+	 customers.removeCustomer(cNumberRemove);
 	}
 
 	public void addOrder(String OrderId, String delDate, String dDate, String cNumber) {
-		Customer newCustomer = customers.findKund(cNumber);
+		Customer newCustomer = customers.findCustomer(cNumber);
 		Order newOrder = new Order(OrderId);
 		newCustomer.addOrder(newOrder);
 		newOrder.setCustomer(newCustomer);
 	}
 	public void addOrderrad(String number, String amount) {
-	//	Order newOrder = 
-		//Order newOrder = ordRowList.findOrder(OrderID);
+		Order newOrder = orderList.
 	}
 		
 	//public HashMap<String, Customer> findKund (String cNumber) {

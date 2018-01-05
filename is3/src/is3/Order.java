@@ -5,9 +5,8 @@ import java.util.HashMap;
 public class Order {
 	private String orderId;
 	private String delDate;
-	public Customer customer;
-	
-	HashMap<String, OrderRow> ordRowList = new HashMap<String, OrderRow> ();
+	private Customer customer;
+	private HashMap<String, OrderRow> ordRowList = new HashMap<String, OrderRow> ();
 	
 	public Order(String orderId, String delDate, Customer customer) {
 		this.setOrderId(orderId);

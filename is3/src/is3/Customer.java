@@ -6,16 +6,13 @@ public class Customer {
 	private String cNumber;
 	private String cName;
 	private String adress;
-	
-	public Customer() {
-	}
-	
 	private HashMap <String, Order> orderList = new HashMap<String, Order>();
 	
+	public Customer() {
+	}	
 	public void setcNumber (String cNumber){
 		this.cNumber = cNumber;
 	}
-
 	public String getcNumber (){
 		return cNumber;
 	}
@@ -40,6 +37,14 @@ public class Customer {
     public void addOrder(Order anOrder) {
         this.orderList.put(anOrder.getOrderId(), anOrder);
     }
+	public Order findOrder (String orderId) {
+		for (Order anOrder : this.orderList.values()) {
+			if (anOrder.getOrderId().equals(orderId)) {
+				return anOrder;
+			}
+		}
+		return null;
+	}
 
 	public Customer(String cNumber2, String cName2, String adress2) {
 		this.setcNumber(cNumber2);
