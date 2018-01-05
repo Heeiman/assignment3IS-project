@@ -10,8 +10,11 @@ public class Order {
 	
 	HashMap<String, Orderrad> ordRowList = new HashMap<String, Orderrad> ();
 	
-	public Order(String orderId) {
+	public Order(String orderId, String delDate, String dDate,  Kund customer) {
 		this.setOrderId(orderId);
+		this.setDDate(dDate);
+		this.setLevDate(delDate);
+		this.setCustomer(customer);
 	}
 	public void setOrderId (String orderId){
 		this.orderId = orderId;

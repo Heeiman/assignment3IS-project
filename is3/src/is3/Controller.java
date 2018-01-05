@@ -19,9 +19,9 @@ public class Controller {
         Kund newCustomer = new Kund (cNumber, cName, adress);
             this.customers.addKund(newCustomer);
 	}
-	public void addCustomerOrder (String orderID, String delDate, String dDate, String cNumber) {
+	public void addCustomerOrder (String orderID, String delDate, String dDate, Kund customer, String cNumber) {
 		Kund newCustomer = customers.findKund(cNumber);
-		Order order = new Order(orderID);
+		Order order = new Order(orderID, delDate, dDate, customer);
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
 		customers.addKund(newCustomer);
