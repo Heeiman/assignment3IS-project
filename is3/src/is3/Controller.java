@@ -25,6 +25,7 @@ public class Controller {
 		order.setCustomer(newCustomer);
 		customers.addKund(newCustomer);
 	}
+	public void addOrderlist
 	
 	
 }

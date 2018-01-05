@@ -9,19 +9,15 @@ public class Produktregister {
 	public void setKundMap (HashMap<String, Produkt> productMap) {
 		this.productMap = productMap;
 	}
-	
 	public HashMap<String, Produkt> getProductMap () {
 		return this.productMap;
 	}
-	
 	public void addProduct (Produkt p) {
 		this.productMap.put(p.getName(), p);
 	}
-	
 	public void removeProduct (String productnr) {
 		this.productMap.entrySet().removeIf(entry -> this.productMap.containsKey(productnr));
 	}
-	
 	public Produkt findProduct (String productname) {
 		for (Produkt p : this.productMap.values()) {
 			if (p.getName().equals(productname)) {

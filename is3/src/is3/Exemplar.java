@@ -2,7 +2,6 @@ package is3;
 
 public class Exemplar {
 	private String serNumber;
-	
 	private Produkt product;
 	
 	public void setSerNumber (String serNumber) {

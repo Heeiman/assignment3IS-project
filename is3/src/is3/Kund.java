@@ -2,8 +2,6 @@ package is3;
 
 import java.util.HashMap;
 
-import inl.Account;
-
 public class Kund {
 	private String cNumber;
 	private String cName;
