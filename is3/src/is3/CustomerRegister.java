@@ -4,29 +4,29 @@ import java.util.HashMap;
 
 public class CustomerRegister {
 
-	private HashMap<String, Customer> kundMap = new HashMap<String, Customer>();
+	private HashMap<String, Customer> customerList = new HashMap<String, Customer>();
 	
-	public void setKundMap (HashMap<String, Customer> kundMap) {
-		this.kundMap = kundMap;
+	public void setCustomerList (HashMap<String, Customer> customerList) {
+		this.customerList = customerList;
 	}
-	public HashMap<String, Customer> getKundMap () {
-		return this.kundMap;
+	public HashMap<String, Customer> getCustomerList () {
+		return this.customerList;
 	}
-	public void addKund (Customer k) {
-		this.kundMap.put(k.getcNumber(), k);
+	public void addCustomer (Customer k) {
+		this.customerList.put(k.getcNumber(), k);
 	}
-	public void removeKund (String cNumber) {
-		kundMap.entrySet().removeIf(entry -> kundMap.containsKey(cNumber));	
+	public void removeCustomer (String cNumber) {
+		customerList.entrySet().removeIf(entry -> customerList.containsKey(cNumber));	
 	}
-	public Customer findKund (String cNumber) {
-		for (Customer k : this.kundMap.values()) {
+	public Customer findCustomer (String cNumber) {
+		for (Customer k : this.customerList.values()) {
 			if (k.getcNumber().equals(cNumber)) {
 				return k;
 			}
 		}
 		return null;
 	}
-	public void changeKund (String cNumber, Customer k) {
-		kundMap.put(cNumber, kundMap.get(k));
+	public void changeCustomer (String cNumber, Customer k) {
+		customerList.put(cNumber, customerList.get(k));
 	}
 }

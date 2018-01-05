@@ -7,7 +7,10 @@ public class Customer {
 	private String cName;
 	private String adress;
 	
-	private HashMap <String, Order> orderlist = new HashMap<String, Order>();
+	public Customer() {
+	}
+	
+	private HashMap <String, Order> orderList = new HashMap<String, Order>();
 	
 	public void setcNumber (String cNumber){
 		this.cNumber = cNumber;
@@ -28,14 +31,14 @@ public class Customer {
 	public String getAdress (){
 		return this.adress;
 	}
-	public void setOrderlista (HashMap<String, Order> orderlista){
-		this.orderlist = orderlista;
+	public void setOrderList (HashMap<String, Order> orderList){
+		this.orderList = orderList;
 	}
-	public HashMap<String,Order> getOrderlista (){
-		return this.orderlist;
+	public HashMap<String,Order> getOrderList (){
+		return this.orderList;
 	}
     public void addOrder(Order anOrder) {
-        this.orderlist.put(anOrder.getOrderId(), anOrder);
+        this.orderList.put(anOrder.getOrderId(), anOrder);
     }
 
 	public Customer(String cNumber2, String cName2, String adress2) {
@@ -43,5 +46,6 @@ public class Customer {
 		this.setName(cName2);
 		this.setAdress(adress2);
 	}
+
+}
 	
-	}

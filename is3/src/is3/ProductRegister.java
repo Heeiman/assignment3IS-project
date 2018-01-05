@@ -6,7 +6,7 @@ public class ProductRegister {
 	
 	private HashMap<String, Product> productMap = new HashMap<String, Product>();
 	
-	public void setKundMap (HashMap<String, Product> productMap) {
+	public void setProductMap (HashMap<String, Product> productMap) {
 		this.productMap = productMap;
 	}
 	public HashMap<String, Product> getProductMap () {
@@ -26,5 +26,4 @@ public class ProductRegister {
 		}
 		return null;
 	}
-	//Hej
 }

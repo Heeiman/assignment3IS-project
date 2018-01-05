@@ -6,17 +6,17 @@ public class test {
 		Customer k = new Customer();
 		CustomerRegister kr = new CustomerRegister();
 		
-		k.setKundnummer("1");
+		k.setcNumber("1");
 		k.setAdress("Hejsvej");
-		k.setNamn("Erik");
+		k.setName("Erik");
 		
-		kr.addKund(k);
+		kr.addCustomer(k);
 		
-		System.out.println(kr.findKund("1").getNamn());
+		System.out.println(kr.findCustomer("1").getName());
 		
-		k.setNamn("Anton");
+		k.setName("Anton");
 		
-		System.out.println(kr.findKund("1").getNamn());
+		System.out.println(kr.findCustomer("1").getName());
 
 	}
 

@@ -5,14 +5,13 @@ import java.util.HashMap;
 public class Order {
 	private String orderId;
 	private String delDate;
-	private String dDate;
 	public Customer customer;
 	
 	HashMap<String, OrderRow> ordRowList = new HashMap<String, OrderRow> ();
 	
 	public Order(String orderId, String delDate, Customer customer) {
 		this.setOrderId(orderId);
-		this.setLevDate(delDate);
+		this.setDelDate(delDate);
 		this.setCustomer(customer);
 	}
 	public Order(String orderId) {
@@ -23,17 +22,11 @@ public class Order {
 	public String getOrderId (){
 		return this.orderId;
 	}
-	public void setLevDate (String delDate){
+	public void setDelDate (String delDate){
 		this.delDate = delDate;
 	}
-	public void setDDate (String dDate){
-		this.dDate = dDate;
-	}
-	public String getdelDate(){
+	public String getDelDate(){
 		return delDate;
-	}
-	public String getdDate (){
-		return this.dDate;
 	}
 	public void setCustomer (Customer customer){
 		this.customer = customer;
@@ -50,5 +43,4 @@ public class Order {
     public void addOrderRow (OrderRow aRow) {
         this.ordRowList.put(aRow.getNumber(), aRow);
     }
-	//HEJ
 }
