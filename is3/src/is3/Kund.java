@@ -35,7 +35,7 @@ public class Kund {
 		return this.orderlista;
 	}
     public void addOrder(Order anOrder) {
-        this.orderlista.add(anOrder);
+        this.orderlista.put(anOrder.getOrderId(), anOrder);
     }
 
 	public Kund(String cNumber2, String cName2, String adress2) {
