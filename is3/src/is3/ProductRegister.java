@@ -2,7 +2,7 @@ package is3;
 
 import java.util.HashMap;
 
-public class Produktregister {
+public class ProductRegister {
 	
 	private HashMap<String, Product> productMap = new HashMap<String, Product>();
 	

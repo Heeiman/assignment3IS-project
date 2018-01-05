@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Controller {
 	CustomerRegister customers;
-	Produktregister products;
+	ProductRegister products;
 	JFrame appFrame;
 	
 	public Controller(CustomerRegister customerReg, JFrame appFrame) {
