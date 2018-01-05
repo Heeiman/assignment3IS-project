@@ -26,7 +26,7 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeKund(cNumberRemove);
 	}
-	public HashMap<String, Kund> findKund (String cNumber) {
+	public HashMap<String, Customer> findKund (String cNumber) {
 		Customer newCustomer = customers.findKund(cNumber);
 	}
 	public void updateCustomer(String cNumber, String newCName, String adress) {

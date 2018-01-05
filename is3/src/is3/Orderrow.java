@@ -1,11 +1,11 @@
 package is3;
 
-public class Orderrad {
+public class Orderrow {
 	private String number;
 	private String amount;
 	
 	private Order order;
-	private Produkt product;
+	private Product product;
 	
 	public void setNumber (String number){
 		this.number = number;
@@ -25,10 +25,10 @@ public class Orderrad {
 	public Order getOrder (){
 		return this.order;
 	}
-	public void setProduct (Produkt product){
+	public void setProduct (Product product){
 		this.product = product;
 	}
-	public Produkt getProduct (){
+	public Product getProduct (){
 		return this.product;
 	}
 }

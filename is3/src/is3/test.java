@@ -4,7 +4,7 @@ public class test {
 
 	public static void main(String[] args) {
 		Customer k = new Customer();
-		Kundregister kr = new Kundregister();
+		CustomerRegister kr = new CustomerRegister();
 		
 		k.setKundnummer("1");
 		k.setAdress("Hejsvej");

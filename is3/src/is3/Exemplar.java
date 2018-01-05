@@ -2,7 +2,7 @@ package is3;
 
 public class Exemplar {
 	private String serNumber;
-	private Produkt product;
+	private Product product;
 	
 	public void setSerNumber (String serNumber) {
 		this.serNumber = serNumber;
@@ -10,10 +10,10 @@ public class Exemplar {
 	public String getSerNumber () {
 		return this.serNumber;
 	}
-	public void setProdukt (Produkt product) {
+	public void setProdukt (Product product) {
 		this.product = product;
 	}
-	public Produkt getProduct () {
+	public Product getProduct () {
 		return this.product;
 	}
 }
