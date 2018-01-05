@@ -1,10 +1,7 @@
 package is3;
 
 import javax.swing.JFrame;
-
-import is3.Produktregister;
-import is3.Kundregister;
-
+import java.util.HashMap;
 
 public class Controller {
 	Kundregister customers;
@@ -29,6 +26,10 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeKund(cNumberRemove);
 	}
+	public HashMap<String, Kund> findKund (String cNumber) {
+		Kund newCustomer = customers.findKund(cNumber);
+	}
+	
 	public void addOrderlist
 	
 	
