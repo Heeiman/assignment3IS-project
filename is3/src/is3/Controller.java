@@ -16,15 +16,15 @@ public class Controller {
         Customer newCustomer = new Customer (cNumber, cName, adress);
             this.customers.addKund(newCustomer);
 	}
-<<<<<<< HEAD
-	public void addCustomerOrder (String orderId, String delDate, String dDate, Kund customer, String cNumber) {
-		Kund newCustomer = customers.findKund(cNumber);
-		Order order = new Order (orderId, delDate, dDate, customer);
-=======
+
+	public void addCustomerOrder (String orderId, String delDate, String dDate, Customer customer, String cNumber) {
+		Customer newCustomer = customers.findKund(cNumber);
+		Order order = new Order (orderId, delDate, customer);
+	}	
+
 	public void addCustomerOrder (String orderID, String delDate, Customer customer, String cNumber) {
 		Customer newCustomer = customers.findKund(cNumber);
 		Order order = new Order (orderID, delDate, customer);
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
 		customers.addKund(newCustomer);
@@ -32,23 +32,18 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeKund(cNumberRemove);
 	}
-<<<<<<< HEAD
-	public void addOrder(String OrderId, String delDate, String dDate) {
-		Kund newKund = customers.findKund(cNumber);
+
+	public void addOrder(String OrderId, String delDate, String dDate, String cNumber) {
+		Customer newCustomer = customers.findKund(cNumber);
 		Order newOrder = new Order(OrderId);
-		newKund.addOrder(anOrder);
-		newOrder.setCustomer(newKund);
+		newCustomer.addOrder(newOrder);
+		newOrder.setCustomer(newCustomer);
 	}
 	public void addOrderrad(String number, String amount) {
-		Order newOrder = 
-		Order newOrder = ordRowList.findOrder(OrderID);
-		
-		
-		
-		
+	//	Order newOrder = 
+		//Order newOrder = ordRowList.findOrder(OrderID);
 	}
 		
-=======
 	//public HashMap<String, Customer> findKund (String cNumber) {
 		//Customer newCustomer = customers.findKund(cNumber);
 		//return newCustomer;
@@ -58,7 +53,4 @@ public class Controller {
 	}
 
 	
-	
-	
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 }
