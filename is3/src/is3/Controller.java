@@ -21,10 +21,13 @@ public class Controller {
 	}
 	public void addCustomerOrder (String orderID, String delDate, String dDate, Kund customer, String cNumber) {
 		Kund newCustomer = customers.findKund(cNumber);
-		Order order = new Order(orderID, delDate, dDate, customer);
+		Order order = new Order (orderID, delDate, dDate, customer);
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
 		customers.addKund(newCustomer);
+	}
+	public void removeCustomer(String cNumberRemove) {
+	 customers.removeKund(cNumberRemove);
 	}
 	public void addOrderlist
 	
