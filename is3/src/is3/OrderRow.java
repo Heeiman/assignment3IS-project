@@ -1,6 +1,6 @@
 package is3;
 
-public class Orderrow {
+public class OrderRow {
 	private String number;
 	private String amount;
 	

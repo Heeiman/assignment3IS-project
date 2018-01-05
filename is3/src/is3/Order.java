@@ -8,7 +8,7 @@ public class Order {
 	private String dDate;
 	public Customer customer;
 	
-	HashMap<String, Orderrow> ordRowList = new HashMap<String, Orderrow> ();
+	HashMap<String, OrderRow> ordRowList = new HashMap<String, OrderRow> ();
 	
 	public Order(String orderId, String delDate, Customer customer) {
 		this.setOrderId(orderId);
@@ -41,11 +41,14 @@ public class Order {
 	public Customer getCustomer (){
 		return this.customer;
 	}
-	public void setOrdRowList(HashMap<String, Orderrow> ordRowList){
+	public void setOrdRowList(HashMap<String, OrderRow> ordRowList){
 		this.ordRowList = ordRowList;
 	}
-	public HashMap<String, Orderrow> getOrdRowList (){
+	public HashMap<String, OrderRow> getOrdRowList (){
 		return this.ordRowList;
 	}
+    public void addOrderRow (OrderRow aRow) {
+        this.ordRowList.put(aRow.getNumber(), aRow);
+    }
 	//HEJ
 }
