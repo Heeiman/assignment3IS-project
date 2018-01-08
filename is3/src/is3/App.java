@@ -158,7 +158,7 @@ public class App {
 				String cName = textCname.getText();
 				String cAdress = textCadress.getText();
 				controller.addCustomer(cNumber, cName, cAdress);
-				textPane.setText(cNumber);
+				textPane.setText(cName + cNumber + cAdress);
 			}
 		});
 		btnSkapa.setBounds(18, 115, 71, 23);

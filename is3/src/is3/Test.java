@@ -9,9 +9,7 @@ public class Test {
 		k.setcNumber("1");
 		k.setcAdress("Hejsvej");
 		k.setcName("Erik");
-		
 		kr.addCustomer(k);
-		
 		
 		System.out.println(kr.findCustomer("1").getName());
 		
