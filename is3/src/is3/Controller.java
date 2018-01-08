@@ -1,6 +1,8 @@
 package is3;
 
 import javax.swing.JFrame;
+
+
 import java.util.HashMap;
 
 public class Controller {
@@ -27,17 +29,18 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeCustomer(cNumberRemove);
 	}
-	//public Customer findCustomer (String cNumber) {
-	//	for (Customer acustomer : this.customers.values()) {
-	//		if (acustomer.getcNumber().equals(cNumber)) {
-	//			return acustomer;
-	//		}
-	//	}
-	//	return null;
-	//}
+	public String findCustomer (String cNumber) {
+		Customer newCustomer = customers.findCustomer(cNumber);
+		if (newCustomer != null) {
+			return newCustomer.getName();
+		}
+		return null;
+
+	}
+
 	public void addOrder(String OrderId, String delDate, String dDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
-		Order newOrder = new Order(OrderId);
+		Order newOrder = new Order(OrderId, cNumber, newCustomer);
 		newCustomer.addOrder(newOrder);
 		newOrder.setCustomer(newCustomer);
 	}

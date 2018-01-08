@@ -155,7 +155,16 @@ public class App {
 		btnSkapa.setBounds(18, 115, 71, 23);
 		panel.add(btnSkapa);
 		
-		btnHitta = new JButton("Hitta");
+		btnHitta = new JButton("Hitta Kund");
+		btnHitta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String cNumber = textCnumber.getText();
+				String tmpCustomer = controller.findCustomer(cNumber);
+				if (tmpCustomer != null) {
+						textCname.setText(tmpCustomer);
+			}
+			}	
+		});
 		btnHitta.setBounds(18, 149, 71, 23);
 		panel.add(btnHitta);
 		
