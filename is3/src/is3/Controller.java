@@ -15,8 +15,8 @@ public class Controller {
 		this.appFrame = appFrame;
 
 	}
-	public void addCustomer(String cNumber, String cName, String adress) {
-        Customer newCustomer = new Customer (cNumber, cName, adress);
+	public void addCustomer(String cNumber, String cName, String cAdress) {
+        Customer newCustomer = new Customer (cNumber, cName, cAdress);
             this.customers.addCustomer(newCustomer);
 	}
 	public void addCustomerOrder (String orderID, String delDate, Customer customer, String cNumber) {
@@ -38,7 +38,7 @@ public class Controller {
 
 	}
 
-	public void addOrder(String OrderId, String delDate, String dDate, String cNumber) {
+	public void addOrder(String OrderId, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		Order newOrder = new Order(OrderId, cNumber, newCustomer);
 		newCustomer.addOrder(newOrder);
