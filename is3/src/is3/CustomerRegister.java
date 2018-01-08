@@ -26,7 +26,13 @@ public class CustomerRegister {
 		}
 		return null;
 	}
-	public void changeCustomer (String cNumber, Customer k) {
-		customerList.put(cNumber, customerList.get(k));
-	}
+	public void changeCustomer (String cNumber, String cName, String cAdress) {
+		for (Customer k : this.customerList.values()) {
+			if (k.getcNumber().equals(cNumber)) {
+				k.setName(cName);
+				k.setAdress(cAdress);
+			}
+
+}
+}
 }
