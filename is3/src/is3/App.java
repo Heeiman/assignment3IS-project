@@ -93,6 +93,8 @@ public class App {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		customerReg = new CustomerRegister();
+		controller = new Controller(customerReg, frame);
 
 		
 		frame = new JFrame();

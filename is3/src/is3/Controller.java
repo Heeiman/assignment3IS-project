@@ -8,11 +8,11 @@ import java.util.HashMap;
 public class Controller {
 	CustomerRegister customers;
 	ProductRegister products;
-	JFrame appFrame;
+	JFrame Frame;
 	
-	public Controller(CustomerRegister customers, JFrame appFrame) {
+	public Controller(CustomerRegister customers, JFrame Frame) {
 		this.customers = customers;
-		this.appFrame = appFrame;
+		this.Frame = Frame;
 
 	}
 	public void addCustomer(String cNumber, String cName, String cAdress) {

@@ -7,15 +7,15 @@ public class Test {
 		CustomerRegister kr = new CustomerRegister();
 		
 		k.setcNumber("1");
-		k.setAdress("Hejsvej");
-		k.setName("Erik");
+		k.setcAdress("Hejsvej");
+		k.setcName("Erik");
 		
 		kr.addCustomer(k);
-		k.
+		
 		
 		System.out.println(kr.findCustomer("1").getName());
 		
-		k.setName("Anton");
+		k.setcName("Anton");
 		
 		System.out.println(kr.findCustomer("1").getName());
 
