@@ -168,9 +168,10 @@ public class App {
 		btnHitta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
-				String tmpCustomer = controller.findCustomer(cNumber);
+				Customer tmpCustomer = controller.findCustomer(cNumber);
+				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
-						textCname.setText(tmpCustomer);
+					textPane.setText(info);
 			}
 			}	
 		});
