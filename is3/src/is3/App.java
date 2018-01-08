@@ -177,7 +177,14 @@ public class App {
 		btnHitta.setBounds(18, 149, 71, 23);
 		panel.add(btnHitta);
 		
-		btnTaBort = new JButton("Ta bort");
+		btnTaBort = new JButton("Ta bort kund");
+		btnTaBort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String cNumber = textCnumber.getText();
+				controller.removeCustomer(cNumber);
+				
+			}
+		});
 		btnTaBort.setBounds(99, 149, 86, 23);
 		panel.add(btnTaBort);
 		
