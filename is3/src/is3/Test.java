@@ -16,6 +16,7 @@ public class Test {
 		k.setcName("Anton");
 		
 		System.out.println(kr.findCustomer("1").getName());
+		
 
 
 	}

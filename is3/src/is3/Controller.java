@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Controller {
 	CustomerRegister customers;
@@ -19,9 +20,9 @@ public class Controller {
         Customer newCustomer = new Customer (cNumber, cName, cAdress);
             this.customers.addCustomer(newCustomer);
 	}
-	public void addCustomerOrder (String orderID, String delDate, Customer customer, String cNumber) {
+	public void addCustomerOrder (String orderID, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
-		Order order = new Order (orderID, delDate, customer);
+		Order order = new Order (orderID, delDate);
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
 		customers.addCustomer(newCustomer);
@@ -40,10 +41,18 @@ public class Controller {
 
 	public void addOrder(String OrderId, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
-		Order newOrder = new Order(OrderId, cNumber, newCustomer);
+		Order newOrder = new Order(OrderId, cNumber);
 		newCustomer.addOrder(newOrder);
 		newOrder.setCustomer(newCustomer);
 	}
+	 public HashMap<String, Order> showOrders(String cNumber) {
+	        Customer newCustomer;
+	        newCustomer = customers.findCustomer(cNumber);
+	        if (newCustomer != null) {
+	            return newCustomer.getOrderList();
+	        }
+	        return null;
+	    }
 	//public void addOrderRow(String number, String amount) {
 		//Order newOrder = orderList.
 	//}

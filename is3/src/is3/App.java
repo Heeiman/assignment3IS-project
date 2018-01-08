@@ -225,8 +225,8 @@ public class App {
 				String info = cNumber + " " + orderId + " " + delDate;
 				if (customer != null) {
 				textPane.setText(info);	
-				controller.addCustomerOrder(orderId, delDate, customer, cNumber);
-				textPane.setText("Order Skapad.");
+				controller.addCustomerOrder(orderId, delDate, cNumber);
+				//textPane.setText("Order Skapad.");
 				}
 			}
 		});
