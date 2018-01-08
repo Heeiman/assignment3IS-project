@@ -1,6 +1,6 @@
 package is3;
 
-public class test {
+public class Test {
 
 	public static void main(String[] args) {
 		Customer k = new Customer();
@@ -17,6 +17,8 @@ public class test {
 		k.setName("Anton");
 		
 		System.out.println(kr.findCustomer("1").getName());
+
+		System.out.println(kr.findCustomer("2").getName());
 
 	}
 
