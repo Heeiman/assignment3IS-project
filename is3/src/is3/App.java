@@ -91,6 +91,21 @@ public class App {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		JPanel panel_1 = new JPanel();
+		tabbedPane.addTab("New tab", null, panel_1, null);
+		panel_1.setLayout(null);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(475, 136, 260, 102);
+		frame.getContentPane().add(textPane);
+		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
+		textPane.setText("Emma Ordernr.123 Rad 1 Penna Serienr. 123 ");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(475, 134, 263, 104);
+		frame.getContentPane().add(scrollPane);
+				
 		frame = new JFrame();
 		frame.setBounds(100, 100, 809, 409);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,11 +118,7 @@ public class App {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(20, 44, 396, 287);
 		frame.getContentPane().add(tabbedPane);
-		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("New tab", null, panel_1, null);
-		panel_1.setLayout(null);
-		
+
 		lblExemplar = new JLabel("Exemplar");
 		lblExemplar.setBounds(243, 36, 79, 14);
 		panel_1.add(lblExemplar);
@@ -291,17 +302,6 @@ public class App {
 		lblOrderrad.setBounds(262, 123, 79, 14);
 		panel.add(lblOrderrad);
 		lblOrderrad.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(475, 136, 260, 102);
-		frame.getContentPane().add(textPane);
-		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
-		textPane.setText("Emma Ordernr.123 Rad 1 Penna Serienr. 123 ");
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(475, 134, 263, 104);
-		frame.getContentPane().add(scrollPane);
-		
 	
 	}
 }

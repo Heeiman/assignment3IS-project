@@ -8,8 +8,8 @@ public class Controller {
 	ProductRegister products;
 	JFrame appFrame;
 	
-	public Controller(CustomerRegister customerReg, JFrame appFrame) {
-		this.customers = customerReg;
+	public Controller(CustomerRegister customers, JFrame appFrame) {
+		this.customers = customers;
 		this.appFrame = appFrame;
 
 	}
@@ -27,14 +27,14 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeCustomer(cNumberRemove);
 	}
-	public Customer findCustomer (String cNumber) {
-		for (Customer acustomer : this.customers.values()) {
-			if (acustomer.getcNumber().equals(cNumber)) {
-				return acustomer;
-			}
-		}
-		return null;
-	}
+	//public Customer findCustomer (String cNumber) {
+	//	for (Customer acustomer : this.customers.values()) {
+	//		if (acustomer.getcNumber().equals(cNumber)) {
+	//			return acustomer;
+	//		}
+	//	}
+	//	return null;
+	//}
 	public void addOrder(String OrderId, String delDate, String dDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		Order newOrder = new Order(OrderId);
