@@ -100,6 +100,11 @@ public class App {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(475, 136, 260, 102);
+		frame.getContentPane().add(textPane);
+		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
+		
 		lblTotalbelopp = new JLabel("Totalbelopp f\u00F6r samtliga produkter:");
 		lblTotalbelopp.setBounds(588, 16, 205, 14);
 		frame.getContentPane().add(lblTotalbelopp);
@@ -107,7 +112,8 @@ public class App {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(20, 44, 396, 287);
 		frame.getContentPane().add(tabbedPane);
-				JPanel panel = new JPanel();
+				
+		JPanel panel = new JPanel();		
 		tabbedPane.addTab("Kund och order", null, panel, null);
 		panel.setLayout(null);
 		
@@ -150,6 +156,7 @@ public class App {
 				String cName = textCname.getText();
 				String cAdress = textCadress.getText();
 				controller.addCustomer(cNumber, cName, cAdress);
+				textPane.setText(cNumber);
 			}
 		});
 		btnSkapa.setBounds(18, 115, 71, 23);
@@ -311,12 +318,6 @@ public class App {
 		button_3 = new JButton("Ta bort");
 		button_3.setBounds(99, 140, 86, 23);
 		panel_1.add(button_3);
-				
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(475, 136, 260, 102);
-		frame.getContentPane().add(textPane);
-		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
-		textPane.setText("Emma Ordernr.123 Rad 1 Penna Serienr. 123 ");
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(475, 134, 263, 104);
