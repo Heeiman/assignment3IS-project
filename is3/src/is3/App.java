@@ -14,6 +14,8 @@ import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class App {
 
@@ -141,7 +143,15 @@ public class App {
 		lblAdress.setBounds(10, 87, 46, 14);
 		panel.add(lblAdress);
 		
-		btnSkapa = new JButton("Skapa");
+		btnSkapa = new JButton("Skapa Kund");
+		btnSkapa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String cNumber = textCnumber.getText();
+				String cName = textCname.getText();
+				String cAdress = textCadress.getText();
+				controller.addCustomer(cNumber, cName, cAdress);
+			}
+		});
 		btnSkapa.setBounds(18, 115, 71, 23);
 		panel.add(btnSkapa);
 		
