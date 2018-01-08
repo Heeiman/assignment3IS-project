@@ -105,83 +105,8 @@ public class App {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(20, 44, 396, 287);
 		frame.getContentPane().add(tabbedPane);
-		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("New tab", null, panel_1, null);
-		panel_1.setLayout(null);
-
-		lblExemplar = new JLabel("Exemplar");
-		lblExemplar.setBounds(243, 36, 79, 14);
-		panel_1.add(lblExemplar);
-		lblExemplar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		textField_11 = new JTextField();
-		textField_11.setBounds(284, 61, 86, 20);
-		panel_1.add(textField_11);
-		textField_11.setColumns(10);
-		
-		lblSerienummer = new JLabel("Serienummer:");
-		lblSerienummer.setBounds(206, 64, 98, 14);
-		panel_1.add(lblSerienummer);
-		
-		button_9 = new JButton("Ta bort");
-		button_9.setBounds(294, 89, 86, 23);
-		panel_1.add(button_9);
-		
-		button_8 = new JButton("Skapa");
-		button_8.setBounds(216, 89, 71, 23);
-		panel_1.add(button_8);
-		
-		lblProdukt = new JLabel("Produkt");
-		lblProdukt.setBounds(74, 11, 97, 14);
-		panel_1.add(lblProdukt);
-		lblProdukt.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		lblNamn_1 = new JLabel("Namn:");
-		lblNamn_1.setBounds(10, 38, 46, 14);
-		panel_1.add(lblNamn_1);
-		
-		textPname = new JTextField();
-		textPname.setBounds(99, 35, 86, 20);
-		panel_1.add(textPname);
-		textPname.setColumns(10);
-		
-		lblKategori = new JLabel("Kategori:");
-		lblKategori.setBounds(10, 63, 46, 14);
-		panel_1.add(lblKategori);
-		
-		textPcategory = new JTextField();
-		textPcategory.setBounds(99, 60, 86, 20);
-		panel_1.add(textPcategory);
-		textPcategory.setColumns(10);
-		
-		lblPris = new JLabel("Pris:");
-		lblPris.setBounds(10, 88, 46, 14);
-		panel_1.add(lblPris);
-		
-		textPprice = new JTextField();
-		textPprice.setBounds(99, 85, 86, 20);
-		panel_1.add(textPprice);
-		textPprice.setColumns(10);
-		
-		button = new JButton("Skapa");
-		button.setBounds(18, 113, 71, 23);
-		panel_1.add(button);
-		
-		button_1 = new JButton("\u00C4ndra");
-		button_1.setBounds(99, 113, 86, 23);
-		panel_1.add(button_1);
-		
-		button_2 = new JButton("Hitta");
-		button_2.setBounds(18, 140, 71, 23);
-		panel_1.add(button_2);
-		
-		button_3 = new JButton("Ta bort");
-		button_3.setBounds(99, 140, 86, 23);
-		panel_1.add(button_3);
-		
-		JPanel panel = new JPanel();
-		tabbedPane.addTab("New tab", null, panel, null);
+				JPanel panel = new JPanel();
+		tabbedPane.addTab("Kund och order", null, panel, null);
 		panel.setLayout(null);
 		
 		lblKund = new JLabel("Kund");
@@ -293,7 +218,81 @@ public class App {
 		lblOrderrad.setBounds(262, 123, 79, 14);
 		panel.add(lblOrderrad);
 		lblOrderrad.setFont(new Font("Tahoma", Font.PLAIN, 14));
+
+		JPanel panel_1 = new JPanel();
+		tabbedPane.addTab("Produkt och exemplar", null, panel_1, null);
+		panel_1.setLayout(null);
+
+		lblExemplar = new JLabel("Exemplar");
+		lblExemplar.setBounds(243, 36, 79, 14);
+		panel_1.add(lblExemplar);
+		lblExemplar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
+		textField_11 = new JTextField();
+		textField_11.setBounds(284, 61, 86, 20);
+		panel_1.add(textField_11);
+		textField_11.setColumns(10);
+		
+		lblSerienummer = new JLabel("Serienummer:");
+		lblSerienummer.setBounds(206, 64, 98, 14);
+		panel_1.add(lblSerienummer);
+		
+		button_9 = new JButton("Ta bort");
+		button_9.setBounds(294, 89, 86, 23);
+		panel_1.add(button_9);
+		
+		button_8 = new JButton("Skapa");
+		button_8.setBounds(216, 89, 71, 23);
+		panel_1.add(button_8);
+		
+		lblProdukt = new JLabel("Produkt");
+		lblProdukt.setBounds(74, 11, 97, 14);
+		panel_1.add(lblProdukt);
+		lblProdukt.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		
+		lblNamn_1 = new JLabel("Namn:");
+		lblNamn_1.setBounds(10, 38, 46, 14);
+		panel_1.add(lblNamn_1);
+		
+		textPname = new JTextField();
+		textPname.setBounds(99, 35, 86, 20);
+		panel_1.add(textPname);
+		textPname.setColumns(10);
+		
+		lblKategori = new JLabel("Kategori:");
+		lblKategori.setBounds(10, 63, 46, 14);
+		panel_1.add(lblKategori);
+		
+		textPcategory = new JTextField();
+		textPcategory.setBounds(99, 60, 86, 20);
+		panel_1.add(textPcategory);
+		textPcategory.setColumns(10);
+		
+		lblPris = new JLabel("Pris:");
+		lblPris.setBounds(10, 88, 46, 14);
+		panel_1.add(lblPris);
+		
+		textPprice = new JTextField();
+		textPprice.setBounds(99, 85, 86, 20);
+		panel_1.add(textPprice);
+		textPprice.setColumns(10);
+		
+		button = new JButton("Skapa");
+		button.setBounds(18, 113, 71, 23);
+		panel_1.add(button);
+		
+		button_1 = new JButton("\u00C4ndra");
+		button_1.setBounds(99, 113, 86, 23);
+		panel_1.add(button_1);
+		
+		button_2 = new JButton("Hitta");
+		button_2.setBounds(18, 140, 71, 23);
+		panel_1.add(button_2);
+		
+		button_3 = new JButton("Ta bort");
+		button_3.setBounds(99, 140, 86, 23);
+		panel_1.add(button_3);
+				
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(475, 136, 260, 102);
 		frame.getContentPane().add(textPane);
