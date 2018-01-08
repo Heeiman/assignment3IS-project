@@ -29,10 +29,10 @@ public class Controller {
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeCustomer(cNumberRemove);
 	}
-	public String findCustomer (String cNumber) {
+	public Customer findCustomer (String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		if (newCustomer != null) {
-			return newCustomer.getName();
+			return newCustomer;
 		}
 		return null;
 

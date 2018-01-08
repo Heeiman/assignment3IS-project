@@ -215,6 +215,19 @@ public class App {
 		panel.add(lblLeveransdatum);
 		
 		button_4 = new JButton("Skapa");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//String cNumber = textCnumber.getText();
+				//String orderId = textOrderId.getText();
+			//	String delDate = 
+			//	String tmpCustomer = controller.findCustomer(cNumber);
+				//if (tmpCustomer != null) {
+				//textField_Name.setText(tmpPerson);	
+				//controller.addCustomerOrder(orderId, delDate, customer, cNumber);
+				//lblResponse_Account.setText("Account added.");
+				//}
+			}
+		});
 		button_4.setBounds(218, 85, 71, 23);
 		panel.add(button_4);
 		
