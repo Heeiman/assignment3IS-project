@@ -101,14 +101,14 @@ public class App {
 		lblTotalbelopp = new JLabel("Totalbelopp f\u00F6r samtliga produkter:");
 		lblTotalbelopp.setBounds(588, 16, 205, 14);
 		frame.getContentPane().add(lblTotalbelopp);
+
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(20, 44, 396, 287);
+		frame.getContentPane().add(tabbedPane);
 		
 		JPanel panel_1 = new JPanel();
 		tabbedPane.addTab("New tab", null, panel_1, null);
 		panel_1.setLayout(null);
-		
-		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(20, 44, 396, 287);
-		frame.getContentPane().add(tabbedPane);
 
 		lblExemplar = new JLabel("Exemplar");
 		lblExemplar.setBounds(243, 36, 79, 14);
