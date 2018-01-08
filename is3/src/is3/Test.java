@@ -11,6 +11,7 @@ public class Test {
 		k.setName("Erik");
 		
 		kr.addCustomer(k);
+		k.
 		
 		System.out.println(kr.findCustomer("1").getName());
 		

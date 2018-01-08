@@ -16,16 +16,16 @@ public class Customer {
 	public String getcNumber (){
 		return cNumber;
 	}
-	public void setName (String cName){
+	public void setcName (String cName){
 		this.cName = cName;
 	}
 	public String getName (){
 		return cName;
 	}
-	public void setAdress (String adress){
+	public void setcAdress (String adress){
 		this.adress = adress;
 	}
-	public String getAdress (){
+	public String getcAdress (){
 		return this.adress;
 	}
 	public void setOrderList (HashMap<String, Order> orderList){
@@ -46,10 +46,10 @@ public class Customer {
 		return null;
 	}
 
-	public Customer(String cNumber2, String cName2, String adress2) {
+	public Customer(String cNumber2, String cName2, String cAdress2) {
 		this.setcNumber(cNumber2);
-		this.setName(cName2);
-		this.setAdress(adress2);
+		this.setcName(cName2);
+		this.setcAdress(cAdress2);
 	}
 
 }
