@@ -215,18 +215,19 @@ public class App {
 		lblLeveransdatum.setBounds(195, 60, 98, 14);
 		panel.add(lblLeveransdatum);
 		
-		button_4 = new JButton("Skapa");
+		button_4 = new JButton("Skapa order till kund");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//String cNumber = textCnumber.getText();
-				//String orderId = textOrderId.getText();
-			//	String delDate = 
-			//	String tmpCustomer = controller.findCustomer(cNumber);
-				//if (tmpCustomer != null) {
-				//textField_Name.setText(tmpPerson);	
-				//controller.addCustomerOrder(orderId, delDate, customer, cNumber);
-				//lblResponse_Account.setText("Account added.");
-				//}
+				String cNumber = textCnumber.getText();
+				String orderId = textOrderId.getText();
+				String delDate = textdelDate.getText();
+				Customer customer = controller.findCustomer(cNumber);
+				String info = cNumber + " " + orderId + " " + delDate;
+				if (customer != null) {
+				textPane.setText(info);	
+				controller.addCustomerOrder(orderId, delDate, customer, cNumber);
+				textPane.setText("Order Skapad.");
+				}
 			}
 		});
 		button_4.setBounds(218, 85, 71, 23);
