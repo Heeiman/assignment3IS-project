@@ -13,8 +13,6 @@ public class Order {
 		this.setDelDate(delDate);
 		this.setCustomer(customer);
 	}
-	public Order(String orderId) {
-	}
 	public void setOrderId (String orderId){
 		this.orderId = orderId;
 	}
