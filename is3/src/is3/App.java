@@ -181,8 +181,7 @@ public class App {
 		btnTaBort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
-				controller.removeCustomer(cNumber);
-				
+				controller.removeCustomer(cNumber);				
 			}
 		});
 		btnTaBort.setBounds(99, 149, 86, 23);
