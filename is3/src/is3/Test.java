@@ -18,7 +18,6 @@ public class Test {
 		
 		System.out.println(kr.findCustomer("1").getName());
 
-		System.out.println(kr.findCustomer("2").getName());
 
 	}
 
