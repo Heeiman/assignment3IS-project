@@ -14,8 +14,7 @@ public class Test {
 		System.out.println(kr.findCustomer("1").getName());
 		
 		k.setcName("Anton");
-		
-<<<<<<< HEAD
+
 		kr.changeCustomer("1", "Kung Erik", "Slottet");
 		
 		System.out.println(kr.findCustomer("1").getName() + kr.findCustomer("1").getcAdress() + kr.findCustomer("1").getcNumber());
@@ -32,11 +31,8 @@ public class Test {
 		System.out.println(p1.getName() + p1.getCategory() + p1.getPrice());
 
 		
-		
-		//System.out.println(kr.findCustomer("1").getName());
-=======
+
 		System.out.println(kr.findCustomer("1").getName());
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 		
 
 
