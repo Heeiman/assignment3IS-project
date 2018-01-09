@@ -95,8 +95,7 @@ public class App {
 	private void initialize() {
 		customerReg = new CustomerRegister();
 		controller = new Controller(customerReg, frame);
-
-		
+	
 		frame = new JFrame();
 		frame.setBounds(100, 100, 809, 409);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -168,8 +167,6 @@ public class App {
 		btnHittakund.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
-				String orderId = textOrderId.getText();
-				String delDate = textdelDate.getText();
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
@@ -264,10 +261,24 @@ public class App {
 		textField_9.setColumns(10);
 		
 		button_6 = new JButton("Skapa");
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			String number = textField_8.getText();
+			String amount = textField_9.getText();
+			String orderId = textOrderId.getText();
+			controller.addOrderRow(number, amount);
+			}
+		});
 		button_6.setBounds(228, 195, 71, 23);
 		panel.add(button_6);
 		
 		button_7 = new JButton("Ta bort");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField_8.getText();
+				controller.removeOrderRow(number);
+			}
+		});
 		button_7.setBounds(306, 195, 86, 23);
 		panel.add(button_7);
 		
