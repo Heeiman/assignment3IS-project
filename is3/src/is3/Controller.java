@@ -38,9 +38,7 @@ public class Controller {
 			return newCustomer;
 		}
 		return null;
-
 	}
-
 	public void addOrder(String OrderId, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		Order newOrder = new Order(OrderId, cNumber);
