@@ -67,6 +67,7 @@ public class App {
 	private CustomerRegister customerReg;
 	private ProductRegister productReg;
 	private JTabbedPane tabbedPane;
+	
 	/**
 	 * Launch the application.
 	 */
