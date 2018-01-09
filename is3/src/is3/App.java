@@ -40,10 +40,10 @@ public class App {
 	private JLabel lblKundnummer;
 	private JLabel lblNamn;
 	private JLabel lblAdress;
-	private JButton btnSkapa;
+	private JButton btnSkapakund;
 	private JButton btnndra;
-	private JButton btnHitta;
-	private JButton btnTaBort;
+	private JButton btnHittakund;
+	private JButton btnTaBortkund;
 	private JLabel lblNamn_1;
 	private JLabel lblKategori;
 	private JLabel lblPris;
@@ -53,8 +53,8 @@ public class App {
 	private JButton button_3;
 	private JLabel lblOrderid;
 	private JLabel lblLeveransdatum;
-	private JButton button_4;
-	private JButton button_5;
+	private JButton button_skapaorder;
+	private JButton button_tabortorder;
 	private JLabel lblNummer;
 	private JLabel lblAntal;
 	private JButton button_6;
@@ -151,8 +151,8 @@ public class App {
 		lblAdress.setBounds(10, 87, 46, 14);
 		panel.add(lblAdress);
 		
-		btnSkapa = new JButton("Skapa Kund");
-		btnSkapa.addActionListener(new ActionListener() {
+		btnSkapakund = new JButton("Skapa Kund");
+		btnSkapakund.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
 				String cName = textCname.getText();
@@ -161,32 +161,34 @@ public class App {
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
 			}
 		});
-		btnSkapa.setBounds(18, 115, 71, 23);
-		panel.add(btnSkapa);
+		btnSkapakund.setBounds(18, 115, 71, 23);
+		panel.add(btnSkapakund);
 		
-		btnHitta = new JButton("Hitta Kund");
-		btnHitta.addActionListener(new ActionListener() {
+		btnHittakund = new JButton("Hitta Kund");
+		btnHittakund.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
+				String orderId = textOrderId.getText();
+				String delDate = textdelDate.getText();
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
-					textPane.setText(info);
+					textPane.setText(info + tmpCustomer.getOrderList().get(orderId) + tmpCustomer.getOrderList().get(delDate));
 			}
 			}	
 		});
-		btnHitta.setBounds(18, 149, 71, 23);
-		panel.add(btnHitta);
+		btnHittakund.setBounds(18, 149, 71, 23);
+		panel.add(btnHittakund);
 		
-		btnTaBort = new JButton("Ta bort kund");
-		btnTaBort.addActionListener(new ActionListener() {
+		btnTaBortkund = new JButton("Ta bort kund");
+		btnTaBortkund.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
 				controller.removeCustomer(cNumber);				
 			}
 		});
-		btnTaBort.setBounds(99, 149, 86, 23);
-		panel.add(btnTaBort);
+		btnTaBortkund.setBounds(99, 149, 86, 23);
+		panel.add(btnTaBortkund);
 		
 		btnndra = new JButton("\u00C4ndra");
 		btnndra.setBounds(99, 115, 86, 23);
@@ -215,8 +217,8 @@ public class App {
 		lblLeveransdatum.setBounds(195, 60, 98, 14);
 		panel.add(lblLeveransdatum);
 		
-		button_4 = new JButton("Skapa order till kund");
-		button_4.addActionListener(new ActionListener() {
+		button_skapaorder = new JButton("Skapa order till kund");
+		button_skapaorder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
 				String orderId = textOrderId.getText();
@@ -230,18 +232,18 @@ public class App {
 				}
 			}
 		});
-		button_4.setBounds(218, 85, 71, 23);
-		panel.add(button_4);
+		button_skapaorder.setBounds(218, 85, 71, 23);
+		panel.add(button_skapaorder);
 		
-		button_5 = new JButton("Ta bort");
-		button_5.addActionListener(new ActionListener() {
+		button_tabortorder = new JButton("Ta bort");
+		button_tabortorder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String orderId = textOrderId.getText();
 				controller.removeOrder(orderId);
 			}
 		});
-		button_5.setBounds(296, 85, 86, 23);
-		panel.add(button_5);
+		button_tabortorder.setBounds(296, 85, 86, 23);
+		panel.add(button_tabortorder);
 		
 		lblNummer = new JLabel("Nummer:");
 		lblNummer.setBounds(228, 145, 46, 14);
