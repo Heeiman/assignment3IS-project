@@ -31,7 +31,7 @@ public class Customer {
 	public void setOrderList (HashMap<String, Order> orderList){
 		this.orderList = orderList;
 	}
-	public HashMap<String,Order> getOrderList (){
+	public HashMap<String, Order> getOrderList (){
 		return this.orderList;
 	}
     public void addOrder(Order anOrder) {
@@ -45,7 +45,6 @@ public class Customer {
 		}
 		return null;
 	}
-
 	public Customer(String cNumber2, String cName2, String cAdress2) {
 		this.setcNumber(cNumber2);
 		this.setcName(cName2);

@@ -26,4 +26,11 @@ public class ProductRegister {
 		}
 		return null;
 	}
+	public void changeProduct(String productName, String category, String price) {
+		Product p = this.findProduct(productName);
+		if (p != null) {
+			p.setCategory(category);
+			p.setPrice(price);
+		}
+	}
 }
