@@ -283,7 +283,7 @@ public class App {
 			}
 				});
 		
-		button_6.setBounds(268, 195, 71, 23);
+		button_6.setBounds(218, 195, 129, 23);
 		panel.add(button_6);
 		
 		button_7 = new JButton("Ta bort");
