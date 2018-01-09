@@ -238,7 +238,6 @@ public class App {
 		button_tabortorder = new JButton("Ta bort");
 		button_tabortorder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String orderId = textOrderId.getText();
 			}
 		});
 		button_tabortorder.setBounds(296, 85, 86, 23);
