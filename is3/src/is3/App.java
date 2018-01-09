@@ -263,10 +263,10 @@ public class App {
 		button_6 = new JButton("Skapa");
 		button_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			String number = textField_8.getText();
-			String amount = textField_9.getText();
-			String orderId = textOrderId.getText();
-			controller.addOrderRow(number, amount, orderId);
+				String number = textField_8.getText();
+				String amount = textField_9.getText();
+				String orderId = textOrderId.getText();
+				controller.addOrderRow(number, amount, orderId);
 			}
 		});
 		button_6.setBounds(228, 195, 71, 23);
