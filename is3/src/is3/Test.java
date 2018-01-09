@@ -9,6 +9,8 @@ public class Test {
 		k1.setcNumber("1");
 		k1.setcAdress("Ettvagen");
 		k1.setcName("Erik");
+		Order anOrder = new Order("10", "21/3");
+		k1.addOrder(anOrder);
 		kr.addCustomer(k1);
 		
 		Customer k2 = new Customer();
@@ -29,7 +31,12 @@ public class Test {
 		System.out.println(kr.findCustomer("1").getName() + kr.findCustomer("1").getcAdress() + kr.findCustomer("1").getcNumber());
 		
 		Product p1 = new Product("Tåg", "Modelltåg", "500");
-		//p1.
+		Item item = new Item("12345");
+		OrderRow row = new OrderRow("1","50");
+		p1.addItem(item);
+		p1.addOrdRowP(row);
+		System.out.println(p1.getName() + p1.getCategory() + p1.getPrice() + p1.getItemList().values() + p1.getOrderRowP());
+
 		
 		
 		//System.out.println(kr.findCustomer("1").getName());
