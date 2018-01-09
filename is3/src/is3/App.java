@@ -262,17 +262,15 @@ public class App {
 		textField_9.setColumns(10);
 		
 		button_6 = new JButton("Skapa");
-<<<<<<< HEAD
 		button_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textField_8.getText();
 				String amount = textField_9.getText();
 				String orderId = textOrderId.getText();
-				controller.addOrderRow(number, amount, orderId);
+		//		controller.addOrderRow(number, amount, orderId);
 			}
 		});
-=======
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
+
 		button_6.setBounds(228, 195, 71, 23);
 		panel.add(button_6);
 		
