@@ -173,7 +173,7 @@ public class App {
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
-					textPane.setText(info + tmpCustomer.getOrderList().get(orderId) + tmpCustomer.getOrderList().get(delDate));
+					textPane.setText(info);
 			}
 			}	
 		});

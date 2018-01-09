@@ -39,7 +39,13 @@ public class CustomerRegister {
 				k.setcName(cName);
 				k.setcAdress(cAdress);
 			}
-
-}
-}
+		}
+	}
+	public void showOrders (String cNumber) {
+		Customer tmpcustomer = this.findCustomer(cNumber);
+		if (tmpcustomer != null) {
+			
+			}
+		}
+	}
 }

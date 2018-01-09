@@ -51,6 +51,17 @@ public class Controller {
 	        }
 	        return null;
 	    }
+	 public String showCustomerOrders (String cNumber, String orderId) {
+		 	Customer tmpCustomer = customers.findCustomer(cNumber);
+		 	if (tmpCustomer != null) {
+		 		Order order = tmpCustomer.findOrder(orderId);
+		 		if (order != null) {
+			return order.getOrderId();
+		 		}
+		 	}
+		 	return null;
+	 }	 
+	 
  	public void removeOrder(String orderId) {
  		customer.removeOrder(orderId);
  	}
@@ -67,7 +78,10 @@ public class Controller {
 			return newCustomer.getOrderList();
 		}
 		return null;
-	}
+
+	
+	
+	
 	 public void updateCustomerName(String cNumber, String newCName, String newAdress) {
 	 customers.setCustomerName(cNumber, newCName, newAdress);
 	 }
