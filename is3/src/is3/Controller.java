@@ -127,7 +127,7 @@ public class Controller {
 		Product newProduct = products.findProduct(name);
 		Item newItem = new Item(serNumber);
 		newProduct.addItem(newItem);
-		newItem.setProdukt(newProduct);
+		newItem.setProduct(newProduct);
 	}
 
 	public void removeItem(String serNumber) {
