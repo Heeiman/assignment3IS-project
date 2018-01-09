@@ -129,8 +129,12 @@ public class Controller {
 		newItem.setProduct(newProduct);
 	}
 
-	public void removeItem(String serNumber) {
-		product.removeItem(serNumber);
+	public void removeItem(String serNumber, String productName) {
+		Product newProduct = products.findProduct(productName);
+		if (newProduct != null) {
+			newProduct.removeItem(serNumber);
+		}
+		
 	}
 
 	// HEJ HEJ EMMA!!!!

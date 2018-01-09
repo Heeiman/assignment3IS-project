@@ -46,6 +46,14 @@ public class Product {
     public void removeItem (String serNumber) {
     	itemList.entrySet().removeIf(entry -> itemList.containsKey(serNumber));
     }
+	public Item findItem (String serNumber) {
+		for (Item anItem : this.itemList.values()) {
+			if (anItem.getSerNumber().equals(serNumber)) {
+				return anItem;
+			}
+		}
+		return null;
+	}
     public HashMap<String, OrderRow> getOrderRowP () {
     	return this.ordRowP;
     }
