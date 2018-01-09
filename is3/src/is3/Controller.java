@@ -59,22 +59,19 @@ public class Controller {
 	        return null;
 	    }
 	 
-	public String showCustomerOrders (String cNumber, String orderId) {
-		 Customer tmpCustomer = customers.findCustomer(cNumber);
-		 if (tmpCustomer != null) {
-		 	Order order = tmpCustomer.findOrder(orderId);
-		 	if (order != null) {
-		 		return order.getOrderId();
+	 public String showCustomerOrders (String cNumber, String orderId) {
+		 	Customer tmpCustomer = customers.findCustomer(cNumber);
+		 	if (tmpCustomer != null) {
+		 		Order order = tmpCustomer.findOrder(orderId);
+		 		if (order != null) {
+		 			return order.getOrderId();
+		 		}
 		 	}
-		 }
-		 return null;
+		 	return null;
 	 }	 
 	 
- 	public void removeOrder(String cNumber, String orderId) {
- 		Customer tmpCustomer = customers.findCustomer(cNumber);
- 		if (tmpCustomer != null) {
- 			tmpCustomer.removeOrder(orderId);
- 		}
+ 	public void removeOrder(String orderId) {
+ 		customer.removeOrder(orderId);
  	}
 	 	 
 	public void addOrderRow(String number, String amount, String orderId) {
