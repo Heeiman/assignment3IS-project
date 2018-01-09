@@ -34,6 +34,7 @@ public class Test {
 		p1.addItem(item);
 		p1.addOrdRowP(row);
 		System.out.println(p1.getName() + " " + p1.getCategory() + " " + p1.getPrice() + " " + item.getSerNumber() + " " + row.getNumber() + " " + row.getAmount());
+		System.out.println("Hell yeah motherduckers");
 
 		
 		
