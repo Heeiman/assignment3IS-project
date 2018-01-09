@@ -1,6 +1,7 @@
 package is3;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Order {
 	private String orderId;
@@ -11,6 +12,7 @@ public class Order {
 	public Order(String orderId, String delDate) {
 		this.setOrderId(orderId);
 		this.setDelDate(delDate);
+		this.setOrdRowList(new HashMap<String, OrderRow>());
 	}
 	public void setOrderId (String orderId){
 		this.orderId = orderId;

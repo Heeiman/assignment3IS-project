@@ -3,7 +3,6 @@ package is3;
 import javax.swing.JFrame;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class Controller {
 	CustomerRegister customers;
@@ -75,10 +74,14 @@ public class Controller {
 	 public void updateProduct(String name, String price, String category) {
 		 products.changeProduct(name, category, price);
 	 }
-	 public void addProduct (String name, String price, String category) {
-		 
+	 public void addProduct (String name, String price, String category, String number, String amount) {
+		 Product newProduct = new Product (name, category, price);
+		 this.products.addProduct(newProduct);
+		 OrderRow row = new OrderRow (number, amount);
+		 newProduct.addOrdRowP(row);
+		 row.setProduct(newProduct);
 	 }
 
-	
+
 	
 }

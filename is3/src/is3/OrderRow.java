@@ -1,11 +1,17 @@
 package is3;
 
+
 public class OrderRow {
 	private String number;
 	private String amount;
 	
 	private Order order;
 	private Product product;
+	
+	public OrderRow (String number, String amount) {
+		this.setNumber(number);
+		this.setAmount(amount);
+	}
 	
 	public void setNumber (String number){
 		this.number = number;
