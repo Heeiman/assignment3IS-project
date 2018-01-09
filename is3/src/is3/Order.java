@@ -1,7 +1,6 @@
 package is3;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class Order {
 	private String orderId;
@@ -41,4 +40,15 @@ public class Order {
     public void addOrderRow (OrderRow aRow) {
         this.ordRowList.put(aRow.getNumber(), aRow);
     }
+	public OrderRow findOrderRow (String number) {
+		for (OrderRow aRow : this.ordRowList.values()) {
+			if (aRow.getNumber().equals(number)) {
+				return aRow;
+			}
+		}
+		return null;
+	}
+	public void removeOrderRow(String number) {
+		ordRowList.entrySet().removeIf(entry -> ordRowList.containsKey(number));
+	}
 }

@@ -8,6 +8,7 @@ public class Controller {
 	CustomerRegister customers;
 	ProductRegister products; 
 	Customer customer;
+	Order order;
 	
 	JFrame Frame;
 	
@@ -54,12 +55,17 @@ public class Controller {
  	public void removeOrder(String orderId) {
  		customer.removeOrder(orderId);
  	}
+	 	 
+	public void addOrderRow(String number, String amount, String orderId) {
+		Order newOrder = customer.findOrder(orderId);
+		OrderRow newOrderRow = new OrderRow (number, amount);
+		newOrder.addOrderRow(newOrderRow);
+		newOrderRow.setOrder(newOrder);
+	}
+ 	public void removeOrderRow(String number) {
+ 		order.removeOrderRow(number);
+ 	}
 	 
-	 
-	 
-	//public void addOrderRow(String number, String amount) {
-		//Order newOrder = orderList.
-	//}
 		
 	public HashMap<String,Order> showCustomers (String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
