@@ -87,7 +87,7 @@ public class Controller {
 		 newProduct.addOrdRowP(row);
 		 row.setProduct(newProduct);
 	 }
-
+// HEJ HEJ EMMA!
 
 	
 }
