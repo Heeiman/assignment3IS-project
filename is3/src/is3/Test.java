@@ -14,15 +14,14 @@ public class Test {
 		System.out.println(kr.findCustomer("1").getName());
 		
 		k.setcName("Anton");
-		
-<<<<<<< HEAD
+
 		kr.changeCustomer("1", "Kung Erik", "Slottet");
 		
 		System.out.println(kr.findCustomer("1").getName() + kr.findCustomer("1").getcAdress() + kr.findCustomer("1").getcNumber());
 		
 		kr.removeCustomer("1");
 		
-		//System.out.println(kr.findCustomer("1").getName() + kr.findCustomer("1").getcAdress() + kr.findCustomer("1").getcNumber());
+		System.out.println(kr.findCustomer("1").getName() + kr.findCustomer("1").getcAdress() + kr.findCustomer("1").getcNumber());
 		
 		Product p1 = new Product("Tåg", "Modelltåg", "500");
 		Item item = new Item("12345");
@@ -34,9 +33,9 @@ public class Test {
 		
 		
 		//System.out.println(kr.findCustomer("1").getName());
-=======
+
 		System.out.println(kr.findCustomer("1").getName());
->>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
+
 		
 
 
