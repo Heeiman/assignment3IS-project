@@ -9,18 +9,20 @@ public class Controller {
 	ProductRegister products; 
 	Customer customer;
 	Order order;
+	Product product;
 	
 	JFrame Frame;
 	
 	public Controller(CustomerRegister customers, JFrame Frame) {
 		this.customers = customers;
 		this.Frame = Frame;
-
 	}
+	
 	public void addCustomer(String cNumber, String cName, String cAdress) {
         Customer newCustomer = new Customer (cNumber, cName, cAdress);
             this.customers.addCustomer(newCustomer);
 	}
+	
 	public void addCustomerOrder (String orderID, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		Order order = new Order (orderID, delDate);
@@ -28,9 +30,11 @@ public class Controller {
 		order.setCustomer(newCustomer);
 		customers.addCustomer(newCustomer);
 	}
+	
 	public void removeCustomer(String cNumberRemove) {
 	 customers.removeCustomer(cNumberRemove);
 	}
+	
 	public Customer findCustomer (String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		if (newCustomer != null) {
@@ -38,12 +42,14 @@ public class Controller {
 		}
 		return null;
 	}
+	
 	public void addOrder(String OrderId, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		Order newOrder = new Order(OrderId, cNumber);
 		newCustomer.addOrder(newOrder);
 		newOrder.setCustomer(newCustomer);
 	}
+	
 	 public HashMap<String, Order> showOrders(String cNumber) {
 	        Customer newCustomer;
 	        newCustomer = customers.findCustomer(cNumber);
@@ -52,6 +58,7 @@ public class Controller {
 	        }
 	        return null;
 	    }
+	 
 	 public String showCustomerOrders (String cNumber, String orderId) {
 		 	Customer tmpCustomer = customers.findCustomer(cNumber);
 		 	if (tmpCustomer != null) {
@@ -73,27 +80,27 @@ public class Controller {
 		newOrder.addOrderRow(newOrderRow);
 		newOrderRow.setOrder(newOrder);
 	}
+	
  	public void removeOrderRow(String number) {
  		order.removeOrderRow(number);
  	}
-	 
-		
-	public HashMap<String,Order> showCustomers (String cNumber) {
+	 		
+ 	public HashMap<String,Order> showCustomers (String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		if (newCustomer != null) {
 			return newCustomer.getOrderList();
 		}
 		return null;
-
-	
-	
+	}
 	
 	 public void updateCustomerName(String cNumber, String newCName, String newAdress) {
 	 customers.setCustomerName(cNumber, newCName, newAdress);
 	 }
+	 
 	 public void updateProduct(String name, String price, String category) {
 		 products.changeProduct(name, category, price);
 	 }
+	 
 	 public void addProduct (String name, String price, String category, String number, String amount) {
 		 Product newProduct = new Product (name, category, price);
 		 this.products.addProduct(newProduct);
@@ -101,6 +108,18 @@ public class Controller {
 		 newProduct.addOrdRowP(row);
 		 row.setProduct(newProduct);
 	 }
+	 
+	 public void addItemProduct(String serNumber, String name, String orderId) {
+			Product newProduct = products.findProduct(name);
+			Item newItem = new Item (serNumber);
+			newProduct.addItem(newItem);
+			newItem.setProdukt(newProduct);
+		}
+		
+	 public void removeItem(String serNumber) {
+	 		product.removeItem(serNumber);
+	 	}
+
 // HEJ HEJ EMMA!
 
 	

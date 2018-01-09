@@ -4,6 +4,10 @@ public class Item {
 	private String serNumber;
 	private Product product;
 	
+	public Item (String serNumber) {
+		this.setSerNumber(serNumber);
+	}
+	
 	public void setSerNumber (String serNumber) {
 		this.serNumber = serNumber;
 	}
