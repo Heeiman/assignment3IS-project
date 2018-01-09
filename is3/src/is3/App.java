@@ -197,6 +197,14 @@ public class App {
 		panel.add(btnTaBortkund);
 		
 		btnndra = new JButton("\u00C4ndra");
+		btnndra.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String cNumber = textCnumber.getText();
+				String cName = textCname.getText();
+				String cAdress = textCadress.getText();
+				customerReg.changeCustomer(cNumber, cName, cAdress);
+			}
+		});
 		btnndra.setBounds(22, 215, 120, 23);
 		panel.add(btnndra);
 		
@@ -279,9 +287,14 @@ public class App {
 						String number = textField_8.getText();
 						String amount = textField_9.getText();
 						String orderId = textOrderId.getText();
-		
-				String cNumber = textCnumber.getText();
+						String cNumber = textCnumber.getText();
 						controller.addOrderRow(number, amount, orderId, cNumber);
+						textPane.setText("Orderrad skapad.");
+						textField_8.setText(" ");
+						textField_9.setText(" ");
+						textOrderId.setText(" ");
+						textCnumber.setText(null);
+						
 			}
 				});
 		
@@ -289,6 +302,14 @@ public class App {
 		panel.add(btnSkapaOrderrad);
 		
 		button_7 = new JButton("Ta bort");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField_8.getText();
+				String orderId = textOrderId.getText();
+				String cNumber = textCnumber.getText();
+				controller.removeOrderRow(cNumber, orderId, number);
+			}
+		});
 		button_7.setBounds(352, 240, 86, 23);
 		panel.add(button_7);
 		
@@ -322,6 +343,7 @@ public class App {
 		button_8 = new JButton("Skapa exemplar");
 		button_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		button_8.setBounds(207, 67, 133, 23);
@@ -360,6 +382,17 @@ public class App {
 		textPprice.setColumns(10);
 		
 		btnSkapaProdukt = new JButton("Skapa produkt");
+		btnSkapaProdukt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String name = textPname.getText();
+				String category = textPcategory.getText();
+				String price = textPprice.getText();
+				String number = textField_8.getText();
+				String amount = textField_9.getText();
+				controller.addProduct(name, price, category, number, amount);
+				textPane.setText("Produkt skapad.");
+			}
+		});
 		btnSkapaProdukt.setBounds(18, 113, 122, 23);
 		panel_1.add(btnSkapaProdukt);
 		
