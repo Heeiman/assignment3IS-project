@@ -120,7 +120,7 @@ public class Controller {
 	 		product.removeItem(serNumber);
 	 	}
 
-// HEJ HEJ EMMA!
+// HEJ HEJ EMMA!!!!
 
 	
 }
