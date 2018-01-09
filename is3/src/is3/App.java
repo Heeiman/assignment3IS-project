@@ -239,7 +239,6 @@ public class App {
 		button_tabortorder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String orderId = textOrderId.getText();
-				controller.removeOrder(orderId);
 			}
 		});
 		button_tabortorder.setBounds(296, 85, 86, 23);
