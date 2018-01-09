@@ -7,7 +7,9 @@ import java.util.LinkedList;
 
 public class Controller {
 	CustomerRegister customers;
-	ProductRegister products;
+	ProductRegister products; 
+	Customer customer;
+	
 	JFrame Frame;
 	
 	public Controller(CustomerRegister customers, JFrame Frame) {
@@ -35,9 +37,7 @@ public class Controller {
 			return newCustomer;
 		}
 		return null;
-
 	}
-
 	public void addOrder(String OrderId, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
 		Order newOrder = new Order(OrderId, cNumber);
@@ -52,6 +52,12 @@ public class Controller {
 	        }
 	        return null;
 	    }
+ 	public void removeOrder(String orderId) {
+ 		customer.removeOrder(orderId);
+ 	}
+	 
+	 
+	 
 	//public void addOrderRow(String number, String amount) {
 		//Order newOrder = orderList.
 	//}
