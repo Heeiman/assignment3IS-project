@@ -280,8 +280,6 @@ public class App {
 
 				String cNumber = textCnumber.getText();
 				controller.addOrderRow(number, amount, orderId, cNumber);
-		//		controller.addOrderRow(number, amount, orderId);
-
 			}
 		});
 
