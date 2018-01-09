@@ -101,23 +101,26 @@ public class App {
 
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 809, 409);
+		frame.setBounds(100, 100, 1000, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setBounds(475, 136, 260, 102);
+		textPane.setBounds(495, 154, 260, 102);
 		frame.getContentPane().add(textPane);
 		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
 		
 		lblResponse = new JLabel("Response:");
-		lblResponse.setBounds(507, 72, 205, 14);
+		lblResponse.setBounds(495, 129, 205, 14);
 		frame.getContentPane().add(lblResponse);
 
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(20, 44, 396, 287);
+		tabbedPane.setBounds(20, 44, 453, 334);
 		frame.getContentPane().add(tabbedPane);
-				
+		
+
+		button_6 = new JButton("Skapa");
+		
 		JPanel panel = new JPanel();		
 		tabbedPane.addTab("Kund och order", null, panel, null);
 		panel.setLayout(null);
@@ -164,7 +167,7 @@ public class App {
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
 			}
 		});
-		btnSkapakund.setBounds(18, 115, 71, 23);
+		btnSkapakund.setBounds(22, 115, 89, 23);
 		panel.add(btnSkapakund);
 		
 		btnHittakund = new JButton("Hitta Kund");
@@ -178,7 +181,7 @@ public class App {
 			}
 			}	
 		});
-		btnHittakund.setBounds(18, 149, 71, 23);
+		btnHittakund.setBounds(22, 149, 89, 23);
 		panel.add(btnHittakund);
 		
 		btnTaBortkund = new JButton("Ta bort kund");
@@ -188,34 +191,34 @@ public class App {
 				controller.removeCustomer(cNumber);				
 			}
 		});
-		btnTaBortkund.setBounds(99, 149, 86, 23);
+		btnTaBortkund.setBounds(119, 149, 93, 23);
 		panel.add(btnTaBortkund);
 		
 		btnndra = new JButton("\u00C4ndra");
-		btnndra.setBounds(99, 115, 86, 23);
+		btnndra.setBounds(119, 115, 93, 23);
 		panel.add(btnndra);
 		
 		lblOrder = new JLabel("Order");
-		lblOrder.setBounds(276, 11, 46, 14);
+		lblOrder.setBounds(326, 7, 35, 17);
 		panel.add(lblOrder);
 		lblOrder.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		lblOrderid = new JLabel("OrderID:");
-		lblOrderid.setBounds(195, 35, 46, 14);
+		lblOrderid.setBounds(296, 38, 43, 14);
 		panel.add(lblOrderid);
 		
 		textOrderId = new JTextField();
-		textOrderId.setBounds(286, 32, 86, 20);
+		textOrderId.setBounds(352, 35, 86, 20);
 		panel.add(textOrderId);
 		textOrderId.setColumns(10);
 		
 		textdelDate = new JTextField();
-		textdelDate.setBounds(286, 57, 86, 20);
+		textdelDate.setBounds(352, 59, 86, 20);
 		panel.add(textdelDate);
 		textdelDate.setColumns(10);
 		
 		lblLeveransdatum = new JLabel("Leveransdatum:");
-		lblLeveransdatum.setBounds(195, 60, 98, 14);
+		lblLeveransdatum.setBounds(261, 62, 78, 14);
 		panel.add(lblLeveransdatum);
 		
 		button_skapaorder = new JButton("Skapa order till kund");
@@ -233,7 +236,7 @@ public class App {
 				}
 			}
 		});
-		button_skapaorder.setBounds(218, 85, 71, 23);
+		button_skapaorder.setBounds(218, 85, 129, 23);
 		panel.add(button_skapaorder);
 		
 		button_tabortorder = new JButton("Ta bort");
@@ -245,53 +248,50 @@ public class App {
 
 			}
 		});
-		button_tabortorder.setBounds(296, 85, 86, 23);
+		button_tabortorder.setBounds(352, 85, 86, 23);
 		panel.add(button_tabortorder);
 		
 		lblNummer = new JLabel("Nummer:");
-		lblNummer.setBounds(228, 145, 46, 14);
+		lblNummer.setBounds(296, 142, 46, 14);
 		panel.add(lblNummer);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(296, 143, 86, 20);
+		textField_8.setBounds(352, 142, 86, 20);
 		panel.add(textField_8);
 		textField_8.setColumns(10);
 		
 		lblAntal = new JLabel("Antal:");
-		lblAntal.setBounds(228, 170, 46, 14);
+		lblAntal.setBounds(293, 176, 46, 14);
 		panel.add(lblAntal);
 		
 		textField_9 = new JTextField();
-		textField_9.setBounds(296, 167, 86, 20);
+		textField_9.setBounds(352, 173, 86, 20);
 		panel.add(textField_9);
 		textField_9.setColumns(10);
 		
 
 		button_6 = new JButton("Skapa");
-
-
-		button_6 = new JButton("Skapa");
-
+		
 		button_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String number = textField_8.getText();
-				String amount = textField_9.getText();
-				String orderId = textOrderId.getText();
-
+					public void actionPerformed(ActionEvent e) {
+						String number = textField_8.getText();
+						String amount = textField_9.getText();
+						String orderId = textOrderId.getText();
+		
 				String cNumber = textCnumber.getText();
-				controller.addOrderRow(number, amount, orderId, cNumber);
+						controller.addOrderRow(number, amount, orderId, cNumber);
 			}
-		});
-
-		button_6.setBounds(228, 195, 71, 23);
+				});
+		
+		button_6.setBounds(268, 195, 71, 23);
 		panel.add(button_6);
 		
 		button_7 = new JButton("Ta bort");
-		button_7.setBounds(306, 195, 86, 23);
+		button_7.setBounds(352, 195, 86, 23);
 		panel.add(button_7);
 		
 		lblOrderrad = new JLabel("Orderrad");
-		lblOrderrad.setBounds(262, 123, 79, 14);
+		lblOrderrad.setBounds(326, 116, 55, 17);
 		panel.add(lblOrderrad);
 		lblOrderrad.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
@@ -370,7 +370,7 @@ public class App {
 		panel_1.add(button_3);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(475, 134, 263, 104);
+		scrollPane.setBounds(495, 154, 260, 102);
 		frame.getContentPane().add(scrollPane);
 		
 	
