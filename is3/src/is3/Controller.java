@@ -45,7 +45,7 @@ public class Controller {
 	
 	public void addOrder(String OrderId, String delDate, String cNumber) {
 		Customer newCustomer = customers.findCustomer(cNumber);
-		Order newOrder = new Order(OrderId, cNumber);
+		Order newOrder = new Order(OrderId, delDate);
 		newCustomer.addOrder(newOrder);
 		newOrder.setCustomer(newCustomer);
 	}
