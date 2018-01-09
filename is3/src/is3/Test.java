@@ -33,7 +33,7 @@ public class Test {
 		OrderRow row = new OrderRow("1","50");
 		p1.addItem(item);
 		p1.addOrdRowP(row);
-		System.out.println(p1.getName() + p1.getCategory() + p1.getPrice());
+		System.out.println(p1.getName() + " " + p1.getCategory() + " " + p1.getPrice() + " " + item.getSerNumber() + " " + row.getNumber() + " " + row.getAmount());
 
 		
 		
