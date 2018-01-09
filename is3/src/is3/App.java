@@ -101,7 +101,7 @@ public class App {
 
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1000, 500);
+		frame.setBounds(100, 100, 787, 428);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
