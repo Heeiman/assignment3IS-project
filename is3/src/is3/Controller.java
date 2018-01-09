@@ -2,7 +2,6 @@ package is3;
 
 import javax.swing.JFrame;
 
-
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -63,13 +62,23 @@ public class Controller {
 		//Order newOrder = orderList.
 	//}
 		
-	//public HashMap<String, Customer> findKund (String cNumber) {
-		//Customer newCustomer = customers.findKund(cNumber);
-		//return newCustomer;
-	//}
-	public void updateCustomer(String cNumber, String newCName, String adress) {
-	//customers.setCustomerName(cNumber, newCName);
+	public HashMap<String,Order> showCustomers (String cNumber) {
+		Customer newCustomer = customers.findCustomer(cNumber);
+		if (newCustomer != null) {
+			return newCustomer.getOrderList();
+		}
+		return null;
 	}
+	 public void updateCustomerName(String cNumber, String newCName, String newAdress) {
+	 customers.setCustomerName(cNumber, newCName, newAdress);
+	 }
+	 public void updateProduct(String name, String price, String category) {
+		 products.changeProduct(name, category, price);
+	 }
+	 public void addProduct (String name, String price, String category) {
+		 
+	 }
+
 	
 	
 }

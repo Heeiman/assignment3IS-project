@@ -26,10 +26,11 @@ public class CustomerRegister {
 		}
 		return null;
 	}
-	public void setCustomerName(String cNumber, String newName) {
+	public void setCustomerName(String cNumber, String newName, String newAdress) {
 		Customer c = this.findCustomer(cNumber);
 		if (c != null) {
 			c.setcName(newName);
+			c.setcAdress(newAdress);
 		}
 	}
 	public void changeCustomer (String cNumber, String cName, String cAdress) {

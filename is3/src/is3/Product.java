@@ -8,6 +8,7 @@ public class Product {
 	private String price;
 	
 	private HashMap<String, Item> itemList = new HashMap<String, Item>();
+	private HashMap<String, OrderRow> ordRowP = new HashMap<String, OrderRow>();
 	
 	public void setName(String name) {
 		this.name = name;
@@ -35,6 +36,15 @@ public class Product {
 	}
     public void addItem (Item anItem) {
         this.itemList.put(anItem.getSerNumber(), anItem);
+    }
+    public HashMap<String, OrderRow> getOrderRowP () {
+    	return this.ordRowP;
+    }
+    public void setOrdRowP (HashMap<String, OrderRow> ordRowP) {
+    	this.ordRowP = ordRowP;
+    }
+    public void addOrdRowP (OrderRow row) {
+    	this.ordRowP.put(row.getNumber(), row);
     }
 	
 }
