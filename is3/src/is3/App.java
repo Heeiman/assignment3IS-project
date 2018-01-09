@@ -236,6 +236,10 @@ public class App {
 		button_tabortorder = new JButton("Ta bort");
 		button_tabortorder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String orderId = textOrderId.getText();
+				String cNumber = textCnumber.getText();
+				controller.removeOrder(orderId, cNumber);
+
 			}
 		});
 		button_tabortorder.setBounds(296, 85, 86, 23);
@@ -259,13 +263,22 @@ public class App {
 		panel.add(textField_9);
 		textField_9.setColumns(10);
 		
+
 		button_6 = new JButton("Skapa");
+
+
+		button_6 = new JButton("Skapa");
+
 		button_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textField_8.getText();
 				String amount = textField_9.getText();
 				String orderId = textOrderId.getText();
+
+				String cNumber = textCnumber.getText();
+				controller.addOrderRow(number, amount, orderId, cNumber);
 		//		controller.addOrderRow(number, amount, orderId);
+
 			}
 		});
 
