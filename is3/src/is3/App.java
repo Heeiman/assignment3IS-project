@@ -36,7 +36,7 @@ public class App {
 	private JLabel lblOrder;
 	private JLabel lblOrderrad;
 	private JLabel lblExemplar;
-	private JLabel lblTotalbelopp;
+	private JLabel lblResponse;
 	private JLabel lblKundnummer;
 	private JLabel lblNamn;
 	private JLabel lblAdress;
@@ -107,9 +107,9 @@ public class App {
 		frame.getContentPane().add(textPane);
 		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
 		
-		lblTotalbelopp = new JLabel("Totalbelopp f\u00F6r samtliga produkter:");
-		lblTotalbelopp.setBounds(588, 16, 205, 14);
-		frame.getContentPane().add(lblTotalbelopp);
+		lblResponse = new JLabel("Response:");
+		lblResponse.setBounds(507, 72, 205, 14);
+		frame.getContentPane().add(lblResponse);
 
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(20, 44, 396, 287);
@@ -158,7 +158,7 @@ public class App {
 				String cName = textCname.getText();
 				String cAdress = textCadress.getText();
 				controller.addCustomer(cNumber, cName, cAdress);
-				textPane.setText(cName + cNumber + cAdress);
+				textPane.setText(cNumber + " " + cName + " " + cAdress);
 			}
 		});
 		btnSkapa.setBounds(18, 115, 71, 23);
@@ -226,7 +226,7 @@ public class App {
 				if (customer != null) {
 				textPane.setText(info);	
 				controller.addCustomerOrder(orderId, delDate, cNumber);
-				//textPane.setText("Order Skapad.");
+				lblResponse.setText("Order Skapad.");
 				}
 			}
 		});
