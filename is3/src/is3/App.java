@@ -266,7 +266,7 @@ public class App {
 			String number = textField_8.getText();
 			String amount = textField_9.getText();
 			String orderId = textOrderId.getText();
-			controller.addOrderRow(number, amount);
+			controller.addOrderRow(number, amount, orderId);
 			}
 		});
 		button_6.setBounds(228, 195, 71, 23);
