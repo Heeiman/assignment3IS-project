@@ -65,6 +65,7 @@ public class App {
 
 	private Controller controller;
 	private CustomerRegister customerReg;
+	private ProductRegister productReg;
 	private JTabbedPane tabbedPane;
 	/**
 	 * Launch the application.
@@ -94,6 +95,7 @@ public class App {
 	 */
 	private void initialize() {
 		customerReg = new CustomerRegister();
+		productReg = new ProductRegister();
 		controller = new Controller(customerReg, frame);
 
 		
