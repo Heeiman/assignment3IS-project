@@ -7,7 +7,6 @@ import java.util.HashMap;
 public class Controller {
 	CustomerRegister customers;
 	ProductRegister products;
-	Customer customer;
 	Order order;
 	Product product;
 
@@ -92,7 +91,7 @@ public class Controller {
 	public void removeOrderRow(String cNumber, String orderId, String number) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
 		if (tmpCustomer != null) {
-			Order tmpOrder = customer.findOrder(orderId);
+			Order tmpOrder = tmpCustomer.findOrder(orderId);
 			if (tmpOrder != null) {
 				tmpOrder.removeOrderRow(number);
 			}
@@ -127,7 +126,7 @@ public class Controller {
 		Product newProduct = products.findProduct(name);
 		Item newItem = new Item(serNumber);
 		newProduct.addItem(newItem);
-		newItem.setProdukt(newProduct);
+		newItem.setProduct(newProduct);
 	}
 
 	public void removeItem(String serNumber) {

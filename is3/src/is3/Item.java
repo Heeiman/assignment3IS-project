@@ -14,7 +14,7 @@ public class Item {
 	public String getSerNumber () {
 		return this.serNumber;
 	}
-	public void setProdukt (Product product) {
+	public void setProduct (Product product) {
 		this.product = product;
 	}
 	public Product getProduct () {
