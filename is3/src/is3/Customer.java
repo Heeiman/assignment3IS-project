@@ -45,6 +45,9 @@ public class Customer {
 		}
 		return null;
 	}
+	public void removeOrder(String orderId) {
+		orderList.entrySet().removeIf(entry -> orderList.containsKey(orderId));
+	}
 
 	public Customer(String cNumber2, String cName2, String cAdress2) {
 		this.setcNumber(cNumber2);

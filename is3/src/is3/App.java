@@ -234,6 +234,12 @@ public class App {
 		panel.add(button_4);
 		
 		button_5 = new JButton("Ta bort");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String orderId = textOrderId.getText();
+				controller.removeOrder(orderId);
+			}
+		});
 		button_5.setBounds(296, 85, 86, 23);
 		panel.add(button_5);
 		
