@@ -168,9 +168,9 @@ public class App {
 				try {
 				controller.addCustomer(cNumber, cName, cAdress);
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
-				textCnumber.setText(" ");
-				textCname.setText(" ");
-				textCadress.setText(" ");
+				textCnumber.setText("");
+				textCname.setText("");
+				textCadress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
 				}
@@ -188,7 +188,7 @@ public class App {
 				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
 					textPane.setText(info);
-					textCnumber.setText(" ");
+					textCnumber.setText("");
 			}
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer.");
@@ -205,7 +205,7 @@ public class App {
 				try {
 				controller.removeCustomer(cNumber);	
 				textPane.setText("Kund borttagen");
-				textCnumber.setText(" ");
+				textCnumber.setText("");
 			} catch (Exception e1) {
 				textPane.setText("Fel: Skriv in kundnummer.");
 			}
@@ -223,9 +223,9 @@ public class App {
 				try {
 				customerReg.changeCustomer(cNumber, cName, cAdress);
 				textPane.setText("Kund ändrad");
-				textCnumber.setText(" ");
-				textCname.setText(" ");
-				textCadress.setText(" ");
+				textCnumber.setText("");
+				textCname.setText("");
+				textCadress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
 				}
@@ -270,9 +270,9 @@ public class App {
 				textPane.setText(info);	
 				controller.addCustomerOrder(orderId, delDate, cNumber);
 				lblResponse.setText("Order Skapad.");
-				textCnumber.setText(" ");
-				textOrderId.setText(" ");
-				textdelDate.setText(" ");
+				textCnumber.setText("");
+				textOrderId.setText("");
+				textdelDate.setText("");
 				}
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
@@ -290,8 +290,8 @@ public class App {
 				try {
 				controller.removeOrder(orderId, cNumber);
 				textPane.setText("Kund borttagen");
-				textOrderId.setText(" ");
-				textCnumber.setText(" ");
+				textOrderId.setText("");
+				textCnumber.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in orderid och kundnummer.");
 				}
@@ -330,10 +330,10 @@ public class App {
 						try {
 						controller.addOrderRow(number, amount, orderId, cNumber);
 						textPane.setText("Orderrad skapad.");
-						textField_8.setText(" ");
-						textField_9.setText(" ");
-						textOrderId.setText(" ");
-						textCnumber.setText(null);
+						textField_8.setText("");
+						textField_9.setText("");
+						textOrderId.setText("");
+						textCnumber.setText("");
 						} catch (Exception e1) {
 							textPane.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
 						}
@@ -352,9 +352,9 @@ public class App {
 				try {
 				controller.removeOrderRow(cNumber, orderId, number);
 				textPane.setText("Orderrad borttagen");
-				textField_8.setText(" ");
-				textOrderId.setText(" ");
-				textCnumber.setText(" ");
+				textField_8.setText("");
+				textOrderId.setText("");
+				textCnumber.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
 				}
@@ -442,11 +442,11 @@ public class App {
 				try {
 				controller.addProduct(name, price, category, number, amount);
 				textPane.setText("Produkt skapad.");
-				textPname.setText(" ");
-				textPcategory.setText(" ");
-				textPprice.setText(" ");
-				textField_8.setText(" ");
-				textField_9.setText(" ");
+				textPname.setText("");
+				textPcategory.setText("");
+				textPprice.setText("");
+				textField_8.setText("");
+				textField_9.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
 				}
@@ -468,7 +468,7 @@ public class App {
 				String info = newProduct.getName() + " " + newProduct.getCategory() + " " + newProduct.getPrice();
 				if (newProduct != null) {
 					textPane.setText(info);
-					textPname.setText(" ");
+					textPname.setText("");
 				}	
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in namn");
@@ -484,7 +484,7 @@ public class App {
 				String name = textPname.getText();
 				try {
 					controller.removeProduct(name);
-					textPname.setText(" ");
+					textPname.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in produktens namn.");
 				}
