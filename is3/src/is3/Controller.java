@@ -119,11 +119,10 @@ public class Controller {
 	}
 	
 	public void addProductOrderRow (String name, String price, String category, String number, String amount) {
-		Product newProduct = new Product(name, category, price);
-		this.products.addProduct(newProduct);
+		Product p = products.findProduct(name);
 		OrderRow row = new OrderRow(number, amount);
-		newProduct.addOrdRowP(row);
-		row.setProduct(newProduct);
+		p.addOrdRowP(row);
+		row.setProduct(p);
 	}
 	
 	public void removeProduct(String productName) {
