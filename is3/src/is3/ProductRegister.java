@@ -3,22 +3,26 @@ package is3;
 import java.util.HashMap;
 
 public class ProductRegister {
-	
+
 	private HashMap<String, Product> productMap = new HashMap<String, Product>();
-	
-	public void setProductMap (HashMap<String, Product> productMap) {
+
+	public void setProductMap(HashMap<String, Product> productMap) {
 		this.productMap = productMap;
 	}
-	public HashMap<String, Product> getProductMap () {
+
+	public HashMap<String, Product> getProductMap() {
 		return this.productMap;
 	}
-	public void addProduct (Product p) {
+
+	public void addProduct(Product p) {
 		this.productMap.put(p.getName(), p);
 	}
-	public void removeProduct (String productName) {
+
+	public void removeProduct(String productName) {
 		this.productMap.entrySet().removeIf(entry -> this.productMap.containsKey(productName));
 	}
-	public Product findProduct (String productname) {
+
+	public Product findProduct(String productname) {
 		for (Product p : this.productMap.values()) {
 			if (p.getName().equals(productname)) {
 				return p;
@@ -26,6 +30,7 @@ public class ProductRegister {
 		}
 		return null;
 	}
+
 	public void changeProduct(String productName, String category, String price) {
 		Product p = this.findProduct(productName);
 		if (p != null) {

@@ -31,8 +31,11 @@ public class Test {
 		Product p1 = new Product("Tåg", "Modelltåg", "500");
 		Item item = new Item("12345");
 		OrderRow row = new OrderRow("1","50");
+		Order o = new Order("1111", "180110");
+		o.addOrderRow(row);
+		OrderRow test = o.findOrderRow("1");		
 		p1.addItem(item);
-		p1.addOrdRowP(row);
+		p1.addOrdRowP(test);
 		System.out.println(p1.getName() + " " + p1.getCategory() + " " + p1.getPrice() + " " + item.getSerNumber() + " " + row.getNumber() + " " + row.getAmount());
 		System.out.println("Hell yeah motherduckers");
 
