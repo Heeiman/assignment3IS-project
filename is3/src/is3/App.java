@@ -69,7 +69,7 @@ public class App {
 	private CustomerRegister customerReg;
 	private ProductRegister productReg;
 	private JTabbedPane tabbedPane;
-	
+
 	/**
 	 * Launch the application.
 	 */
@@ -101,17 +101,16 @@ public class App {
 		productReg = new ProductRegister();
 		controller = new Controller(customerReg, productReg, frame);
 
-		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 914, 427);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(495, 154, 352, 159);
 		frame.getContentPane().add(textPane);
 		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
-		
+
 		lblResponse = new JLabel("Response:");
 		lblResponse.setBounds(495, 116, 352, 27);
 		frame.getContentPane().add(lblResponse);
@@ -119,46 +118,45 @@ public class App {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(20, 44, 453, 334);
 		frame.getContentPane().add(tabbedPane);
-		
 
 		button_6 = new JButton("Skapa");
-		
-		JPanel panel = new JPanel();		
+
+		JPanel panel = new JPanel();
 		tabbedPane.addTab("Kund och order", null, panel, null);
 		panel.setLayout(null);
-		
+
 		lblKund = new JLabel("Kund");
 		lblKund.setBounds(77, 5, 88, 29);
 		panel.add(lblKund);
 		lblKund.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
+
 		lbl_kundnummer = new JLabel("Kundnummer:");
 		lbl_kundnummer.setBounds(10, 38, 98, 14);
 		panel.add(lbl_kundnummer);
-		
+
 		textField_cNumber = new JTextField();
 		textField_cNumber.setBounds(99, 35, 86, 20);
 		panel.add(textField_cNumber);
 		textField_cNumber.setColumns(10);
-		
+
 		lbl_kundnamn = new JLabel("Namn:");
 		lbl_kundnamn.setBounds(10, 62, 46, 14);
 		panel.add(lbl_kundnamn);
-		
+
 		textField_cName = new JTextField();
 		textField_cName.setBounds(99, 59, 86, 20);
 		panel.add(textField_cName);
 		textField_cName.setColumns(10);
-		
+
 		textField_cAdress = new JTextField();
 		textField_cAdress.setBounds(99, 84, 86, 20);
 		panel.add(textField_cAdress);
 		textField_cAdress.setColumns(10);
-		
+
 		lbl_kundadress = new JLabel("Adress:");
 		lbl_kundadress.setBounds(10, 87, 46, 14);
 		panel.add(lbl_kundadress);
-		
+
 		btn_kundskapa = new JButton("Skapa kund");
 		btn_kundskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -167,27 +165,28 @@ public class App {
 				String cAdress = textField_cAdress.getText();
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				if (tmpCustomer == null) {
-				if (textField_cNumber.getText().length() == 4) {	
-				try {	
-				cName = cName.substring(0,1).toUpperCase() + cName.substring(1).toLowerCase();
-				cAdress = cAdress.substring(0,1).toUpperCase() + cAdress.substring(1).toLowerCase(); //BLA
-				controller.addCustomer(cNumber, cName, cAdress);
-				textPane.setText("Kundnummer: " + cNumber + "\nKundnamn: " + cName + "\nAdress: " + cAdress);
-				textField_cNumber.setText("");
-				textField_cName.setText("");
-				textField_cAdress.setText("");
-				lblResponse.setText("");			
-				} catch (Exception e1) {
-					lblResponse.setText("Fel: Skriv in kundnummer, namn eller adress.");
-					textPane.setText("");
-				}
-				} else {
-					lblResponse.setText("Ett kundnummer måste vara 4 siffror långt");
-					textField_cNumber.setText("");
-					textField_cName.setText("");
-					textField_cAdress.setText("");
-					textPane.setText("");
-				}
+					if (textField_cNumber.getText().length() == 4) {
+						try {
+							cName = cName.substring(0, 1).toUpperCase() + cName.substring(1).toLowerCase();
+							cAdress = cAdress.substring(0, 1).toUpperCase() + cAdress.substring(1).toLowerCase(); // BLA
+							controller.addCustomer(cNumber, cName, cAdress);
+							textPane.setText(
+									"Kundnummer: " + cNumber + "\nKundnamn: " + cName + "\nAdress: " + cAdress);
+							textField_cNumber.setText("");
+							textField_cName.setText("");
+							textField_cAdress.setText("");
+							lblResponse.setText("");
+						} catch (Exception e1) {
+							lblResponse.setText("Fel: Skriv in kundnummer, namn eller adress.");
+							textPane.setText("");
+						}
+					} else {
+						lblResponse.setText("Ett kundnummer måste vara 4 siffror långt");
+						textField_cNumber.setText("");
+						textField_cName.setText("");
+						textField_cAdress.setText("");
+						textPane.setText("");
+					}
 				} else {
 					lblResponse.setText("Fel: Kund existerar redan.");
 					textField_cNumber.setText("");
@@ -199,48 +198,49 @@ public class App {
 		});
 		btn_kundskapa.setBounds(22, 115, 120, 23);
 		panel.add(btn_kundskapa);
-		
+
 		btn_kundhitta = new JButton("Hitta kund");
 		btn_kundhitta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textField_cNumber.getText();
 				try {
-				Customer tmpCustomer = controller.findCustomer(cNumber);
-				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
-				if (tmpCustomer != null) {
-					textPane.setText(info);
-					textField_cNumber.setText("");
-					lblResponse.setText("");
-			}
+					Customer tmpCustomer = controller.findCustomer(cNumber);
+					String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " "
+							+ tmpCustomer.getcAdress();
+					if (tmpCustomer != null) {
+						textPane.setText(info);
+						textField_cNumber.setText("");
+						lblResponse.setText("");
+					}
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in kundnummer.");
-			}
+				}
 			}
 		});
 		btn_kundhitta.setBounds(22, 149, 120, 23);
 		panel.add(btn_kundhitta);
-		
+
 		btn_kundtabort = new JButton("Ta bort kund");
 		btn_kundtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textField_cNumber.getText();
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				if (tmpCustomer != null) {
-				try {
-				controller.removeCustomer(cNumber);	
-				lblResponse.setText("Kund borttagen");
-				textField_cNumber.setText("");
-			} catch (Exception e1) {
-				lblResponse.setText("Fel: Skriv in kundnummer.");
-			}
-			} else {
-				lblResponse.setText("Den här kunden finns inte.");
-			}
+					try {
+						controller.removeCustomer(cNumber);
+						lblResponse.setText("Kund borttagen");
+						textField_cNumber.setText("");
+					} catch (Exception e1) {
+						lblResponse.setText("Fel: Skriv in kundnummer.");
+					}
+				} else {
+					lblResponse.setText("Den här kunden finns inte.");
+				}
 			}
 		});
 		btn_kundtabort.setBounds(22, 183, 120, 23);
 		panel.add(btn_kundtabort);
-		
+
 		btn_kundandra = new JButton("\u00C4ndra");
 		btn_kundandra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -249,15 +249,15 @@ public class App {
 				String cAdress = textField_cAdress.getText();
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				if (tmpCustomer != null) {
-				try {
-				controller.updateCustomerName(cNumber, cName, cAdress);
-				textPane.setText("Kund ändrad");
-				textField_cNumber.setText("");
-				textField_cName.setText("");
-				textField_cAdress.setText("");
-				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
-				}	
+					try {
+						controller.updateCustomerName(cNumber, cName, cAdress);
+						textPane.setText("Kund ändrad");
+						textField_cNumber.setText("");
+						textField_cName.setText("");
+						textField_cAdress.setText("");
+					} catch (Exception e1) {
+						textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
+					}
 				} else {
 					lblResponse.setText("Den här kunden finns inte.");
 				}
@@ -265,30 +265,30 @@ public class App {
 		});
 		btn_kundandra.setBounds(22, 215, 120, 23);
 		panel.add(btn_kundandra);
-		
+
 		lblOrder = new JLabel("Order");
 		lblOrder.setBounds(326, 11, 35, 17);
 		panel.add(lblOrder);
 		lblOrder.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
+
 		lbl_orderId = new JLabel("OrderID:");
 		lbl_orderId.setBounds(239, 38, 81, 14);
 		panel.add(lbl_orderId);
-		
+
 		textField_orderId = new JTextField();
 		textField_orderId.setBounds(352, 35, 86, 20);
 		panel.add(textField_orderId);
 		textField_orderId.setColumns(10);
-		
+
 		textField_orderLevDatum = new JTextField();
 		textField_orderLevDatum.setBounds(352, 59, 86, 20);
 		panel.add(textField_orderLevDatum);
 		textField_orderLevDatum.setColumns(10);
-		
+
 		lbl_levdatum = new JLabel("Leveransdatum:");
 		lbl_levdatum.setBounds(239, 65, 122, 14);
 		panel.add(lbl_levdatum);
-		
+
 		btn_orderskapa = new JButton("Skapa order");
 		btn_orderskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -298,41 +298,40 @@ public class App {
 				Customer customer = controller.findCustomer(cNumber);
 				String info = cNumber + " " + orderId + " " + delDate;
 				if (customer != null) {
-				if (textField_orderId.getText().length() == 4 && textField_orderLevDatum.getText().length() == 6) {
-				try {
-				textPane.setText(info);	
-				controller.addCustomerOrder(orderId, delDate, cNumber);
-				lblResponse.setText("Order Skapad.");
-				textField_cNumber.setText("");
-				textField_orderId.setText("");
-				textField_orderLevDatum.setText("");
-				
-				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
-				} 
+					if (textField_orderId.getText().length() == 4 && textField_orderLevDatum.getText().length() == 6) {
+						try {
+							textPane.setText(info);
+							controller.addCustomerOrder(orderId, delDate, cNumber);
+							lblResponse.setText("Order Skapad.");
+							textField_cNumber.setText("");
+							textField_orderId.setText("");
+							textField_orderLevDatum.setText("");
+
+						} catch (Exception e1) {
+							textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
+						}
+					} else {
+						lblResponse.setText("Ett orderid måste vara 4-siffrigt och ett datum skrivs ååmmdd.");
+					}
+
 				} else {
-					lblResponse.setText("Ett orderid måste vara 4-siffrigt och ett datum skrivs ååmmdd.");
+					lblResponse.setText("Vänligen fyll i kundnummer.");
 				}
-				
-					
-			} else {
-				lblResponse.setText("Vänligen fyll i kundnummer.");
-			}
 			}
 		});
 		btn_orderskapa.setBounds(228, 94, 114, 23);
 		panel.add(btn_orderskapa);
-		
+
 		btn_ordertabort = new JButton("Ta bort");
 		btn_ordertabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String orderId = textField_orderId.getText();
 				String cNumber = textField_cNumber.getText();
 				try {
-				controller.removeOrder(orderId, cNumber);
-				lblResponse.setText("Order borttagen");
-				textField_orderId.setText("");
-				textField_cNumber.setText("");
+					controller.removeOrder(orderId, cNumber);
+					lblResponse.setText("Order borttagen");
+					textField_orderId.setText("");
+					textField_cNumber.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in orderid och kundnummer.");
 				}
@@ -340,61 +339,58 @@ public class App {
 		});
 		btn_ordertabort.setBounds(352, 94, 86, 23);
 		panel.add(btn_ordertabort);
-		
+
 		lbl_orderRadNummer = new JLabel("Nummer:");
 		lbl_orderRadNummer.setBounds(239, 180, 140, 14);
 		panel.add(lbl_orderRadNummer);
-		
+
 		textField_orderRadNummer = new JTextField();
 		textField_orderRadNummer.setBounds(352, 177, 86, 20);
 		panel.add(textField_orderRadNummer);
 		textField_orderRadNummer.setColumns(10);
-		
+
 		lbl_orderRadAntal = new JLabel("Antal:");
 		lbl_orderRadAntal.setBounds(239, 211, 140, 14);
 		panel.add(lbl_orderRadAntal);
-		
+
 		textField_orderRadAntal = new JTextField();
 		textField_orderRadAntal.setBounds(352, 208, 86, 20);
 		panel.add(textField_orderRadAntal);
 		textField_orderRadAntal.setColumns(10);
-		
 
 		btn_orderradskapa = new JButton("Skapa orderrad");
-		
+
 		btn_orderradskapa.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String number = textField_orderRadNummer.getText();
-						String amount = textField_orderRadAntal.getText();
-						String orderId = textField_orderId.getText();
-						String cNumber = textField_cNumber.getText();
-						Customer customer = controller.findCustomer(cNumber);
-						if (customer != null) {
-							if (textField_orderRadNummer.getText().length() == 4) {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField_orderRadNummer.getText();
+				String amount = textField_orderRadAntal.getText();
+				String orderId = textField_orderId.getText();
+				String cNumber = textField_cNumber.getText();
+				Customer customer = controller.findCustomer(cNumber);
+				if (customer != null) {
+					if (textField_orderRadNummer.getText().length() == 4) {
 						try {
-						controller.addOrderRow(number, amount, orderId, cNumber);
-						textPane.setText("Orderrad skapad.");
-						textField_orderRadNummer.setText("");
-						textField_orderRadAntal.setText("");
-						textField_orderId.setText("");
-						textField_cNumber.setText("");
+							controller.addOrderRow(number, amount, orderId, cNumber);
+							textPane.setText("Orderrad skapad.");
+							textField_orderRadNummer.setText("");
+							textField_orderRadAntal.setText("");
+							textField_orderId.setText("");
+							textField_cNumber.setText("");
 						} catch (Exception e1) {
 							textPane.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
 						}
-							}
-							else {
-								lblResponse.setText("Ett orderradsnummer måste vara 4-siffrigt.");
-							}
-						}
-						else {
-							lblResponse.setText("Den här kunden finns inte.");
-						}
+					} else {
+						lblResponse.setText("Ett orderradsnummer måste vara 4-siffrigt.");
 					}
-				});
-		
+				} else {
+					lblResponse.setText("Den här kunden finns inte.");
+				}
+			}
+		});
+
 		btn_orderradskapa.setBounds(209, 240, 133, 23);
 		panel.add(btn_orderradskapa);
-		
+
 		btn_orderradtabort = new JButton("Ta bort");
 		btn_orderradtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -402,22 +398,23 @@ public class App {
 				String orderId = textField_orderId.getText();
 				String cNumber = textField_cNumber.getText();
 				if (textField_orderRadNummer.getText().length() == 4) {
-				try {
-				controller.removeOrderRow(cNumber, orderId, number);
-				textPane.setText("Orderrad borttagen");
-				textField_orderRadNummer.setText("");
-				textField_orderId.setText("");
-				textField_cNumber.setText("");
-				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
-				}
-				} else { lblResponse.setText("Ordern finns inte.");				
+					try {
+						controller.removeOrderRow(cNumber, orderId, number);
+						textPane.setText("Orderrad borttagen");
+						textField_orderRadNummer.setText("");
+						textField_orderId.setText("");
+						textField_cNumber.setText("");
+					} catch (Exception e1) {
+						textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
+					}
+				} else {
+					lblResponse.setText("Ordern finns inte.");
 				}
 			}
 		});
 		btn_orderradtabort.setBounds(352, 240, 86, 23);
 		panel.add(btn_orderradtabort);
-		
+
 		lblOrderrad = new JLabel("Orderrad");
 		lblOrderrad.setBounds(314, 149, 124, 17);
 		panel.add(lblOrderrad);
@@ -431,90 +428,90 @@ public class App {
 		lblExemplar.setBounds(315, 11, 79, 14);
 		panel_1.add(lblExemplar);
 		lblExemplar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
+
 		textField_serialnumber = new JTextField();
 		textField_serialnumber.setBounds(352, 36, 86, 20);
 		panel_1.add(textField_serialnumber);
 		textField_serialnumber.setColumns(10);
-		
+
 		lblSerienummer = new JLabel("Serienummer:");
 		lblSerienummer.setBounds(242, 39, 98, 14);
 		panel_1.add(lblSerienummer);
-		
-		
+
 		button_extabort = new JButton("Ta bort");
 		button_extabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String serNumber = textField_serialnumber.getText();
 				String name = textField_pName.getText();
 				if (serNumber.length() > 0) {
-				try {
-				controller.removeItem(serNumber, name);
-				textField_serialnumber.setText(" ");
-				lblResponse.setText("Exemplar borttaget");
-				} catch (Exception e1) {
-					lblResponse.setText("Fel: Skriv in serienummer/ skriv in namn på produkt");
+					try {
+						controller.removeItem(serNumber, name);
+						textField_serialnumber.setText(" ");
+						lblResponse.setText("Exemplar borttaget");
+					} catch (Exception e1) {
+						lblResponse.setText("Fel: Skriv in serienummer/ skriv in namn på produkt");
+					}
+				} else {
+					lblResponse.setText("Exemplaret finns inte.");
+
 				}
-				} else { lblResponse.setText("Exemplaret finns inte.");
-				
-				}
-			} 
+			}
 		});
 		button_extabort.setBounds(352, 67, 86, 23);
 		panel_1.add(button_extabort);
-		
+
 		button_exskapa = new JButton("Skapa exemplar");
 		button_exskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String name = textField_pName.getText();
 				String serNumber = textField_serialnumber.getText();
 				try {
-				controller.addItemProduct(serNumber, name);
-				textPane.setText("Namn: " + name + "\nSerienummer: " + serNumber);
-				textField_pName.setText("");
-				textField_serialnumber.setText("");
-				lblResponse.setText("Exemplar skapat.");
+					controller.addItemProduct(serNumber, name);
+					textPane.setText("Namn: " + name + "\nSerienummer: " + serNumber);
+					textField_pName.setText("");
+					textField_serialnumber.setText("");
+					lblResponse.setText("Exemplar skapat.");
 				} catch (Exception e1) {
 					textPane.setText(" ");
 					lblResponse.setText("Fel: Skriv in produktens namn/skapa produkten");
-			}
+				}
 			}
 		});
 		button_exskapa.setBounds(207, 67, 133, 23);
 		panel_1.add(button_exskapa);
-		
+
 		lblProdukt = new JLabel("Produkt");
 		lblProdukt.setBounds(74, 11, 97, 14);
 		panel_1.add(lblProdukt);
 		lblProdukt.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
+
 		lbl_exnamn = new JLabel("Namn:");
 		lbl_exnamn.setBounds(10, 38, 79, 14);
 		panel_1.add(lbl_exnamn);
-		
+
 		textField_pName = new JTextField();
 		textField_pName.setBounds(99, 35, 86, 20);
 		panel_1.add(textField_pName);
 		textField_pName.setColumns(10);
-		
+
 		lbl_exkategori = new JLabel("Kategori:");
 		lbl_exkategori.setBounds(10, 63, 79, 14);
 		panel_1.add(lbl_exkategori);
-		
+
 		textField_pCategory = new JTextField();
 		textField_pCategory.setBounds(99, 60, 86, 20);
 		panel_1.add(textField_pCategory);
 		textField_pCategory.setColumns(10);
-		
+
 		lbl_expris = new JLabel("Pris:");
 		lbl_expris.setBounds(10, 88, 79, 14);
 		panel_1.add(lbl_expris);
-		
+
 		textField_pPrice = new JTextField();
 		textField_pPrice.setBounds(99, 85, 86, 20);
 		panel_1.add(textField_pPrice);
 		textField_pPrice.setColumns(10);
-		
+
 		btn_prodskapa = new JButton("Skapa produkt");
 		btn_prodskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -524,23 +521,23 @@ public class App {
 				String price = textField_pPrice.getText();
 				Product p = productReg.findProduct(name);
 				if (p == null) {
-					if (price.length() > 0 && price.length() < 99 ) {
-				try {
-					name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
-					category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();					
-				controller.addProduct(name, category, price);
-				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
-				textField_pName.setText("");
-				textField_pCategory.setText("");
-				textField_pPrice.setText("");
-				lblResponse.setText("");
-				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in namn, kategori och pris.");
-				}
-				
-				} else {
-					lblResponse.setText("Fel: Skriv in namn, kategori och pris.");
-				}
+					if (price.length() > 0 && price.length() < 99) {
+						try {
+							name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+							category = category.substring(0, 1).toUpperCase() + category.substring(1).toLowerCase();
+							controller.addProduct(name, category, price);
+							textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
+							textField_pName.setText("");
+							textField_pCategory.setText("");
+							textField_pPrice.setText("");
+							lblResponse.setText("");
+						} catch (Exception e1) {
+							textPane.setText("Fel: Skriv in namn, kategori och pris.");
+						}
+
+					} else {
+						lblResponse.setText("Fel: Skriv in namn, kategori och pris.");
+					}
 				}
 
 			}
@@ -548,7 +545,7 @@ public class App {
 
 		btn_prodskapa.setBounds(18, 113, 122, 23);
 		panel_1.add(btn_prodskapa);
-		
+
 		btn_prodAndra = new JButton("\u00C4ndra produkt");
 		btn_prodAndra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -557,23 +554,25 @@ public class App {
 				String price = textField_pPrice.getText();
 				String number = textField_orderRadNummer.getText();
 				String amount = textField_orderRadAntal.getText();
+				String cNumber = textField_cNumber.getText();
+				String orderId = textField_orderId.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
-					if (name.length() > 0 && number.length() > 0 && amount.length() > 0 ) {
-						controller.addProductOrderRow(name, number, amount);
-					}
-				else if (price.length() > 0 && price.length() < 99 && category.length() > 0 && category.length() < 99 ) {
-				try {
-				controller.updateProduct(name, price, category);
-				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
-				textField_pName.setText("");
-				textField_pCategory.setText("");
-				textField_pPrice.setText("");
-				lblResponse.setText("");
-				} catch (Exception e1) {
-					lblResponse.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
-					textPane.setText("");
-				}
+					if (name.length() > 0 && number.length() > 0) {
+						controller.addProductOrderRow(name, number, orderId, cNumber);
+					} else if (price.length() > 0 && price.length() < 99 && category.length() > 0
+							&& category.length() < 99) {
+						try {
+							controller.updateProduct(name, category, price);
+							textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
+							textField_pName.setText("");
+							textField_pCategory.setText("");
+							textField_pPrice.setText("");
+							lblResponse.setText("");
+						} catch (Exception e1) {
+							lblResponse.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
+							textPane.setText("");
+						}
 					} else {
 						lblResponse.setText("Fel skriv in namn, kategori och pris.");
 						textPane.setText("");
@@ -586,57 +585,57 @@ public class App {
 		});
 		btn_prodAndra.setBounds(18, 214, 122, 23);
 		panel_1.add(btn_prodAndra);
-		
+
 		btn_prodhitta = new JButton("Hitta produkt");
 		btn_prodhitta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String name = textField_pName.getText();
 				try {
-				Product newProduct = controller.findProduct(name);
-				String info = "Namn: " + newProduct.getName() + "\nKategori: " + newProduct.getCategory() + "\nPris: " + newProduct.getPrice();
-				if (newProduct != null) {
-					textPane.setText(info);
-					textField_pName.setText("");
-				}	
+					Product newProduct = controller.findProduct(name);
+					String info = "Namn: " + newProduct.getName() + "\nKategori: " + newProduct.getCategory()
+							+ "\nPris: " + newProduct.getPrice();
+					if (newProduct != null) {
+						textPane.setText(info);
+						textField_pName.setText("");
+					}
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in namnet på en existerande produkt.");
 					textPane.setText("");
 				}
-				}              
-			});
+			}
+		});
 		btn_prodhitta.setBounds(18, 147, 122, 23);
 		panel_1.add(btn_prodhitta);
-		
+
 		btn_prodtabort = new JButton("Ta bort produkt");
 		btn_prodtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String name = textField_pName.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
-				try {
-					controller.removeProduct(name);
-					textField_pName.setText("");
-					textField_pCategory.setText("");
-					textField_pPrice.setText("");
-					lblResponse.setText("Produkt borttagen");
-					textPane.setText("");
-				} catch (Exception e1) {
-					textPane.setText("");
-				}
+					try {
+						controller.removeProduct(name);
+						textField_pName.setText("");
+						textField_pCategory.setText("");
+						textField_pPrice.setText("");
+						lblResponse.setText("Produkt borttagen");
+						textPane.setText("");
+					} catch (Exception e1) {
+						textPane.setText("");
+					}
 				} else {
 					lblResponse.setText("Den här produkten finns inte.");
 					textPane.setText("");
-	
+
+				}
 			}
-			}		
 		});
 		btn_prodtabort.setBounds(18, 181, 122, 23);
 		panel_1.add(btn_prodtabort);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(495, 154, 260, 102);
 		frame.getContentPane().add(scrollPane);
-		
-	
-	} //HEJ HEJ
+
+	} // HEJ HEJ
 }

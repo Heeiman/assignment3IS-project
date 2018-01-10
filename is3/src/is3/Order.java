@@ -6,41 +6,51 @@ public class Order {
 	private String orderId;
 	private String delDate;
 	private Customer customer;
-	private HashMap<String, OrderRow> ordRowList = new HashMap<String, OrderRow> ();
-	
+	private HashMap<String, OrderRow> ordRowList = new HashMap<String, OrderRow>();
+
 	public Order(String orderId, String delDate) {
 		this.setOrderId(orderId);
 		this.setDelDate(delDate);
 		this.setOrdRowList(new HashMap<String, OrderRow>());
 	}
-	public void setOrderId (String orderId){
+
+	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-	public String getOrderId (){
+
+	public String getOrderId() {
 		return this.orderId;
 	}
-	public void setDelDate (String delDate){
+
+	public void setDelDate(String delDate) {
 		this.delDate = delDate;
 	}
-	public String getDelDate(){
+
+	public String getDelDate() {
 		return delDate;
 	}
-	public void setCustomer (Customer customer){
+
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Customer getCustomer (){
+
+	public Customer getCustomer() {
 		return this.customer;
 	}
-	public void setOrdRowList(HashMap<String, OrderRow> ordRowList){
+
+	public void setOrdRowList(HashMap<String, OrderRow> ordRowList) {
 		this.ordRowList = ordRowList;
 	}
-	public HashMap<String, OrderRow> getOrdRowList (){
+
+	public HashMap<String, OrderRow> getOrdRowList() {
 		return this.ordRowList;
 	}
-    public void addOrderRow (OrderRow aRow) {
-        this.ordRowList.put(aRow.getNumber(), aRow);
-    }
-	public OrderRow findOrderRow (String number) {
+
+	public void addOrderRow(OrderRow aRow) {
+		this.ordRowList.put(aRow.getNumber(), aRow);
+	}
+
+	public OrderRow findOrderRow(String number) {
 		for (OrderRow aRow : this.ordRowList.values()) {
 			if (aRow.getNumber().equals(number)) {
 				return aRow;
@@ -48,6 +58,7 @@ public class Order {
 		}
 		return null;
 	}
+
 	public void removeOrderRow(String number) {
 		ordRowList.entrySet().removeIf(entry -> ordRowList.containsKey(number));
 	}

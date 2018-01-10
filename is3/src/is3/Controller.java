@@ -9,7 +9,7 @@ public class Controller {
 	ProductRegister products;
 	JFrame Frame;
 
-	public Controller(CustomerRegister customers,ProductRegister products, JFrame Frame) {
+	public Controller(CustomerRegister customers, ProductRegister products, JFrame Frame) {
 		this.customers = customers;
 		this.Frame = Frame;
 		this.products = products;
@@ -117,17 +117,20 @@ public class Controller {
 		Product newProduct = new Product(name, price, category);
 		this.products.addProduct(newProduct);
 	}
-	
-	public void addProductOrderRow (String name, String number, String amount) {
+
+	public void addProductOrderRow(String name, String number, String orderId, String cNumber) {
 		Product p = products.findProduct(name);
-		OrderRow row = new OrderRow(number, amount);
+		Customer c = customers.findCustomer(cNumber);
+		Order o = c.findOrder(orderId);
+		OrderRow row = o.findOrderRow(number);
 		p.addOrdRowP(row);
 		row.setProduct(p);
 	}
-	
+
 	public void removeProduct(String productName) {
 		products.removeProduct(productName);
 	}
+
 	public Product findProduct(String pName) {
 		Product newProduct = products.findProduct(pName);
 		if (newProduct != null) {
@@ -148,7 +151,7 @@ public class Controller {
 		if (newProduct != null) {
 			newProduct.removeItem(serNumber);
 		}
-		
+
 	}
 
 }

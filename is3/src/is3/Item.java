@@ -3,21 +3,24 @@ package is3;
 public class Item {
 	private String serNumber;
 	private Product product;
-	
-	public Item (String serNumber) {
+
+	public Item(String serNumber) {
 		this.setSerNumber(serNumber);
 	}
-	
-	public void setSerNumber (String serNumber) {
+
+	public void setSerNumber(String serNumber) {
 		this.serNumber = serNumber;
 	}
-	public String getSerNumber () {
+
+	public String getSerNumber() {
 		return this.serNumber;
 	}
-	public void setProduct (Product product) {
+
+	public void setProduct(Product product) {
 		this.product = product;
 	}
-	public Product getProduct () {
+
+	public Product getProduct() {
 		return this.product;
 	}
 }
