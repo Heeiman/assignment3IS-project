@@ -368,6 +368,9 @@ public class App {
 						String amount = textField_orderradantal.getText();
 						String orderId = textField_orderid.getText();
 						String cNumber = textField_Cnumber.getText();
+						Customer customer = controller.findCustomer(cNumber);
+						if (customer != null) {
+							if (textField_orderradnummer.getText().length() == 4) {
 						try {
 						controller.addOrderRow(number, amount, orderId, cNumber);
 						textPane.setText("Orderrad skapad.");
@@ -377,6 +380,14 @@ public class App {
 						textField_Cnumber.setText("");
 						} catch (Exception e1) {
 							textPane.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
+						}
+							}
+							else {
+								lblResponse.setText("Ett orderradsnummer måste vara 4-siffrigt.");
+							}
+						}
+						else {
+							lblResponse.setText("Den här kunden finns inte.");
 						}
 					}
 				});
