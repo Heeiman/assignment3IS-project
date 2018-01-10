@@ -602,13 +602,19 @@ public class App {
 		btn_prodtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String name = textField_pName.getText();
+				Product p = controller.findProduct(name);
+				if (p != null) {
 				try {
 					controller.removeProduct(name);
 					textField_pName.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in produktens namn.");
 				}
+				} else {
+					lblResponse.setText("Den här produkten finns inte.");
+	
 			}
+			}		
 		});
 		btn_prodtabort.setBounds(18, 181, 122, 23);
 		panel_1.add(btn_prodtabort);
