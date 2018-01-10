@@ -401,6 +401,7 @@ public class App {
 				String number = textField_orderRadNummer.getText();
 				String orderId = textField_orderId.getText();
 				String cNumber = textField_cNumber.getText();
+				if (textField_orderRadNummer.getText().length() == 4) {
 				try {
 				controller.removeOrderRow(cNumber, orderId, number);
 				textPane.setText("Orderrad borttagen");
@@ -409,6 +410,8 @@ public class App {
 				textField_cNumber.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
+				}
+				} else { lblResponse.setText("Ordern finns inte.");				
 				}
 			}
 		});
