@@ -560,9 +560,9 @@ public class App {
 				category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();	
 				controller.updateProduct(name, price, category);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
-				textField_cNumber.setText("");
-				textField_cName.setText("");
-				textField_cAdress.setText("");
+				textField_pName.setText("");
+				textField_pCategory.setText("");
+				textField_pPrice.setText("");
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
 					textPane.setText("");
