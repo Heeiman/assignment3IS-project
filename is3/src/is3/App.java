@@ -520,18 +520,24 @@ public class App {
 				String price = textField_pPrice.getText();
 				Product p = productReg.findProduct(name);
 				if (p == null) {
+					if (price.length() > 0 && price.length() < 99 ) {
 				try {
+					name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+					category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();					
 				controller.addProduct(name, category, price);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
 				textField_pName.setText("");
 				textField_pCategory.setText("");
 				textField_pPrice.setText("");
+				
 
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in namn, kategori och pris.");
 				}
+				
 				} else {
-					lblResponse.setText("Produkten finns inte.");
+					lblResponse.setText("Fel: Skriv in namn, kategori och pris.");
+				}
 				}
 
 			}
