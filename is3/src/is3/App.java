@@ -529,8 +529,7 @@ public class App {
 				textField_pName.setText("");
 				textField_pCategory.setText("");
 				textField_pPrice.setText("");
-				
-
+				lblResponse.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in namn, kategori och pris.");
 				}
@@ -591,7 +590,8 @@ public class App {
 					textField_pName.setText("");
 				}	
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in namnet på en existerande produkt.");
+					lblResponse.setText("Fel: Skriv in namnet på en existerande produkt.");
+					textPane.setText("");
 				}
 				}              
 			});
@@ -607,11 +607,16 @@ public class App {
 				try {
 					controller.removeProduct(name);
 					textField_pName.setText("");
+					textField_pCategory.setText("");
+					textField_pPrice.setText("");
+					lblResponse.setText("Produkt borttagen");
+					textPane.setText("");
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in produktens namn.");
+					textPane.setText("");
 				}
 				} else {
 					lblResponse.setText("Den här produkten finns inte.");
+					textPane.setText("");
 	
 			}
 			}		
