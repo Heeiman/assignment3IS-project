@@ -564,7 +564,7 @@ public class App {
 					textPane.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
 				}	
 				} else {
-					lblResponse.setText("Den här kunden finns inte.");
+					lblResponse.setText("Den här produkten finns inte.");
 				}
 			}
 		});
