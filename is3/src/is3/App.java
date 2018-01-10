@@ -295,20 +295,23 @@ public class App {
 				String cNumber = textField_Cnumber.getText();
 				String orderId = textField_orderid.getText();
 				String delDate = textField_orderlevdatum.getText();
-				try {
 				Customer customer = controller.findCustomer(cNumber);
 				String info = cNumber + " " + orderId + " " + delDate;
 				if (customer != null) {
+				try {
 				textPane.setText(info);	
 				controller.addCustomerOrder(orderId, delDate, cNumber);
 				lblResponse.setText("Order Skapad.");
 				textField_Cnumber.setText("");
 				textField_orderid.setText("");
 				textField_orderlevdatum.setText("");
-				}
+				
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
 				}
+			} else {
+				lblResponse.setText("Den här kunden finns inte.");
+			}
 			}
 		});
 		btn_orderskapa.setBounds(228, 94, 114, 23);
