@@ -386,6 +386,7 @@ public class App {
 		lblSerienummer.setBounds(242, 39, 98, 14);
 		panel_1.add(lblSerienummer);
 		
+		
 		button_extabort = new JButton("Ta bort");
 		button_extabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
