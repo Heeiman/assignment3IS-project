@@ -168,14 +168,17 @@ public class App {
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				if (tmpCustomer == null) {
 				try {
+				if (textField_Cnumber.getText().length() == 4) {	
 				controller.addCustomer(cNumber, cName, cAdress);
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
 				textField_Cnumber.setText("");
 				textField_Cname.setText("");
 				textField_Cadress.setText("");
+				}
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
 				}
+				
 				} else {
 					textPane.setText("Fel: Kund existerar redan.");
 				}
