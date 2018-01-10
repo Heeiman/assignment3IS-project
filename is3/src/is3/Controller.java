@@ -121,6 +121,10 @@ public class Controller {
 		newProduct.addOrdRowP(row);
 		row.setProduct(newProduct);
 	}
+	
+	public void removeProduct(String productName) {
+		products.removeProduct(productName);
+	}
 
 	public void addItemProduct(String serNumber, String name, String orderId) {
 		Product newProduct = products.findProduct(name);

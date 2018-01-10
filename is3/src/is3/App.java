@@ -165,8 +165,15 @@ public class App {
 				String cNumber = textCnumber.getText();
 				String cName = textCname.getText();
 				String cAdress = textCadress.getText();
+				try {
 				controller.addCustomer(cNumber, cName, cAdress);
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
+				textCnumber.setText(" ");
+				textCname.setText(" ");
+				textCadress.setText(" ");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
+				}
 			}
 		});
 		btnSkapakund.setBounds(22, 115, 120, 23);
@@ -176,12 +183,17 @@ public class App {
 		btnHittakund.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
+				try {
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
 					textPane.setText(info);
+					textCnumber.setText(" ");
 			}
-			}	
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in kundnummer.");
+			}
+			}
 		});
 		btnHittakund.setBounds(22, 149, 120, 23);
 		panel.add(btnHittakund);
@@ -190,7 +202,13 @@ public class App {
 		btnTaBortkund.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textCnumber.getText();
-				controller.removeCustomer(cNumber);				
+				try {
+				controller.removeCustomer(cNumber);	
+				textPane.setText("Kund borttagen");
+				textCnumber.setText(" ");
+			} catch (Exception e1) {
+				textPane.setText("Fel: Skriv in kundnummer.");
+			}
 			}
 		});
 		btnTaBortkund.setBounds(22, 183, 120, 23);
@@ -202,7 +220,15 @@ public class App {
 				String cNumber = textCnumber.getText();
 				String cName = textCname.getText();
 				String cAdress = textCadress.getText();
+				try {
 				customerReg.changeCustomer(cNumber, cName, cAdress);
+				textPane.setText("Kund ändrad");
+				textCnumber.setText(" ");
+				textCname.setText(" ");
+				textCadress.setText(" ");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
+				}
 			}
 		});
 		btnndra.setBounds(22, 215, 120, 23);
@@ -237,12 +263,19 @@ public class App {
 				String cNumber = textCnumber.getText();
 				String orderId = textOrderId.getText();
 				String delDate = textdelDate.getText();
+				try {
 				Customer customer = controller.findCustomer(cNumber);
 				String info = cNumber + " " + orderId + " " + delDate;
 				if (customer != null) {
 				textPane.setText(info);	
 				controller.addCustomerOrder(orderId, delDate, cNumber);
 				lblResponse.setText("Order Skapad.");
+				textCnumber.setText(" ");
+				textOrderId.setText(" ");
+				textdelDate.setText(" ");
+				}
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
 				}
 			}
 		});
@@ -254,8 +287,14 @@ public class App {
 			public void actionPerformed(ActionEvent arg0) {
 				String orderId = textOrderId.getText();
 				String cNumber = textCnumber.getText();
+				try {
 				controller.removeOrder(orderId, cNumber);
-
+				textPane.setText("Kund borttagen");
+				textOrderId.setText(" ");
+				textCnumber.setText(" ");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in orderid och kundnummer.");
+				}
 			}
 		});
 		button_tabortorder.setBounds(352, 94, 86, 23);
@@ -288,14 +327,17 @@ public class App {
 						String amount = textField_9.getText();
 						String orderId = textOrderId.getText();
 						String cNumber = textCnumber.getText();
+						try {
 						controller.addOrderRow(number, amount, orderId, cNumber);
 						textPane.setText("Orderrad skapad.");
 						textField_8.setText(" ");
 						textField_9.setText(" ");
 						textOrderId.setText(" ");
 						textCnumber.setText(null);
-						
-			}
+						} catch (Exception e1) {
+							textPane.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
+						}
+					}
 				});
 		
 		btnSkapaOrderrad.setBounds(209, 240, 133, 23);
@@ -307,7 +349,15 @@ public class App {
 				String number = textField_8.getText();
 				String orderId = textOrderId.getText();
 				String cNumber = textCnumber.getText();
+				try {
 				controller.removeOrderRow(cNumber, orderId, number);
+				textPane.setText("Orderrad borttagen");
+				textField_8.setText(" ");
+				textOrderId.setText(" ");
+				textCnumber.setText(" ");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
+				}
 			}
 		});
 		button_7.setBounds(352, 240, 86, 23);
@@ -389,8 +439,17 @@ public class App {
 				String price = textPprice.getText();
 				String number = textField_8.getText();
 				String amount = textField_9.getText();
+				try {
 				controller.addProduct(name, price, category, number, amount);
 				textPane.setText("Produkt skapad.");
+				textPname.setText(" ");
+				textPcategory.setText(" ");
+				textPprice.setText(" ");
+				textField_8.setText(" ");
+				textField_9.setText(" ");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
+				}
 			}
 		});
 		btnSkapaProdukt.setBounds(18, 113, 122, 23);
@@ -403,12 +462,34 @@ public class App {
 		button_2 = new JButton("Hitta produkt");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
+				String name = textPname.getText();
+				try {
+				Product newProduct = productReg.findProduct(name);
+				String info = newProduct.getName() + " " + newProduct.getCategory() + " " + newProduct.getPrice();
+				if (newProduct != null) {
+					textPane.setText(info);
+					textPname.setText(" ");
+				}	
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in namn");
+				}
+				}              
+			});
 		button_2.setBounds(18, 147, 122, 23);
 		panel_1.add(button_2);
 		
 		btnTaBortProdukt = new JButton("Ta bort produkt");
+		btnTaBortProdukt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String name = textPname.getText();
+				try {
+					controller.removeProduct(name);
+					textPname.setText(" ");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in produktens namn.");
+				}
+			}
+		});
 		btnTaBortProdukt.setBounds(18, 181, 122, 23);
 		panel_1.add(btnTaBortProdukt);
 		

@@ -15,8 +15,8 @@ public class ProductRegister {
 	public void addProduct (Product p) {
 		this.productMap.put(p.getName(), p);
 	}
-	public void removeProduct (String productnr) {
-		this.productMap.entrySet().removeIf(entry -> this.productMap.containsKey(productnr));
+	public void removeProduct (String productName) {
+		this.productMap.entrySet().removeIf(entry -> this.productMap.containsKey(productName));
 	}
 	public Product findProduct (String productname) {
 		for (Product p : this.productMap.values()) {
