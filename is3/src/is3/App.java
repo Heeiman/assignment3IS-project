@@ -437,15 +437,12 @@ public class App {
 				String name = textPname.getText();
 				String category = textPcategory.getText();
 				String price = textPprice.getText();
-				try {
 				controller.addProduct(name, category, price);
 				textPane.setText(name + " " + category + " " + price);
 				textPname.setText("");
 				textPcategory.setText("");
 				textPprice.setText("");
-				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in namn, kategori och pris.");
-				}
+
 			}
 		});
 //		
@@ -455,16 +452,12 @@ public class App {
 //				String name = textPname.getText();
 //				String category = textPcategory.getText();
 //				String price = textPprice.getText();
-//				String number = textField_8.getText();
-//				String amount = textField_9.getText();
 //				try {
-//				controller.addProduct(name, price, category, number, amount);
+//				controller.addProduct(name, price, category);
 //				textPane.setText("Produkt skapad.");
 //				textPname.setText("");
 //				textPcategory.setText("");
 //				textPprice.setText("");
-//				textField_8.setText("");
-//				textField_9.setText("");
 //				} catch (Exception e1) {
 //					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
 //				}

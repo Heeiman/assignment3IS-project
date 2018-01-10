@@ -10,10 +10,10 @@ public class Product {
 	private HashMap<String, Item> itemList = new HashMap<String, Item>();
 	private HashMap<String, OrderRow> ordRowP = new HashMap<String, OrderRow>();
 	
-	public Product (String name, String category, String price) {
-		this.setName(name);
-		this.setCategory(category);
-		this.setPrice(price);
+	public Product (String pName, String pCategory, String pPrice) {
+		this.setName(pName);
+		this.setCategory(pCategory);
+		this.setPrice(pPrice);
 	}
 	
 	public void setName(String name) {
@@ -62,6 +62,9 @@ public class Product {
     }
     public void addOrdRowP (OrderRow row) {
     	this.ordRowP.put(row.getNumber(), row);
+    }
+    public Product () {
+    	
     }
 	
 }
