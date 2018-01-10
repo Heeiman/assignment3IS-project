@@ -49,7 +49,7 @@ public class App {
 	private JLabel lbl_exkategori;
 	private JLabel lbl_expris;
 	private JButton btn_prodskapa;
-	private JButton btn_prodandra;
+	private JButton btn_prodAndra;
 	private JButton btn_prodhitta;
 	private JButton btn_prodtabort;
 	private JLabel lbl_orderId;
@@ -546,9 +546,30 @@ public class App {
 		btn_prodskapa.setBounds(18, 113, 122, 23);
 		panel_1.add(btn_prodskapa);
 		
-		btn_prodandra = new JButton("\u00C4ndra produkt");
-		btn_prodandra.setBounds(18, 214, 122, 23);
-		panel_1.add(btn_prodandra);
+		btn_prodAndra = new JButton("\u00C4ndra produkt");
+		btn_prodAndra.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String name = textField_pName.getText();
+				String category = textField_pCategory.getText();
+				String price = textField_pPrice.getText();
+				Product p = productReg.findProduct(name);
+				if (p != null) {
+				try {
+				controller.updateProduct(name, price, category);
+				textPane.setText("Produkt ändrad");
+				textField_cNumber.setText("");
+				textField_cName.setText("");
+				textField_cAdress.setText("");
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
+				}	
+				} else {
+					lblResponse.setText("Den här kunden finns inte.");
+				}
+			}
+		});
+		btn_prodAndra.setBounds(18, 214, 122, 23);
+		panel_1.add(btn_prodAndra);
 		
 		btn_prodhitta = new JButton("Hitta produkt");
 		btn_prodhitta.addActionListener(new ActionListener() {
