@@ -78,8 +78,8 @@ public class Controller {
 		}
 	}
 
-	public void addOrderRow(String number, String amount, String orderId) {
-		Customer tmpCustomer = new Customer();
+	public void addOrderRow(String cNumber, String number, String amount, String orderId) {
+		Customer tmpCustomer = customers.findCustomer(cNumber);
 		if (tmpCustomer != null) {
 			Order newOrder = tmpCustomer.findOrder(orderId);
 			if (newOrder != null) {
