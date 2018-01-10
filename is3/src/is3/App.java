@@ -220,12 +220,17 @@ public class App {
 		btn_kundtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textField_Cnumber.getText();
+				Customer tmpCustomer = controller.findCustomer(cNumber);
+				if (tmpCustomer != null) {
 				try {
 				controller.removeCustomer(cNumber);	
 				textPane.setText("Kund borttagen");
 				textField_Cnumber.setText("");
 			} catch (Exception e1) {
 				textPane.setText("Fel: Skriv in kundnummer.");
+			}
+			} else {
+				lblResponse.setText("Den här kunden finns inte");
 			}
 			}
 		});
