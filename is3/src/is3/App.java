@@ -165,6 +165,8 @@ public class App {
 				String cNumber = textField_Cnumber.getText();
 				String cName = textField_Cname.getText();
 				String cAdress = textField_Cadress.getText();
+				Customer tmpCustomer = controller.findCustomer(cNumber);
+				if (tmpCustomer == null) {
 				try {
 				controller.addCustomer(cNumber, cName, cAdress);
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
@@ -173,6 +175,9 @@ public class App {
 				textField_Cadress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
+				}
+				} else {
+					textPane.setText("Fel: Kund existerar redan.");
 				}
 			}
 		});
