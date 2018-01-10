@@ -519,7 +519,7 @@ public class App {
 				String category = textField_pCategory.getText();
 				String price = textField_pPrice.getText();
 				Product p = productReg.findProduct(name);
-				if (p != null) {
+				if (p == null) {
 				try {
 				controller.addProduct(name, category, price);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
