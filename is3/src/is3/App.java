@@ -176,26 +176,24 @@ public class App {
 				textField_Cnumber.setText("");
 				textField_Cname.setText("");
 				textField_Cadress.setText("");
-				lblResponse.setText(" ");
-				
-				
+				lblResponse.setText("");			
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in kundnummer, namn eller adress.");
-					textPane.setText(" ");
+					textPane.setText("");
 				}
 				} else {
 					lblResponse.setText("Ett kundnummer måste vara 4 siffror långt");
 					textField_Cnumber.setText("");
 					textField_Cname.setText("");
 					textField_Cadress.setText("");
-					textPane.setText(" ");
+					textPane.setText("");
 				}
 				} else {
 					lblResponse.setText("Fel: Kund existerar redan.");
 					textField_Cnumber.setText("");
 					textField_Cname.setText("");
 					textField_Cadress.setText("");
-					textPane.setText(" ");
+					textPane.setText("");
 				}
 			}
 		});
