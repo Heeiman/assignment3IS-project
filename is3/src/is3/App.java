@@ -559,18 +559,21 @@ public class App {
 				name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
 				category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();	
 				controller.updateProduct(name, price, category);
-				textPane.setText("Produkt ändrad");
-				textField_pName.setText("");
-				textField_pCategory.setText("");
-				textField_pPrice.setText("");
+				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
+				textField_cNumber.setText("");
+				textField_cName.setText("");
+				textField_cAdress.setText("");
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
+					lblResponse.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
+					textPane.setText("");
 				}
 					} else {
 						lblResponse.setText("Fel skriv in namn, kategori och pris.");
+						textPane.setText("");
 					}
 				} else {
 					lblResponse.setText("Den här produkten finns inte.");
+					textPane.setText("");
 				}
 			}
 		});
