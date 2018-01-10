@@ -406,13 +406,13 @@ public class App {
 		button_exskapa = new JButton("Skapa exemplar");
 		button_exskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String name = textField_Pname.getName();
+				String name = textField_Pname.getText();
 				String serNumber = textField_serienummer.getText();
 				try {
 				controller.addItemProduct(serNumber, name);
 				textPane.setText(name + serNumber);
-				textField_Pname.setText(" ");
-				textField_serienummer.setText(" ");
+				textField_Pname.setText("");
+				textField_serienummer.setText("");
 				lblResponse.setText("Exemplar skapat.");
 				} catch (Exception e1) {
 					textPane.setText(" ");

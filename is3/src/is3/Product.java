@@ -20,7 +20,7 @@ public class Product {
 		this.name = name;
 	}
 	public String getName() {
-		return this.name;
+		return name;
 	}
 	public void setCategory(String category) {
 		this.category = category;
