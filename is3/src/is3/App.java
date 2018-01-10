@@ -437,21 +437,39 @@ public class App {
 				String name = textPname.getText();
 				String category = textPcategory.getText();
 				String price = textPprice.getText();
-				String number = textField_8.getText();
-				String amount = textField_9.getText();
 				try {
-				controller.addProduct(name, price, category, number, amount);
-				textPane.setText("Produkt skapad.");
+				controller.addProduct(name, category, price);
+				textPane.setText(name + " " + category + " " + price);
 				textPname.setText("");
 				textPcategory.setText("");
 				textPprice.setText("");
-				textField_8.setText("");
-				textField_9.setText("");
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
+					textPane.setText("Fel: Skriv in namn, kategori och pris.");
 				}
 			}
 		});
+//		
+//		btnSkapaProdukt = new JButton("Skapa produkt");
+//		btnSkapaProdukt.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				String name = textPname.getText();
+//				String category = textPcategory.getText();
+//				String price = textPprice.getText();
+//				String number = textField_8.getText();
+//				String amount = textField_9.getText();
+//				try {
+//				controller.addProduct(name, price, category, number, amount);
+//				textPane.setText("Produkt skapad.");
+//				textPname.setText("");
+//				textPcategory.setText("");
+//				textPprice.setText("");
+//				textField_8.setText("");
+//				textField_9.setText("");
+//				} catch (Exception e1) {
+//					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
+//				}
+//			}
+//		});
 		btnSkapaProdukt.setBounds(18, 113, 122, 23);
 		panel_1.add(btnSkapaProdukt);
 		
