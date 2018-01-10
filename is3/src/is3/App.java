@@ -172,7 +172,7 @@ public class App {
 				cName = cName.substring(0,1).toUpperCase() + cName.substring(1).toLowerCase();
 				cAdress = cAdress.substring(0,1).toUpperCase() + cAdress.substring(1).toLowerCase(); //BLA
 				controller.addCustomer(cNumber, cName, cAdress);
-				textPane.setText(cNumber + " " + cName + " " + cAdress);
+				textPane.setText("Kundnummer: " + cNumber + " Kundnamn: " + cName + " Adress: " + cAdress);
 				textField_Cnumber.setText("");
 				textField_Cname.setText("");
 				textField_Cadress.setText("");
