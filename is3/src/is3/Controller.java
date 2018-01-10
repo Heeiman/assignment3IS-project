@@ -15,6 +15,7 @@ public class Controller {
 	public Controller(CustomerRegister customers,ProductRegister products, JFrame Frame) {
 		this.customers = customers;
 		this.Frame = Frame;
+		this.products = products;
 	}
 
 	public void addCustomer(String cNumber, String cName, String cAdress) {
