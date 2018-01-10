@@ -210,6 +210,7 @@ public class App {
 				if (tmpCustomer != null) {
 					textPane.setText(info);
 					textField_Cnumber.setText("");
+					lblResponse.setText("");
 			}
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in kundnummer.");
@@ -233,7 +234,7 @@ public class App {
 				textPane.setText("Fel: Skriv in kundnummer.");
 			}
 			} else {
-				lblResponse.setText("Den här kunden finns inte");
+				lblResponse.setText("Den här kunden finns inte.");
 			}
 			}
 		});
