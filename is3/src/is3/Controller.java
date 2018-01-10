@@ -12,7 +12,7 @@ public class Controller {
 
 	JFrame Frame;
 
-	public Controller(CustomerRegister customers, JFrame Frame) {
+	public Controller(CustomerRegister customers,ProductRegister products, JFrame Frame) {
 		this.customers = customers;
 		this.Frame = Frame;
 	}

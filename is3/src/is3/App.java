@@ -99,7 +99,7 @@ public class App {
 	private void initialize() {
 		customerReg = new CustomerRegister();
 		productReg = new ProductRegister();
-		controller = new Controller(customerReg, frame);
+		controller = new Controller(customerReg, productReg, frame);
 
 		
 		frame = new JFrame();
