@@ -541,25 +541,6 @@ public class App {
 
 		btn_prodskapa.setBounds(18, 113, 122, 23);
 		panel_1.add(btn_prodskapa);
-
-//		
-//		btnSkapaProdukt = new JButton("Skapa produkt");
-//		btnSkapaProdukt.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				String name = textPname.getText();
-//				String category = textPcategory.getText();
-//				String price = textPprice.getText();
-//				try {
-//				controller.addProduct(name, price, category);
-//				textPane.setText("Produkt skapad.");
-//				textPname.setText("");
-//				textPcategory.setText("");
-//				textPprice.setText("");
-//				} catch (Exception e1) {
-//					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
-//				}
-//			}
-//		});
 		
 		btn_prodandra = new JButton("\u00C4ndra produkt");
 		btn_prodandra.setBounds(18, 214, 122, 23);
