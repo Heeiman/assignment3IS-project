@@ -7,9 +7,6 @@ import java.util.HashMap;
 public class Controller {
 	CustomerRegister customers;
 	ProductRegister products;
-	Order order;
-	Product product;
-
 	JFrame Frame;
 
 	public Controller(CustomerRegister customers,ProductRegister products, JFrame Frame) {
@@ -131,6 +128,13 @@ public class Controller {
 	
 	public void removeProduct(String productName) {
 		products.removeProduct(productName);
+	}
+	public Product findProduct(String pName) {
+		Product newProduct = products.findProduct(pName);
+		if (newProduct != null) {
+			return newProduct;
+		}
+		return null;
 	}
 
 	public void addItemProduct(String serNumber, String name) {

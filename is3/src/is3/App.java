@@ -552,7 +552,7 @@ public class App {
 				String name = textField_pName.getText();
 				String category = textField_pCategory.getText();
 				String price = textField_pPrice.getText();
-				Product p = productReg.findProduct(name);
+				Product p = controller.findProduct(name);
 				if (p != null) {
 				try {
 				controller.updateProduct(name, price, category);
