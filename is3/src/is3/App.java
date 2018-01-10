@@ -527,7 +527,7 @@ public class App {
 				textField_pPrice.setText("");
 
 				controller.addProduct(name, category, price);
-				textPane.setText(name + " " + category + " " + price);
+				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
 				textField_pName.setText("");
 				textField_pCategory.setText("");
 				textField_pPrice.setText("");
