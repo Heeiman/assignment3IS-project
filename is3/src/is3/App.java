@@ -228,10 +228,10 @@ public class App {
 				if (tmpCustomer != null) {
 				try {
 				controller.removeCustomer(cNumber);	
-				textPane.setText("Kund borttagen");
+				lblResponse.setText("Kund borttagen");
 				textField_Cnumber.setText("");
 			} catch (Exception e1) {
-				textPane.setText("Fel: Skriv in kundnummer.");
+				lblResponse.setText("Fel: Skriv in kundnummer.");
 			}
 			} else {
 				lblResponse.setText("Den här kunden finns inte.");
