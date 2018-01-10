@@ -298,6 +298,7 @@ public class App {
 				Customer customer = controller.findCustomer(cNumber);
 				String info = cNumber + " " + orderId + " " + delDate;
 				if (customer != null) {
+				if (textField_orderid.getText().length() == 4 && textField_orderlevdatum.getText().length() == 6) {
 				try {
 				textPane.setText(info);	
 				controller.addCustomerOrder(orderId, delDate, cNumber);
@@ -308,7 +309,12 @@ public class App {
 				
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
+				} 
+				} else {
+					lblResponse.setText("Ett orderid måste vara 4-siffrigt och ett datum skrivs ååmmdd.");
 				}
+				
+					
 			} else {
 				lblResponse.setText("Den här kunden finns inte.");
 			}
