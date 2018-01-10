@@ -19,8 +19,11 @@ public class Controller {
 	}
 
 	public void addCustomer(String cNumber, String cName, String cAdress) {
+		Customer tmpCustomer = customers.findCustomer(cNumber);
+		if (tmpCustomer == null) {
 		Customer newCustomer = new Customer(cNumber, cName, cAdress);
 		this.customers.addCustomer(newCustomer);
+		}
 	}
 
 	public void addCustomerOrder(String orderID, String delDate, String cNumber) {

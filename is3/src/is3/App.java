@@ -289,7 +289,7 @@ public class App {
 				String cNumber = textField_Cnumber.getText();
 				try {
 				controller.removeOrder(orderId, cNumber);
-				textPane.setText("Kund borttagen");
+				lblResponse.setText("Order borttagen");
 				textField_orderid.setText("");
 				textField_Cnumber.setText("");
 				} catch (Exception e1) {
