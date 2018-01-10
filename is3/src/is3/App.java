@@ -113,7 +113,7 @@ public class App {
 		textPane.setFont(new Font("Arial", Font.PLAIN, 12));
 		
 		lblResponse = new JLabel("Response:");
-		lblResponse.setBounds(495, 129, 205, 14);
+		lblResponse.setBounds(495, 129, 260, 14);
 		frame.getContentPane().add(lblResponse);
 
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -176,21 +176,25 @@ public class App {
 				textField_Cnumber.setText("");
 				textField_Cname.setText("");
 				textField_Cadress.setText("");
+				lblResponse.setText(" ");
 				
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
+					lblResponse.setText("Fel: Skriv in kundnummer, namn eller adress.");
+					textPane.setText(" ");
 				}
 				} else {
-					textPane.setText("Ett kundnummer måste vara 4 siffror långt");
+					lblResponse.setText("Ett kundnummer måste vara 4 siffror långt");
 					textField_Cnumber.setText("");
 					textField_Cname.setText("");
 					textField_Cadress.setText("");
+					textPane.setText(" ");
 				}
 				} else {
-					textPane.setText("Fel: Kund existerar redan.");
+					lblResponse.setText("Fel: Kund existerar redan.");
 					textField_Cnumber.setText("");
 					textField_Cname.setText("");
 					textField_Cadress.setText("");
+					textPane.setText(" ");
 				}
 			}
 		});
