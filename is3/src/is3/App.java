@@ -518,14 +518,9 @@ public class App {
 				String name = textField_pName.getText();
 				String category = textField_pCategory.getText();
 				String price = textField_pPrice.getText();
+				Product p = productReg.findProduct(name);
+				if (p != null) {
 				try {
-
-				controller.addProduct(name, price, category);
-				textPane.setText("Produkt skapad.");
-				textField_pName.setText("");
-				textField_pCategory.setText("");
-				textField_pPrice.setText("");
-
 				controller.addProduct(name, category, price);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
 				textField_pName.setText("");
@@ -534,6 +529,9 @@ public class App {
 
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in namn, kategori och pris.");
+				}
+				} else {
+					lblResponse.setText("Produkten finns inte.");
 				}
 
 			}
