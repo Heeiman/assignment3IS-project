@@ -107,7 +107,7 @@ public class Controller {
 
 	public void updateCustomerName(String cNumber, String newCName, String newAdress) {
 		customers.setCustomerName(cNumber, newCName, newAdress);
-	}
+	}	
 
 	public void updateProduct(String name, String price, String category) {
 		products.changeProduct(name, price, category);
@@ -118,9 +118,11 @@ public class Controller {
 		this.products.addProduct(newProduct);
 	}
 	
-	public void addProductOrderRow (String name, String number, String amount) {
+	public void addProductOrderRow (String name, String number, String amount, String orderId, String cNumber) {
 		Product p = products.findProduct(name);
-		OrderRow row = new OrderRow(number, amount);
+		Customer c = customers.findCustomer(cNumber);
+		Order o = c.findOrder(orderId);
+		OrderRow row = o.findOrderRow(number);
 		p.addOrdRowP(row);
 		row.setProduct(p);
 	}

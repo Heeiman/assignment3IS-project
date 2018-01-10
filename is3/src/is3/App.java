@@ -557,14 +557,21 @@ public class App {
 				String price = textField_pPrice.getText();
 				String number = textField_orderRadNummer.getText();
 				String amount = textField_orderRadAntal.getText();
+				String cNumber = textField_cNumber.getText();
+				String orderId = textField_orderId.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
 					if (name.length() > 0 && number.length() > 0 && amount.length() > 0 ) {
-						controller.addProductOrderRow(name, number, amount);
+						try {
+						controller.addProductOrderRow(name, number, amount, orderId, cNumber);
+					} catch (Exception e1) {
+						lblResponse.setText("Error!! Error!!");
+						textPane.setText("");
+					}
 					}
 				else if (price.length() > 0 && price.length() < 99 && category.length() > 0 && category.length() < 99 ) {
 				try {
-				controller.updateProduct(name, price, category);
+				controller.updateProduct(name, category, price);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
 				textField_pName.setText("");
 				textField_pCategory.setText("");
