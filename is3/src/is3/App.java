@@ -21,49 +21,49 @@ import javax.swing.SwingConstants;
 public class App {
 
 	private JFrame frame;
-	private JTextField textCnumber;
-	private JTextField textCname;
-	private JTextField textCadress;
-	private JTextField textPname;
-	private JTextField textPcategory;
-	private JTextField textPprice;
-	private JTextField textOrderId;
-	private JTextField textdelDate;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_11;
+	private JTextField textField_Cnumber;
+	private JTextField textField_Cname;
+	private JTextField textField_Cadress;
+	private JTextField textField_Pname;
+	private JTextField textField_Pcategory;
+	private JTextField textField_Pprice;
+	private JTextField textField_orderid;
+	private JTextField textField_orderlevdatum;
+	private JTextField textField_orderradnummer;
+	private JTextField textField_orderradantal;
+	private JTextField textField_serienummer;
 	private JLabel lblKund;
 	private JLabel lblProdukt;
 	private JLabel lblOrder;
 	private JLabel lblOrderrad;
 	private JLabel lblExemplar;
 	private JLabel lblResponse;
-	private JLabel lblKundnummer;
-	private JLabel lblNamn;
-	private JLabel lblAdress;
-	private JButton btnSkapakund;
-	private JButton btnndra;
-	private JButton btnHittakund;
-	private JButton btnTaBortkund;
-	private JLabel lblNamn_1;
-	private JLabel lblKategori;
-	private JLabel lblPris;
-	private JButton btnSkapaProdukt;
-	private JButton btnndraProdukt;
-	private JButton button_2;
-	private JButton btnTaBortProdukt;
-	private JLabel lblOrderid;
-	private JLabel lblLeveransdatum;
-	private JButton btnSkapaOrderTill;
-	private JButton button_tabortorder;
-	private JLabel lblNummer;
-	private JLabel lblAntal;
+	private JLabel lbl_kundnummer;
+	private JLabel lbl_kundnamn;
+	private JLabel lbl_kundadress;
+	private JButton btn_kundskapa;
+	private JButton btn_kundandra;
+	private JButton btn_kundhitta;
+	private JButton btn_kundtabort;
+	private JLabel lbl_exnamn;
+	private JLabel lbl_exkategori;
+	private JLabel lbl_expris;
+	private JButton btn_prodskapa;
+	private JButton btn_prodandra;
+	private JButton btn_prodhitta;
+	private JButton btn_prodtabort;
+	private JLabel lbl_orderId;
+	private JLabel lbl_levdatum;
+	private JButton btn_orderskapa;
+	private JButton btn_ordertabort;
+	private JLabel lbl_orderradnummer;
+	private JLabel lbl_orderradantal;
 	private JButton button_6;
-	private JButton btnSkapaOrderrad;
-	private JButton button_7;
+	private JButton btn_orderradskapa;
+	private JButton btn_orderradtabort;
 	private JLabel lblSerienummer;
-	private JButton button_8;
-	private JButton button_9;
+	private JButton button_exskapa;
+	private JButton button_extabort;
 
 	private Controller controller;
 	private CustomerRegister customerReg;
@@ -132,137 +132,137 @@ public class App {
 		panel.add(lblKund);
 		lblKund.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		lblKundnummer = new JLabel("Kundnummer:");
-		lblKundnummer.setBounds(10, 38, 98, 14);
-		panel.add(lblKundnummer);
+		lbl_kundnummer = new JLabel("Kundnummer:");
+		lbl_kundnummer.setBounds(10, 38, 98, 14);
+		panel.add(lbl_kundnummer);
 		
-		textCnumber = new JTextField();
-		textCnumber.setBounds(99, 35, 86, 20);
-		panel.add(textCnumber);
-		textCnumber.setColumns(10);
+		textField_Cnumber = new JTextField();
+		textField_Cnumber.setBounds(99, 35, 86, 20);
+		panel.add(textField_Cnumber);
+		textField_Cnumber.setColumns(10);
 		
-		lblNamn = new JLabel("Namn:");
-		lblNamn.setBounds(10, 62, 46, 14);
-		panel.add(lblNamn);
+		lbl_kundnamn = new JLabel("Namn:");
+		lbl_kundnamn.setBounds(10, 62, 46, 14);
+		panel.add(lbl_kundnamn);
 		
-		textCname = new JTextField();
-		textCname.setBounds(99, 59, 86, 20);
-		panel.add(textCname);
-		textCname.setColumns(10);
+		textField_Cname = new JTextField();
+		textField_Cname.setBounds(99, 59, 86, 20);
+		panel.add(textField_Cname);
+		textField_Cname.setColumns(10);
 		
-		textCadress = new JTextField();
-		textCadress.setBounds(99, 84, 86, 20);
-		panel.add(textCadress);
-		textCadress.setColumns(10);
+		textField_Cadress = new JTextField();
+		textField_Cadress.setBounds(99, 84, 86, 20);
+		panel.add(textField_Cadress);
+		textField_Cadress.setColumns(10);
 		
-		lblAdress = new JLabel("Adress:");
-		lblAdress.setBounds(10, 87, 46, 14);
-		panel.add(lblAdress);
+		lbl_kundadress = new JLabel("Adress:");
+		lbl_kundadress.setBounds(10, 87, 46, 14);
+		panel.add(lbl_kundadress);
 		
-		btnSkapakund = new JButton("Skapa kund");
-		btnSkapakund.addActionListener(new ActionListener() {
+		btn_kundskapa = new JButton("Skapa kund");
+		btn_kundskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String cNumber = textCnumber.getText();
-				String cName = textCname.getText();
-				String cAdress = textCadress.getText();
+				String cNumber = textField_Cnumber.getText();
+				String cName = textField_Cname.getText();
+				String cAdress = textField_Cadress.getText();
 				try {
 				controller.addCustomer(cNumber, cName, cAdress);
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
-				textCnumber.setText("");
-				textCname.setText("");
-				textCadress.setText("");
+				textField_Cnumber.setText("");
+				textField_Cname.setText("");
+				textField_Cadress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
 				}
 			}
 		});
-		btnSkapakund.setBounds(22, 115, 120, 23);
-		panel.add(btnSkapakund);
+		btn_kundskapa.setBounds(22, 115, 120, 23);
+		panel.add(btn_kundskapa);
 		
-		btnHittakund = new JButton("Hitta kund");
-		btnHittakund.addActionListener(new ActionListener() {
+		btn_kundhitta = new JButton("Hitta kund");
+		btn_kundhitta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String cNumber = textCnumber.getText();
+				String cNumber = textField_Cnumber.getText();
 				try {
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " " + tmpCustomer.getcAdress();
 				if (tmpCustomer != null) {
 					textPane.setText(info);
-					textCnumber.setText("");
+					textField_Cnumber.setText("");
 			}
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer.");
 			}
 			}
 		});
-		btnHittakund.setBounds(22, 149, 120, 23);
-		panel.add(btnHittakund);
+		btn_kundhitta.setBounds(22, 149, 120, 23);
+		panel.add(btn_kundhitta);
 		
-		btnTaBortkund = new JButton("Ta bort kund");
-		btnTaBortkund.addActionListener(new ActionListener() {
+		btn_kundtabort = new JButton("Ta bort kund");
+		btn_kundtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String cNumber = textCnumber.getText();
+				String cNumber = textField_Cnumber.getText();
 				try {
 				controller.removeCustomer(cNumber);	
 				textPane.setText("Kund borttagen");
-				textCnumber.setText("");
+				textField_Cnumber.setText("");
 			} catch (Exception e1) {
 				textPane.setText("Fel: Skriv in kundnummer.");
 			}
 			}
 		});
-		btnTaBortkund.setBounds(22, 183, 120, 23);
-		panel.add(btnTaBortkund);
+		btn_kundtabort.setBounds(22, 183, 120, 23);
+		panel.add(btn_kundtabort);
 		
-		btnndra = new JButton("\u00C4ndra");
-		btnndra.addActionListener(new ActionListener() {
+		btn_kundandra = new JButton("\u00C4ndra");
+		btn_kundandra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String cNumber = textCnumber.getText();
-				String cName = textCname.getText();
-				String cAdress = textCadress.getText();
+				String cNumber = textField_Cnumber.getText();
+				String cName = textField_Cname.getText();
+				String cAdress = textField_Cadress.getText();
 				try {
 				customerReg.changeCustomer(cNumber, cName, cAdress);
 				textPane.setText("Kund ändrad");
-				textCnumber.setText("");
-				textCname.setText("");
-				textCadress.setText("");
+				textField_Cnumber.setText("");
+				textField_Cname.setText("");
+				textField_Cadress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
 				}
 			}
 		});
-		btnndra.setBounds(22, 215, 120, 23);
-		panel.add(btnndra);
+		btn_kundandra.setBounds(22, 215, 120, 23);
+		panel.add(btn_kundandra);
 		
 		lblOrder = new JLabel("Order");
 		lblOrder.setBounds(326, 11, 35, 17);
 		panel.add(lblOrder);
 		lblOrder.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		lblOrderid = new JLabel("OrderID:");
-		lblOrderid.setBounds(239, 38, 81, 14);
-		panel.add(lblOrderid);
+		lbl_orderId = new JLabel("OrderID:");
+		lbl_orderId.setBounds(239, 38, 81, 14);
+		panel.add(lbl_orderId);
 		
-		textOrderId = new JTextField();
-		textOrderId.setBounds(352, 35, 86, 20);
-		panel.add(textOrderId);
-		textOrderId.setColumns(10);
+		textField_orderid = new JTextField();
+		textField_orderid.setBounds(352, 35, 86, 20);
+		panel.add(textField_orderid);
+		textField_orderid.setColumns(10);
 		
-		textdelDate = new JTextField();
-		textdelDate.setBounds(352, 59, 86, 20);
-		panel.add(textdelDate);
-		textdelDate.setColumns(10);
+		textField_orderlevdatum = new JTextField();
+		textField_orderlevdatum.setBounds(352, 59, 86, 20);
+		panel.add(textField_orderlevdatum);
+		textField_orderlevdatum.setColumns(10);
 		
-		lblLeveransdatum = new JLabel("Leveransdatum:");
-		lblLeveransdatum.setBounds(239, 65, 122, 14);
-		panel.add(lblLeveransdatum);
+		lbl_levdatum = new JLabel("Leveransdatum:");
+		lbl_levdatum.setBounds(239, 65, 122, 14);
+		panel.add(lbl_levdatum);
 		
-		btnSkapaOrderTill = new JButton("Skapa order");
-		btnSkapaOrderTill.addActionListener(new ActionListener() {
+		btn_orderskapa = new JButton("Skapa order");
+		btn_orderskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String cNumber = textCnumber.getText();
-				String orderId = textOrderId.getText();
-				String delDate = textdelDate.getText();
+				String cNumber = textField_Cnumber.getText();
+				String orderId = textField_orderid.getText();
+				String delDate = textField_orderlevdatum.getText();
 				try {
 				Customer customer = controller.findCustomer(cNumber);
 				String info = cNumber + " " + orderId + " " + delDate;
@@ -270,98 +270,98 @@ public class App {
 				textPane.setText(info);	
 				controller.addCustomerOrder(orderId, delDate, cNumber);
 				lblResponse.setText("Order Skapad.");
-				textCnumber.setText("");
-				textOrderId.setText("");
-				textdelDate.setText("");
+				textField_Cnumber.setText("");
+				textField_orderid.setText("");
+				textField_orderlevdatum.setText("");
 				}
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
 				}
 			}
 		});
-		btnSkapaOrderTill.setBounds(228, 94, 114, 23);
-		panel.add(btnSkapaOrderTill);
+		btn_orderskapa.setBounds(228, 94, 114, 23);
+		panel.add(btn_orderskapa);
 		
-		button_tabortorder = new JButton("Ta bort");
-		button_tabortorder.addActionListener(new ActionListener() {
+		btn_ordertabort = new JButton("Ta bort");
+		btn_ordertabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String orderId = textOrderId.getText();
-				String cNumber = textCnumber.getText();
+				String orderId = textField_orderid.getText();
+				String cNumber = textField_Cnumber.getText();
 				try {
 				controller.removeOrder(orderId, cNumber);
 				textPane.setText("Kund borttagen");
-				textOrderId.setText("");
-				textCnumber.setText("");
+				textField_orderid.setText("");
+				textField_Cnumber.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in orderid och kundnummer.");
 				}
 			}
 		});
-		button_tabortorder.setBounds(352, 94, 86, 23);
-		panel.add(button_tabortorder);
+		btn_ordertabort.setBounds(352, 94, 86, 23);
+		panel.add(btn_ordertabort);
 		
-		lblNummer = new JLabel("Nummer:");
-		lblNummer.setBounds(239, 180, 199, 14);
-		panel.add(lblNummer);
+		lbl_orderradnummer = new JLabel("Nummer:");
+		lbl_orderradnummer.setBounds(239, 180, 140, 14);
+		panel.add(lbl_orderradnummer);
 		
-		textField_8 = new JTextField();
-		textField_8.setBounds(352, 177, 86, 20);
-		panel.add(textField_8);
-		textField_8.setColumns(10);
+		textField_orderradnummer = new JTextField();
+		textField_orderradnummer.setBounds(352, 177, 86, 20);
+		panel.add(textField_orderradnummer);
+		textField_orderradnummer.setColumns(10);
 		
-		lblAntal = new JLabel("Antal:");
-		lblAntal.setBounds(239, 211, 199, 14);
-		panel.add(lblAntal);
+		lbl_orderradantal = new JLabel("Antal:");
+		lbl_orderradantal.setBounds(239, 211, 140, 14);
+		panel.add(lbl_orderradantal);
 		
-		textField_9 = new JTextField();
-		textField_9.setBounds(352, 208, 86, 20);
-		panel.add(textField_9);
-		textField_9.setColumns(10);
+		textField_orderradantal = new JTextField();
+		textField_orderradantal.setBounds(352, 208, 86, 20);
+		panel.add(textField_orderradantal);
+		textField_orderradantal.setColumns(10);
 		
 
-		btnSkapaOrderrad = new JButton("Skapa orderrad");
+		btn_orderradskapa = new JButton("Skapa orderrad");
 		
-		btnSkapaOrderrad.addActionListener(new ActionListener() {
+		btn_orderradskapa.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						String number = textField_8.getText();
-						String amount = textField_9.getText();
-						String orderId = textOrderId.getText();
-						String cNumber = textCnumber.getText();
+						String number = textField_orderradnummer.getText();
+						String amount = textField_orderradantal.getText();
+						String orderId = textField_orderid.getText();
+						String cNumber = textField_Cnumber.getText();
 						try {
 						controller.addOrderRow(number, amount, orderId, cNumber);
 						textPane.setText("Orderrad skapad.");
-						textField_8.setText("");
-						textField_9.setText("");
-						textOrderId.setText("");
-						textCnumber.setText("");
+						textField_orderradnummer.setText("");
+						textField_orderradantal.setText("");
+						textField_orderid.setText("");
+						textField_Cnumber.setText("");
 						} catch (Exception e1) {
 							textPane.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
 						}
 					}
 				});
 		
-		btnSkapaOrderrad.setBounds(209, 240, 133, 23);
-		panel.add(btnSkapaOrderrad);
+		btn_orderradskapa.setBounds(209, 240, 133, 23);
+		panel.add(btn_orderradskapa);
 		
-		button_7 = new JButton("Ta bort");
-		button_7.addActionListener(new ActionListener() {
+		btn_orderradtabort = new JButton("Ta bort");
+		btn_orderradtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String number = textField_8.getText();
-				String orderId = textOrderId.getText();
-				String cNumber = textCnumber.getText();
+				String number = textField_orderradnummer.getText();
+				String orderId = textField_orderid.getText();
+				String cNumber = textField_Cnumber.getText();
 				try {
 				controller.removeOrderRow(cNumber, orderId, number);
 				textPane.setText("Orderrad borttagen");
-				textField_8.setText("");
-				textOrderId.setText("");
-				textCnumber.setText("");
+				textField_orderradnummer.setText("");
+				textField_orderid.setText("");
+				textField_Cnumber.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
 				}
 			}
 		});
-		button_7.setBounds(352, 240, 86, 23);
-		panel.add(button_7);
+		btn_orderradtabort.setBounds(352, 240, 86, 23);
+		panel.add(btn_orderradtabort);
 		
 		lblOrderrad = new JLabel("Orderrad");
 		lblOrderrad.setBounds(314, 149, 124, 17);
@@ -377,74 +377,102 @@ public class App {
 		panel_1.add(lblExemplar);
 		lblExemplar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		textField_11 = new JTextField();
-		textField_11.setBounds(352, 36, 86, 20);
-		panel_1.add(textField_11);
-		textField_11.setColumns(10);
+		textField_serienummer = new JTextField();
+		textField_serienummer.setBounds(352, 36, 86, 20);
+		panel_1.add(textField_serienummer);
+		textField_serienummer.setColumns(10);
 		
 		lblSerienummer = new JLabel("Serienummer:");
 		lblSerienummer.setBounds(242, 39, 98, 14);
 		panel_1.add(lblSerienummer);
 		
-		button_9 = new JButton("Ta bort");
-		button_9.setBounds(352, 67, 86, 23);
-		panel_1.add(button_9);
+		button_extabort = new JButton("Ta bort");
+		button_extabort.setBounds(352, 67, 86, 23);
+		panel_1.add(button_extabort);
 		
-		button_8 = new JButton("Skapa exemplar");
-		button_8.addActionListener(new ActionListener() {
+		button_exskapa = new JButton("Skapa exemplar");
+		button_exskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String name = textField_Pname.getName();
+				String serNumber = textField_serienummer.getText();
+				try {
+				controller.addItemProduct(serNumber, name);
+				textPane.setText(name + serNumber);
+				textField_Pname.setText(" ");
+				textField_serienummer.setText(" ");
+				lblResponse.setText("Exemplar skapat.");
+				} catch (Exception e1) {
+					textPane.setText(" ");
+					lblResponse.setText("Fel: Skriv in produktens namn/skapa produkten");
+			}
 			}
 		});
-		button_8.setBounds(207, 67, 133, 23);
-		panel_1.add(button_8);
+		button_exskapa.setBounds(207, 67, 133, 23);
+		panel_1.add(button_exskapa);
 		
 		lblProdukt = new JLabel("Produkt");
 		lblProdukt.setBounds(74, 11, 97, 14);
 		panel_1.add(lblProdukt);
 		lblProdukt.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		lblNamn_1 = new JLabel("Namn:");
-		lblNamn_1.setBounds(10, 38, 79, 14);
-		panel_1.add(lblNamn_1);
+		lbl_exnamn = new JLabel("Namn:");
+		lbl_exnamn.setBounds(10, 38, 79, 14);
+		panel_1.add(lbl_exnamn);
 		
-		textPname = new JTextField();
-		textPname.setBounds(99, 35, 86, 20);
-		panel_1.add(textPname);
-		textPname.setColumns(10);
+		textField_Pname = new JTextField();
+		textField_Pname.setBounds(99, 35, 86, 20);
+		panel_1.add(textField_Pname);
+		textField_Pname.setColumns(10);
 		
-		lblKategori = new JLabel("Kategori:");
-		lblKategori.setBounds(10, 63, 79, 14);
-		panel_1.add(lblKategori);
+		lbl_exkategori = new JLabel("Kategori:");
+		lbl_exkategori.setBounds(10, 63, 79, 14);
+		panel_1.add(lbl_exkategori);
 		
-		textPcategory = new JTextField();
-		textPcategory.setBounds(99, 60, 86, 20);
-		panel_1.add(textPcategory);
-		textPcategory.setColumns(10);
+		textField_Pcategory = new JTextField();
+		textField_Pcategory.setBounds(99, 60, 86, 20);
+		panel_1.add(textField_Pcategory);
+		textField_Pcategory.setColumns(10);
 		
-		lblPris = new JLabel("Pris:");
-		lblPris.setBounds(10, 88, 79, 14);
-		panel_1.add(lblPris);
+		lbl_expris = new JLabel("Pris:");
+		lbl_expris.setBounds(10, 88, 79, 14);
+		panel_1.add(lbl_expris);
 		
-		textPprice = new JTextField();
-		textPprice.setBounds(99, 85, 86, 20);
-		panel_1.add(textPprice);
-		textPprice.setColumns(10);
+		textField_Pprice = new JTextField();
+		textField_Pprice.setBounds(99, 85, 86, 20);
+		panel_1.add(textField_Pprice);
+		textField_Pprice.setColumns(10);
 		
-		btnSkapaProdukt = new JButton("Skapa produkt");
-		btnSkapaProdukt.addActionListener(new ActionListener() {
+		btn_prodskapa = new JButton("Skapa produkt");
+		btn_prodskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String name = textPname.getText();
-				String category = textPcategory.getText();
-				String price = textPprice.getText();
+
+				String name = textField_Pname.getText();
+				String category = textField_Pcategory.getText();
+				String price = textField_Pprice.getText();
+				try {
+
+				controller.addProduct(name, price, category);
+				textPane.setText("Produkt skapad.");
+				textField_Pname.setText("");
+				textField_Pcategory.setText("");
+				textField_Pprice.setText("");
+
 				controller.addProduct(name, category, price);
 				textPane.setText(name + " " + category + " " + price);
-				textPname.setText("");
-				textPcategory.setText("");
-				textPprice.setText("");
+				textField_Pname.setText("");
+				textField_Pcategory.setText("");
+				textField_Pprice.setText("");
+
+				} catch (Exception e1) {
+					textPane.setText("Fel: Skriv in namn, kategori och pris.");
+				}
 
 			}
 		});
+
+		btn_prodskapa.setBounds(18, 113, 122, 23);
+		panel_1.add(btn_prodskapa);
+
 //		
 //		btnSkapaProdukt = new JButton("Skapa produkt");
 //		btnSkapaProdukt.addActionListener(new ActionListener() {
@@ -463,46 +491,44 @@ public class App {
 //				}
 //			}
 //		});
-		btnSkapaProdukt.setBounds(18, 113, 122, 23);
-		panel_1.add(btnSkapaProdukt);
 		
-		btnndraProdukt = new JButton("\u00C4ndra produkt");
-		btnndraProdukt.setBounds(18, 214, 122, 23);
-		panel_1.add(btnndraProdukt);
+		btn_prodandra = new JButton("\u00C4ndra produkt");
+		btn_prodandra.setBounds(18, 214, 122, 23);
+		panel_1.add(btn_prodandra);
 		
-		button_2 = new JButton("Hitta produkt");
-		button_2.addActionListener(new ActionListener() {
+		btn_prodhitta = new JButton("Hitta produkt");
+		btn_prodhitta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String name = textPname.getText();
+				String name = textField_Pname.getText();
 				try {
 				Product newProduct = productReg.findProduct(name);
 				String info = newProduct.getName() + " " + newProduct.getCategory() + " " + newProduct.getPrice();
 				if (newProduct != null) {
 					textPane.setText(info);
-					textPname.setText("");
+					textField_Pname.setText("");
 				}	
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in namn");
 				}
 				}              
 			});
-		button_2.setBounds(18, 147, 122, 23);
-		panel_1.add(button_2);
+		btn_prodhitta.setBounds(18, 147, 122, 23);
+		panel_1.add(btn_prodhitta);
 		
-		btnTaBortProdukt = new JButton("Ta bort produkt");
-		btnTaBortProdukt.addActionListener(new ActionListener() {
+		btn_prodtabort = new JButton("Ta bort produkt");
+		btn_prodtabort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String name = textPname.getText();
+				String name = textField_Pname.getText();
 				try {
 					controller.removeProduct(name);
-					textPname.setText("");
+					textField_Pname.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in produktens namn.");
 				}
 			}
 		});
-		btnTaBortProdukt.setBounds(18, 181, 122, 23);
-		panel_1.add(btnTaBortProdukt);
+		btn_prodtabort.setBounds(18, 181, 122, 23);
+		panel_1.add(btn_prodtabort);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(495, 154, 260, 102);
