@@ -213,7 +213,7 @@ public class App {
 					lblResponse.setText("");
 			}
 				} catch (Exception e1) {
-					lblResponse.setText("Fel: Skriv in kundnummer på existerande kund.");
+					lblResponse.setText("Fel: Skriv in kundnummer.");
 			}
 			}
 		});
@@ -247,6 +247,8 @@ public class App {
 				String cNumber = textField_Cnumber.getText();
 				String cName = textField_Cname.getText();
 				String cAdress = textField_Cadress.getText();
+				Customer tmpCustomer = controller.findCustomer(cNumber);
+				if (tmpCustomer != null) {
 				try {
 				customerReg.changeCustomer(cNumber, cName, cAdress);
 				textPane.setText("Kund ändrad");
@@ -255,6 +257,9 @@ public class App {
 				textField_Cadress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
+				}	
+				} else {
+					lblResponse.setText("Den här kunden finns inte.");
 				}
 			}
 		});
