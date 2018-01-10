@@ -561,6 +561,7 @@ public class App {
 				textField_pName.setText("");
 				textField_pCategory.setText("");
 				textField_pPrice.setText("");
+				lblResponse.setText("");
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
 					textPane.setText("");
