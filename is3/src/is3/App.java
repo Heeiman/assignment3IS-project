@@ -178,6 +178,8 @@ public class App {
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in kundnummer, namn och adress.");
 				}
+				} else {
+					textPane.setText("Ett kundnummer måste vara 4 siffror långt");
 				}
 				} else {
 					textPane.setText("Fel: Kund existerar redan.");
