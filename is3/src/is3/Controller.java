@@ -110,7 +110,7 @@ public class Controller {
 	}
 
 	public void updateProduct(String name, String price, String category) {
-		products.changeProduct(name, category, price);
+		products.changeProduct(name, price, category);
 	}
 
 	public void addProduct(String name, String price, String category) {
