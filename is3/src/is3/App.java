@@ -561,10 +561,10 @@ public class App {
 				String orderId = textField_orderId.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
-					if (name.length() > 0 && number.length() > 0 && amount.length() > 0 ) {
+					if (name.length() > 0 && number.length() > 0) {
 						try {
-						controller.addProductOrderRow(name, number, amount, orderId, cNumber);
-					} catch (Exception e1) {
+						controller.addProductOrderRow(name, number, orderId, cNumber);
+					  } catch (Exception e1) {
 						lblResponse.setText("Error!! Error!!");
 						textPane.setText("");
 					}

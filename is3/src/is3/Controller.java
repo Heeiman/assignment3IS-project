@@ -118,7 +118,7 @@ public class Controller {
 		this.products.addProduct(newProduct);
 	}
 	
-	public void addProductOrderRow (String name, String number, String amount, String orderId, String cNumber) {
+	public void addProductOrderRow (String name, String number, String orderId, String cNumber) {
 		Product p = products.findProduct(name);
 		Customer c = customers.findCustomer(cNumber);
 		Order o = c.findOrder(orderId);
