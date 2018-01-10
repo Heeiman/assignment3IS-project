@@ -554,7 +554,10 @@ public class App {
 				String price = textField_pPrice.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
+					if (price.length() > 0 && price.length() < 99 ) {
 				try {
+				name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+				category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();	
 				controller.updateProduct(name, price, category);
 				textPane.setText("Produkt ändrad");
 				textField_cNumber.setText("");
@@ -562,7 +565,10 @@ public class App {
 				textField_cAdress.setText("");
 				} catch (Exception e1) {
 					textPane.setText("Fel: Skriv in produktnamn för att ändra kategori och pris");
-				}	
+				}
+					} else {
+						lblResponse.setText("Fel skriv in namn, kategori och pris.");
+					}
 				} else {
 					lblResponse.setText("Den här produkten finns inte.");
 				}
