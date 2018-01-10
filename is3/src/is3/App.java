@@ -316,7 +316,7 @@ public class App {
 				
 					
 			} else {
-				lblResponse.setText("Den här kunden finns inte.");
+				lblResponse.setText("Vänligen fyll i kundnummer.");
 			}
 			}
 		});
