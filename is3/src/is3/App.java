@@ -624,5 +624,5 @@ public class App {
 		frame.getContentPane().add(scrollPane);
 		
 	
-	}
+	} //HEJ HEJ
 }
