@@ -63,8 +63,5 @@ public class Product {
     public void addOrdRowP (OrderRow row) {
     	this.ordRowP.put(row.getNumber(), row);
     }
-    public Product () {
-    	
-    }
 	
 }

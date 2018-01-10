@@ -28,13 +28,18 @@ public class Test {
 		
 		System.out.println(kr.findCustomer("1"));
 		
+		ProductRegister pr = new ProductRegister();
 		Product p1 = new Product("Tåg", "Modelltåg", "500");
+		pr.addProduct(p1);
 		Item item = new Item("12345");
 		OrderRow row = new OrderRow("1","50");
 		p1.addItem(item);
 		p1.addOrdRowP(row);
 		System.out.println(p1.getName() + " " + p1.getCategory() + " " + p1.getPrice() + " " + item.getSerNumber() + " " + row.getNumber() + " " + row.getAmount());
 		System.out.println("Hell yeah motherduckers");
+		pr.printProducts();
+
+		
 
 		
 		

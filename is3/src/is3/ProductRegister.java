@@ -33,4 +33,7 @@ public class ProductRegister {
 			p.setPrice(price);
 		}
 	}
+	public void printProducts () {
+			productMap.forEach((key, value) -> System.out.println(key + ":" + value.getCategory() + " " + value.getPrice()));
+		}
 }
