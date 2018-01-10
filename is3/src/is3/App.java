@@ -387,6 +387,19 @@ public class App {
 		panel_1.add(lblSerienummer);
 		
 		button_extabort = new JButton("Ta bort");
+		button_extabort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String serNumber = textField_serienummer.getText();
+				String name = textField_Pname.getText();
+				try {
+				controller.removeItem(serNumber, name);
+				textField_serienummer.setText(" ");
+				lblResponse.setText("Exemplar borttaget");
+				} catch (Exception e1) {
+					lblResponse.setText("Fel: Skriv in serienummer/ skriv in namn på produkt");
+				}
+			} 
+		});
 		button_extabort.setBounds(352, 67, 86, 23);
 		panel_1.add(button_extabort);
 		
