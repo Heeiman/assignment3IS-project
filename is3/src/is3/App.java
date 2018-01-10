@@ -178,6 +178,7 @@ public class App {
 				textField_Cadress.setText("");
 				lblResponse.setText(" ");
 				
+				
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in kundnummer, namn eller adress.");
 					textPane.setText(" ");
