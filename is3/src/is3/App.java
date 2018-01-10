@@ -209,7 +209,7 @@ public class App {
 					textField_Cnumber.setText("");
 			}
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in kundnummer.");
+					lblResponse.setText("Fel: Skriv in kundnummer.");
 			}
 			}
 		});
