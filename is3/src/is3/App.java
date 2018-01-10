@@ -447,12 +447,16 @@ public class App {
 			public void actionPerformed(ActionEvent e) {
 				String serNumber = textField_serialnumber.getText();
 				String name = textField_pName.getText();
+				if (serNumber.length() > 0) {
 				try {
 				controller.removeItem(serNumber, name);
 				textField_serialnumber.setText(" ");
 				lblResponse.setText("Exemplar borttaget");
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in serienummer/ skriv in namn på produkt");
+				}
+				} else { lblResponse.setText("Exemplaret finns inte.");
+				
 				}
 			} 
 		});
@@ -466,7 +470,7 @@ public class App {
 				String serNumber = textField_serialnumber.getText();
 				try {
 				controller.addItemProduct(serNumber, name);
-				textPane.setText(name + serNumber);
+				textPane.setText("Namn: " + name + "\nSerienummer: " + serNumber);
 				textField_pName.setText("");
 				textField_serialnumber.setText("");
 				lblResponse.setText("Exemplar skapat.");
