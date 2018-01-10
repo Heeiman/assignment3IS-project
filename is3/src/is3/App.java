@@ -554,10 +554,8 @@ public class App {
 				String price = textField_pPrice.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
-					if (price.length() > 0 && price.length() < 99 ) {
+					if (price.length() > 0 && price.length() < 99 && category.length() > 0 && category.length() < 99 ) {
 				try {
-				name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
-				category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();	
 				controller.updateProduct(name, price, category);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
 				textField_pName.setText("");
