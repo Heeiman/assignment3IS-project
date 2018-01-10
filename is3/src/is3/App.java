@@ -250,7 +250,7 @@ public class App {
 				Customer tmpCustomer = controller.findCustomer(cNumber);
 				if (tmpCustomer != null) {
 				try {
-				customerReg.changeCustomer(cNumber, cName, cAdress);
+				controller.updateCustomerName(cNumber, cName, cAdress);
 				textPane.setText("Kund ändrad");
 				textField_cNumber.setText("");
 				textField_cName.setText("");
