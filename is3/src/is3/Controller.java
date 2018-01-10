@@ -114,7 +114,7 @@ public class Controller {
 	}
 
 	public void addProduct(String name, String price, String category) {
-		Product newProduct = new Product(name, category, price);
+		Product newProduct = new Product(name, price, category);
 		this.products.addProduct(newProduct);
 	}
 	
