@@ -213,7 +213,7 @@ public class App {
 					lblResponse.setText("");
 			}
 				} catch (Exception e1) {
-					lblResponse.setText("Fel: Skriv in kundnummer.");
+					lblResponse.setText("Fel: Skriv in kundnummer på existerande kund.");
 			}
 			}
 		});
