@@ -576,7 +576,7 @@ public class App {
 			public void actionPerformed(ActionEvent e) {
 				String name = textField_pName.getText();
 				try {
-				Product newProduct = productReg.findProduct(name);
+				Product newProduct = controller.findProduct(name);
 				String info = newProduct.getName() + " " + newProduct.getCategory() + " " + newProduct.getPrice();
 				if (newProduct != null) {
 					textPane.setText(info);
