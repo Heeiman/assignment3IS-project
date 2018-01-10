@@ -555,9 +555,14 @@ public class App {
 				String name = textField_pName.getText();
 				String category = textField_pCategory.getText();
 				String price = textField_pPrice.getText();
+				String number = textField_orderRadNummer.getText();
+				String amount = textField_orderRadAntal.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
-					if (price.length() > 0 && price.length() < 99 && category.length() > 0 && category.length() < 99 ) {
+					if (name.length() > 0 && number.length() > 0 && amount.length() > 0 ) {
+						controller.addProductOrderRow(name, number, amount);
+					}
+				else if (price.length() > 0 && price.length() < 99 && category.length() > 0 && category.length() < 99 ) {
 				try {
 				controller.updateProduct(name, price, category);
 				textPane.setText("Namn: " + name + "\nKategori: " + category + "\nPris: " + price);
