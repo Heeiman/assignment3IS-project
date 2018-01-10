@@ -126,7 +126,7 @@ public class Controller {
 		products.removeProduct(productName);
 	}
 
-	public void addItemProduct(String serNumber, String name, String orderId) {
+	public void addItemProduct(String serNumber, String name) {
 		Product newProduct = products.findProduct(name);
 		Item newItem = new Item(serNumber);
 		newProduct.addItem(newItem);
