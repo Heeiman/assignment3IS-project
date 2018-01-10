@@ -445,12 +445,19 @@ public class App {
 		btn_prodskapa = new JButton("Skapa produkt");
 		btn_prodskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+<<<<<<< HEAD
 				String name = textField_Pname.getText();
 				String category = textField_Pcategory.getText();
 				String price = textField_Pprice.getText();
 				String number = textField_orderradnummer.getText();
 				String amount = textField_orderradantal.getText();
+=======
+				String name = textPname.getText();
+				String category = textPcategory.getText();
+				String price = textPprice.getText();
+>>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 				try {
+<<<<<<< HEAD
 				controller.addProduct(name, price, category, number, amount);
 				textPane.setText("Produkt skapad.");
 				textField_Pname.setText("");
@@ -458,13 +465,47 @@ public class App {
 				textField_Pprice.setText("");
 				textField_orderradnummer.setText("");
 				textField_orderradantal.setText("");
+=======
+				controller.addProduct(name, category, price);
+				textPane.setText(name + " " + category + " " + price);
+				textPname.setText("");
+				textPcategory.setText("");
+				textPprice.setText("");
+>>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
+					textPane.setText("Fel: Skriv in namn, kategori och pris.");
 				}
 			}
 		});
+<<<<<<< HEAD
 		btn_prodskapa.setBounds(18, 113, 122, 23);
 		panel_1.add(btn_prodskapa);
+=======
+//		
+//		btnSkapaProdukt = new JButton("Skapa produkt");
+//		btnSkapaProdukt.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				String name = textPname.getText();
+//				String category = textPcategory.getText();
+//				String price = textPprice.getText();
+//				String number = textField_8.getText();
+//				String amount = textField_9.getText();
+//				try {
+//				controller.addProduct(name, price, category, number, amount);
+//				textPane.setText("Produkt skapad.");
+//				textPname.setText("");
+//				textPcategory.setText("");
+//				textPprice.setText("");
+//				textField_8.setText("");
+//				textField_9.setText("");
+//				} catch (Exception e1) {
+//					textPane.setText("Fel: Skriv in namn, kategori, nummer och antal");
+//				}
+//			}
+//		});
+		btnSkapaProdukt.setBounds(18, 113, 122, 23);
+		panel_1.add(btnSkapaProdukt);
+>>>>>>> branch 'master' of https://github.com/Heeiman/assignment3IS-project
 		
 		btn_prodandra = new JButton("\u00C4ndra produkt");
 		btn_prodandra.setBounds(18, 214, 122, 23);

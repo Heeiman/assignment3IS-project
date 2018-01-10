@@ -114,7 +114,12 @@ public class Controller {
 		products.changeProduct(name, category, price);
 	}
 
-	public void addProduct(String name, String price, String category, String number, String amount) {
+	public void addProduct(String name, String price, String category) {
+		Product newProduct = new Product(name, category, price);
+		this.products.addProduct(newProduct);
+	}
+	
+	public void addProductOrderRow (String name, String price, String category, String number, String amount) {
 		Product newProduct = new Product(name, category, price);
 		this.products.addProduct(newProduct);
 		OrderRow row = new OrderRow(number, amount);
