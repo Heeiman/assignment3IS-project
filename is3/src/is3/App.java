@@ -169,6 +169,8 @@ public class App {
 				if (tmpCustomer == null) {
 				if (textField_Cnumber.getText().length() == 4) {	
 				try {	
+				cName = cName.substring(0,1).toUpperCase() + cName.substring(1).toLowerCase();
+				cAdress = cAdress.substring(0,1).toUpperCase() + cAdress.substring(1).toLowerCase();
 				controller.addCustomer(cNumber, cName, cAdress);
 				textPane.setText(cNumber + " " + cName + " " + cAdress);
 				textField_Cnumber.setText("");
