@@ -585,13 +585,13 @@ public class App {
 				String name = textField_pName.getText();
 				try {
 				Product newProduct = controller.findProduct(name);
-				String info = newProduct.getName() + " " + newProduct.getCategory() + " " + newProduct.getPrice();
+				String info = "Namn: " + newProduct.getName() + "\nKategori: " + newProduct.getCategory() + "\nPris: " + newProduct.getPrice();
 				if (newProduct != null) {
 					textPane.setText(info);
 					textField_pName.setText("");
 				}	
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in namn");
+					textPane.setText("Fel: Skriv in namnet på en existerande produkt.");
 				}
 				}              
 			});
