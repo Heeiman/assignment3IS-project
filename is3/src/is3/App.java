@@ -182,9 +182,15 @@ public class App {
 				}
 				} else {
 					textPane.setText("Ett kundnummer måste vara 4 siffror långt");
+					textField_Cnumber.setText("");
+					textField_Cname.setText("");
+					textField_Cadress.setText("");
 				}
 				} else {
 					textPane.setText("Fel: Kund existerar redan.");
+					textField_Cnumber.setText("");
+					textField_Cname.setText("");
+					textField_Cadress.setText("");
 				}
 			}
 		});
