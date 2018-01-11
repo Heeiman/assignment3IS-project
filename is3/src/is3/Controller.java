@@ -189,13 +189,13 @@ public class Controller {
 //                                }
 //                public Owner find(String nr) {
 //                      return this.owners.get(nr);
-   public int getOrderProductPrice (String OrderId, String cNumber) {
+   public double getOrderProductPrice (String OrderId, String cNumber) {
 	   Order o = this.findorder(OrderId, cNumber);
 	   if (o != null) {
 		   for (OrderRow or: o.getOrdRowList().values()) {
 			  String price = or.getProduct().getPrice();
 			  String amount = or.getAmount();
-			  int sum = Integer.parseInt(price) * Integer.parseInt(amount);
+			  double sum = Double.parseDouble(price) * Double.parseDouble(amount);
 			  return sum;
 		   }
 	   }
