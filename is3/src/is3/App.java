@@ -426,6 +426,23 @@ public class App {
 		lblOrderrad.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		JButton btnkundvisaordrar = new JButton("Visa kunds ordrar");
+		btnkundvisaordrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String cNumber = textField_cNumber.getText();
+				try {
+					Customer tmpCustomer = controller.findCustomer(cNumber);
+					String info = controller.printOrders(cNumber);
+					if (tmpCustomer != null) {
+						textPane.setText(info);
+						lblResponse.setText("");
+					}
+
+				} catch (Exception e1) {
+					lblResponse.setText("Fel: Skriv in kundnummer.");
+					textPane.setText("");
+				}
+			}
+		});
 		btnkundvisaordrar.setBounds(22, 249, 143, 23);
 		panel.add(btnkundvisaordrar);
 
