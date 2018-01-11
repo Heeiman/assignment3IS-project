@@ -44,7 +44,7 @@ public class OrderRow {
 		return this.product;
 	}
 
-	public void removeProduct(String name) {
-		this.removeProduct(name);
+	public void removeProduct() {
+		this.product = null;
 	}
 }
