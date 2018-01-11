@@ -371,7 +371,7 @@ public class App {
 				if (customer != null) {
 					if (textField_orderRadNummer.getText().length() == 4) {
 						try {
-							controller.addOrderOrderRow(number, amount, orderId, cNumber);
+							controller.addOrderOrderRow(cNumber, amount, orderId, number);
 							lblResponse.setText("Orderrad skapad.");
 							textPane.setText("Kundnummer: " + cNumber + "\nOrderID: " + orderId + "\nOrderradnummer: " + number);
 							textField_orderRadAntal.setText("");
