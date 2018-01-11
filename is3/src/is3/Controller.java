@@ -98,7 +98,7 @@ public class Controller {
 		o.addOrderRow(oRow);
 		oRow.setOrder(o);
 		}
-
+//Hej
 	public void removeOrderRow(String cNumber, String orderId, String number) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
 		if (tmpCustomer != null) {
