@@ -683,6 +683,12 @@ public class App {
 				String orderId = textField_orderId.getText();
 				String name = textField_pName.getText();
 				if (name.length() > 0 && number.length() > 0) {
+					  Product p = productReg.findProduct(name);
+	                    Customer c = customerReg.findCustomer(cNumber);
+	                    Order o = c.findOrder(orderId);
+	                    OrderRow row = o.findOrderRow(number);
+	                    String test = row.getAmount();
+	                    if (p.getItemList().size() > Integer.parseInt(test)) {
 					try {
 						controller.addProductOrderRow(name, number, orderId, cNumber);
 						textPane.setText("Produkt tillagd till orderrad.");
@@ -694,6 +700,10 @@ public class App {
 						textPane.setText("");
 					}
 				}
+	                    else {
+	                        textPane.setText("Otillräckligt med exemplar i lager.");
+	                    }
+			}
 			}
 		});
 		btnLggTillProdukt.setBounds(10, 215, 190, 23);
