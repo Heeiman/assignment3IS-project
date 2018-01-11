@@ -650,7 +650,7 @@ public class App {
 		btnSummaProdukter.setBounds(150, 181, 122, 23);
 		panel_1.add(btnSummaProdukter);
 		
-		JButton btnLggTillProdukt = new JButton("L\u00E4gg till produkt");
+		JButton btnLggTillProdukt = new JButton("L\u00E4gg till produkt orderrad");
 		btnLggTillProdukt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String number = textField_orderRadNummer.getText();
@@ -671,10 +671,24 @@ public class App {
 		btnLggTillProdukt.setBounds(150, 113, 122, 23);
 		panel_1.add(btnLggTillProdukt);
 		
-		JButton btnTaBortProdukt = new JButton("Ta bort produkt");
+		JButton btnTaBortProdukt = new JButton("Ta bort produkt orderrad");
 		btnTaBortProdukt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				String number = textField_orderRadNummer.getText();
+				String amount = textField_orderRadAntal.getText();
+				String cNumber = textField_cNumber.getText();
+				String orderId = textField_orderId.getText();
+				String name = textField_pName.getText();
+				if (name.length() > 0 && number.length() > 0) {
+					try {
+						controller.removeProductOrderRow(name, number, orderId, cNumber);;
+						textPane.setText("Produkt borttagen från orderrad.");
+					} catch (Exception e1) {
+						lblResponse.setText("Produkt ej borttagen.");
+					}
+				}
+			}
+		});
 			}
 		});
 		btnTaBortProdukt.setBounds(150, 147, 122, 23);
