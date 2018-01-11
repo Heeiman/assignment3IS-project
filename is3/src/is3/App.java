@@ -207,6 +207,7 @@ public class App {
 						textPane.setText(info);
 						lblResponse.setText("");
 					}
+					
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in kundnummer.");
 					textPane.setText("");
