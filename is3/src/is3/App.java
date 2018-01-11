@@ -654,8 +654,24 @@ public class App {
 				textPane.setText(info);
 			}
 		});
-		btnSummaProdukter.setBounds(18, 248, 122, 23);
+		btnSummaProdukter.setBounds(150, 181, 122, 23);
 		panel_1.add(btnSummaProdukter);
+		
+		JButton btnLggTillProdukt = new JButton("L\u00E4gg till produkt");
+		btnLggTillProdukt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnLggTillProdukt.setBounds(150, 113, 122, 23);
+		panel_1.add(btnLggTillProdukt);
+		
+		JButton btnTaBortProdukt = new JButton("Ta bort produkt");
+		btnTaBortProdukt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnTaBortProdukt.setBounds(150, 147, 122, 23);
+		panel_1.add(btnTaBortProdukt);
 		
 
 		JScrollPane scrollPane = new JScrollPane();
