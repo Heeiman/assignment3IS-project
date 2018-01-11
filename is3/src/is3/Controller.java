@@ -193,7 +193,7 @@ public class Controller {
 	   Order o = this.findorder(OrderId, cNumber);
 	   if (o != null) {
 		   for (OrderRow or: o.getOrdRowList().values()) {
-			   System.out.println(or.getProduct().getPrice());
+			  return or.getProduct().getPrice();
 		   }
 	   }
 	   return null;
