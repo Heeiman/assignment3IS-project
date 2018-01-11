@@ -25,7 +25,6 @@ public class Controller {
 		Order order = new Order(orderID, delDate);
 		newCustomer.addOrder(order);
 		order.setCustomer(newCustomer);
-		customers.addCustomer(newCustomer);
 	}
 
 	public void removeCustomer(String cNumberRemove) {
