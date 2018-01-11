@@ -189,14 +189,19 @@ public class Controller {
 //                                }
 //                public Owner find(String nr) {
 //                      return this.owners.get(nr);
-   public String getOrderProductPrice (String OrderId, String cNumber) {
+   public int getOrderProductPrice (String OrderId, String cNumber) {
 	   Order o = this.findorder(OrderId, cNumber);
 	   if (o != null) {
 		   for (OrderRow or: o.getOrdRowList().values()) {
-			  return or.getProduct().getPrice();
+			  String test = or.getProduct().getPrice();
+			  String test2 = or.getAmount();
+			  int test3 = Integer.parseInt(test);
+			  int test4 = Integer.parseInt(test2);
+			  int test5 = (test3 * test4);
+			  return test5;
 		   }
 	   }
-	   return null;
+	return 0;
    }
 	 public HashMap<String, OrderRow> showOrderRows(String orderId, String cNumber) {
 	        Order newOrder;
