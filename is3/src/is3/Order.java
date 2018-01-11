@@ -50,7 +50,6 @@ public class Order {
 		this.ordRowList.put(aRow.getNumber(), aRow);
 	}
 	
-
 	public OrderRow findOrderRow(String number) {
 		for (OrderRow aRow : this.ordRowList.values()) {
 			if (aRow.getNumber().equals(number)) {

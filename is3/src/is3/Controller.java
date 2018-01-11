@@ -2,7 +2,6 @@ package is3;
 
 import javax.swing.JFrame;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class Controller {
 	CustomerRegister customers;
@@ -93,17 +92,13 @@ public class Controller {
 		}
 	}
 
-	public void addOrderRow(String cNumber, String number, String amount, String orderId) {
+	public void addOrderOrderRow(String cNumber, String number, String amount, String orderId) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
-		if (tmpCustomer != null) {
-			Order newOrder = tmpCustomer.findOrder(orderId);
-			if (newOrder != null) {
-				OrderRow newOrderRow = new OrderRow(number, amount);
-				newOrder.addOrderRow(newOrderRow);
-				newOrderRow.setOrder(newOrder);
-			}
+		Order o = tmpCustomer.findOrder(orderId);
+		OrderRow oRow = new OrderRow(number, amount);
+		o.addOrderRow(oRow);
+		oRow.setOrder(o);
 		}
-	}
 
 	public void removeOrderRow(String cNumber, String orderId, String number) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
