@@ -565,8 +565,12 @@ public class App {
 				Product p = controller.findProduct(name);
 				if (p != null) {
 					if (name.length() > 0 && number.length() > 0) {
-						controller.addProductOrderRow(name, number, orderId, cNumber);
-						textPane.setText("Produkt tillagd till orderrad.");
+						try {
+							controller.addProductOrderRow(name, number, orderId, cNumber);
+							textPane.setText("Produkt tillagd till orderrad.");
+						} catch (Exception e1) {
+							lblResponse.setText("Produkt ej tillagd");
+						}
 					} else if (price.length() > 0 && price.length() < 99 && category.length() > 0
 							&& category.length() < 99) {
 						try {
