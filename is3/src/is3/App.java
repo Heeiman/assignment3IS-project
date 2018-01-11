@@ -425,7 +425,7 @@ public class App {
 		panel.add(lblOrderrad);
 		lblOrderrad.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
-		JButton btnkundvisaordrar = new JButton("Visa kunds ordrar");
+		JButton btnkundvisaordrar = new JButton("Visa kundens ordrar");
 		btnkundvisaordrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textField_cNumber.getText();
