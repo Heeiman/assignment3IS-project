@@ -195,10 +195,10 @@ public class Controller {
 		   for (OrderRow or: o.getOrdRowList().values()) {
 			  String test = or.getProduct().getPrice();
 			  String test2 = or.getAmount();
-			  int test3 = Integer.parseInt(test);
-			  int test4 = Integer.parseInt(test2);
-			  int test5 = (test3 * test4);
-			  return test5;
+			  int test3 = (Integer.parseInt(test) * Integer.parseInt(test2));
+			  //int test4 = Integer.parseInt(test2);
+			  //int test5 = (test3 * test4);
+			  return test3;
 		   }
 	   }
 	return 0;

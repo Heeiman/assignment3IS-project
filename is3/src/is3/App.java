@@ -643,8 +643,13 @@ public class App {
 				String cNumber = textField_cNumber.getText();
 				String OrderId = textField_orderId.getText();
 				String pName = textField_pName.getText();
+				try {
 				int info = controller.getOrderProductPrice(OrderId, cNumber);
 				textPane.setText(String.valueOf(info));
+				} catch (Exception e1) {
+					textPane.setText("Produkt finns inte.");
+					
+				}
 			}
 		});
 		btnSummaProdukter.setBounds(150, 181, 122, 23);
