@@ -240,13 +240,14 @@ public class Controller {
 //	        }
 //	        return null;
 //	    }
-	public void printOrders (String cNumber){
+	public String printOrders (String cNumber){
 	      Customer c = this.findCustomer(cNumber);
 	       if (c != null) {
 	                for (Order o: c.getOrderList().values()){
-	                       System.out.print (o.getOrderId() + " " + o.getDelDate());
+	                       return o.getOrderId() + " " + o.getDelDate();
 	                }
 	       }
+	       return null;
 	}
 
 	
