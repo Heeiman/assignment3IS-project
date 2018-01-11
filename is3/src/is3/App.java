@@ -578,7 +578,6 @@ public class App {
 							textPane.setText("");
 						}
 
-
 					} else {
 						lblResponse.setText("Fel: Skriv in namn, kategori och pris.");
 						textPane.setText("");
@@ -700,27 +699,26 @@ public class App {
 				String orderId = textField_orderId.getText();
 				String name = textField_pName.getText();
 				if (name.length() > 0 && number.length() > 0) {
-					  Product p = productReg.findProduct(name);
-	                    Customer c = customerReg.findCustomer(cNumber);
-	                    Order o = c.findOrder(orderId);
-	                    OrderRow row = o.findOrderRow(number);
-	                    String test = row.getAmount();
-	                    if (p.getItemList().size() > Integer.parseInt(test)) {
-					try {
-						controller.addProductOrderRow(name, number, orderId, cNumber);
-						textPane.setText("Produkt tillagd till orderrad.");
-						textField_pCategory.setText("");
-						textField_pPrice.setText("");
-						lblResponse.setText("");
-					} catch (Exception e1) {
-						lblResponse.setText("Produkt ej tillagd.");
-						textPane.setText("");
+					Product p = productReg.findProduct(name);
+					Customer c = customerReg.findCustomer(cNumber);
+					Order o = c.findOrder(orderId);
+					OrderRow row = o.findOrderRow(number);
+					String test = row.getAmount();
+					if (p.getItemList().size() >= Integer.parseInt(test)) {
+						try {
+							controller.addProductOrderRow(name, number, orderId, cNumber);
+							textPane.setText("Produkt tillagd till orderrad.");
+							textField_pCategory.setText("");
+							textField_pPrice.setText("");
+							lblResponse.setText("");
+						} catch (Exception e1) {
+							lblResponse.setText("Produkt ej tillagd.");
+							textPane.setText("");
+						}
+					} else {
+						textPane.setText("Otillräckligt med exemplar i lager.");
 					}
 				}
-	                    else {
-	                        textPane.setText("Otillräckligt med exemplar i lager.");
-	                    }
-			}
 			}
 		});
 		btnLggTillProdukt.setBounds(10, 215, 190, 23);
