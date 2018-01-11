@@ -689,8 +689,7 @@ public class App {
 				}
 			}
 		});
-			}
-		});
+
 		btnTaBortProdukt.setBounds(150, 147, 122, 23);
 		panel_1.add(btnTaBortProdukt);
 		
