@@ -654,7 +654,6 @@ public class App {
 		btnLggTillProdukt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String number = textField_orderRadNummer.getText();
-				String amount = textField_orderRadAntal.getText();
 				String cNumber = textField_cNumber.getText();
 				String orderId = textField_orderId.getText();
 				String name = textField_pName.getText();
@@ -675,7 +674,6 @@ public class App {
 		btnTaBortProdukt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String number = textField_orderRadNummer.getText();
-				String amount = textField_orderRadAntal.getText();
 				String cNumber = textField_cNumber.getText();
 				String orderId = textField_orderId.getText();
 				String name = textField_pName.getText();
