@@ -156,7 +156,7 @@ public class Controller {
 					OrderRow row = o.findOrderRow(number);
 					if (row != null) {
 						p.removeOrdRowP(number);
-						row.removeProduct(p);
+						row.removeProduct();
 					}
 				}
 			}
