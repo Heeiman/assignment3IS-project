@@ -2,6 +2,7 @@ package is3;
 
 import javax.swing.JFrame;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Controller {
 	CustomerRegister customers;
@@ -75,6 +76,15 @@ public class Controller {
 		}
 		return null;
 	}
+
+	 public HashMap<String, Order> showCustomerOrder (String orderId, String cNumber) {
+	        Customer newCustomer;
+	        newCustomer = this.findCustomer(cNumber);
+	        if (newCustomer != null) {
+	            return newCustomer.getOrderList();
+	        }
+	        return null;
+	    }
 
 	public void removeOrder(String cNumber, String orderId) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
