@@ -163,7 +163,7 @@ public class Controller {
 //                                }
 //                public Owner find(String nr) {
 //                      return this.owners.get(nr);
-   public String getOrderProductPrice (String OrderId, String pName, String cNumber) {
+   public String getOrderProductPrice (String OrderId, String cNumber) {
 	   Order o = this.findorder(OrderId, cNumber);
 	   if (o != null) {
 		   for (OrderRow or: o.getOrdRowList().values()) {

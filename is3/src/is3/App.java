@@ -640,7 +640,8 @@ public class App {
 				String cNumber = textField_cNumber.getText();
 				String OrderId = textField_orderId.getText();
 				String pName = textField_pName.getText();
-				//LinkedList<OrderRow> sum_list = controller.printSumStuff(OrderId, cNumber, pName);
+				String info = controller.getOrderProductPrice(OrderId, cNumber);
+				textPane.setText(info);
 			}
 		});
 		btnSummaProdukter.setBounds(18, 248, 122, 23);
