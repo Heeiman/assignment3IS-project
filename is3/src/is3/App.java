@@ -4,20 +4,15 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.JTable;
 import javax.swing.JTextPane;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import java.awt.event.ActionListener;
-import java.util.LinkedList;
 import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
 
 public class App {
 
@@ -173,7 +168,6 @@ public class App {
 							controller.addCustomer(cNumber, cName, cAdress);
 							textPane.setText(
 									"Kundnummer: " + cNumber + "\nKundnamn: " + cName + "\nAdress: " + cAdress);
-							textField_cNumber.setText("");
 							textField_cName.setText("");
 							textField_cAdress.setText("");
 							lblResponse.setText("");
@@ -206,15 +200,16 @@ public class App {
 				String cNumber = textField_cNumber.getText();
 				try {
 					Customer tmpCustomer = controller.findCustomer(cNumber);
-					String info = tmpCustomer.getcNumber() + " " + tmpCustomer.getName() + " "
-							+ tmpCustomer.getcAdress();
+					String info =("Kundnummer: " + tmpCustomer.getcNumber() + "\nNamn: " + 
+					tmpCustomer.getName() + "\nAddress: " + tmpCustomer.getcAdress());
+					controller.showCustomerOrders(cNumber, orderId)
 					if (tmpCustomer != null) {
 						textPane.setText(info);
-						textField_cNumber.setText("");
 						lblResponse.setText("");
 					}
 				} catch (Exception e1) {
 					lblResponse.setText("Fel: Skriv in kundnummer.");
+					textPane.setText("");
 				}
 			}
 		});
@@ -231,11 +226,14 @@ public class App {
 						controller.removeCustomer(cNumber);
 						lblResponse.setText("Kund borttagen");
 						textField_cNumber.setText("");
+						textPane.setText("");
 					} catch (Exception e1) {
 						lblResponse.setText("Fel: Skriv in kundnummer.");
+						textPane.setText("");
 					}
 				} else {
 					lblResponse.setText("Den här kunden finns inte.");
+					textPane.setText("");
 				}
 			}
 		});
@@ -253,14 +251,15 @@ public class App {
 					try {
 						controller.updateCustomerName(cNumber, cName, cAdress);
 						textPane.setText("Kund ändrad");
-						textField_cNumber.setText("");
 						textField_cName.setText("");
 						textField_cAdress.setText("");
 					} catch (Exception e1) {
-						textPane.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
-					}
+						lblResponse.setText("Fel: Skriv in kundnummer för att ändra namn och adress.");
+						textPane.setText("");
+						}
 				} else {
 					lblResponse.setText("Den här kunden finns inte.");
+					textPane.setText("");
 				}
 			}
 		});
@@ -297,26 +296,27 @@ public class App {
 				String orderId = textField_orderId.getText();
 				String delDate = textField_orderLevDatum.getText();
 				Customer customer = controller.findCustomer(cNumber);
-				String info = cNumber + " " + orderId + " " + delDate;
+				String info =("Kundnummer: " + cNumber + "\nOrderID: " + orderId + "\nLeveransdatum: " + delDate);
 				if (customer != null) {
 					if (textField_orderId.getText().length() == 4 && textField_orderLevDatum.getText().length() == 6) {
 						try {
 							textPane.setText(info);
 							controller.addCustomerOrder(orderId, delDate, cNumber);
 							lblResponse.setText("Order Skapad.");
-							textField_cNumber.setText("");
-							textField_orderId.setText("");
 							textField_orderLevDatum.setText("");
 
 						} catch (Exception e1) {
-							textPane.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
+							lblResponse.setText("Fel: Skriv in kundnummer, orderID och leveransdatum.");
+							textPane.setText("");
 						}
 					} else {
 						lblResponse.setText("Ett orderid måste vara 4-siffrigt och ett datum skrivs ååmmdd.");
+						textPane.setText("");
 					}
 
 				} else {
 					lblResponse.setText("Vänligen fyll i kundnummer.");
+					textPane.setText("");
 				}
 			}
 		});
