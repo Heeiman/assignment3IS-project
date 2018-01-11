@@ -146,6 +146,22 @@ public class Controller {
 			}
 		}
 	}
+	public void removeProductOrderRow(String name, String number, String orderId, String cNumber) {
+		Product p = products.findProduct(name);
+		if (p != null) {
+			Customer c = customers.findCustomer(cNumber);
+			if ( c != null) {
+				Order o = c.findOrder(orderId);
+				if ( c != null) {
+					OrderRow row = o.findOrderRow(number);
+					if (row != null) {
+						p.removeOrdRowP(number);
+						row.removeProduct(p);
+					}
+				}
+			}
+		}
+	}
 	
 	public void printStuff (String cNumber, String orderId, String number, String productName) {
 		Customer c = customers.findCustomer(cNumber);
