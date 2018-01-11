@@ -3,7 +3,7 @@ package is3;
 import javax.swing.JFrame;
 
 import java.util.HashMap;
-import java.util.LinkedList;
+
 
 public class Controller {
 	CustomerRegister customers;
@@ -148,6 +148,32 @@ public class Controller {
 		
 	}
 	}
+//	reg.getOwnerCarBrand("Owner", "DSA332")
+//    for (owner i : reg.getOwners().values()) {
+//           System.out.println(owner.getName());
+//           for (car bil: owner) {
+//                    System.out.println(bil.getRegNbr()+ " " + bil.getBrand());
+//                    
+//                    public String getOwnerCarBrand (String ownerNbr, String regNbr){
+//                        owner o = this.find (ownerNbr);
+//                        if (o != null){
+//                                car bil = o.find (regNbr);
+//                                if (bil != null) {
+//                                        return bil.getBrand
+//                                }
+//                public Owner find(String nr) {
+//                      return this.owners.get(nr);
+   public String getOrderProductPrice (String OrderId, String pName, String cNumber) {
+	   Order o = this.findorder(OrderId, cNumber);
+	   if (o != null) {
+		   for (OrderRow or: o.getOrdRowList().values()) {
+			   System.out.println(or.getProduct().getPrice());
+		   }
+	   }
+	   return null;
+   }
+ 
+   
 //	public void printSum (String orderId, String cNumber) {
 //		Order o = this.findorder(orderId, cNumber);
 //		if (o != null) {

@@ -46,8 +46,15 @@ public class ProductRegister {
 	public void getPrice () {
 		productMap.forEach((key, value) -> value.getPrice().toString());
 	}
-
-	
+//	public String getProductPrice (String pName, String regNbr){
+//        Product p = this.findProduct(pName);
+//        if (p != null){
+//                car bil = o.find (regNbr);
+//                if (bil != null) {
+//                        return bil.getBrand
+//                }
+//
+//	
 //	public void printProduct (String name){
 //	      Product p = this.findProduct(name);
 //	       if (p != null) {
