@@ -516,6 +516,7 @@ public class App {
 		textField_pPrice.setBounds(99, 85, 86, 20);
 		panel_1.add(textField_pPrice);
 		textField_pPrice.setColumns(10);
+		
 
 		btn_prodskapa = new JButton("Skapa produkt");
 		btn_prodskapa.addActionListener(new ActionListener() {
