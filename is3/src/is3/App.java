@@ -566,6 +566,7 @@ public class App {
 				if (p != null) {
 					if (name.length() > 0 && number.length() > 0) {
 						controller.addProductOrderRow(name, number, orderId, cNumber);
+						textPane.setText("Produkt tillagd till orderrad.");
 					} else if (price.length() > 0 && price.length() < 99 && category.length() > 0
 							&& category.length() < 99) {
 						try {
