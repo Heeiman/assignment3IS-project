@@ -193,12 +193,10 @@ public class Controller {
 	   Order o = this.findorder(OrderId, cNumber);
 	   if (o != null) {
 		   for (OrderRow or: o.getOrdRowList().values()) {
-			  String test = or.getProduct().getPrice();
-			  String test2 = or.getAmount();
-			  int test3 = Integer.parseInt(test);
-			  int test4 = Integer.parseInt(test2);
-			  int test5 = (test3 * test4);
-			  return test5;
+			  String price = or.getProduct().getPrice();
+			  String amount = or.getAmount();
+			  int sum = Integer.parseInt(price) * Integer.parseInt(amount);
+			  return sum;
 		   }
 	   }
 	return 0;
