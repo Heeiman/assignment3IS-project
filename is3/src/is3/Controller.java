@@ -1,9 +1,7 @@
 package is3;
 
 import javax.swing.JFrame;
-
 import java.util.HashMap;
-
 
 public class Controller {
 	CustomerRegister customers;
@@ -172,6 +170,14 @@ public class Controller {
 	   }
 	   return null;
    }
+	 public HashMap<String, OrderRow> showOrderRows(String orderId, String cNumber) {
+	        Order newOrder;
+	        newOrder = this.findorder(orderId, cNumber);
+	        if (newOrder != null) {
+	            return newOrder.getOrdRowList();
+	        }
+	        return null;
+	    }
  
    
 //	public void printSum (String orderId, String cNumber) {
