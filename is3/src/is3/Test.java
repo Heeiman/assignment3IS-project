@@ -46,7 +46,11 @@ public class Test {
 		kr.printOrders("2");
 		System.out.println();
 		o.printOrderRows();
-
+		System.out.println(o.getOrderId() + " " + o.getDelDate());
+		System.out.println();
+		k2.findOrder("1111");
+		Order oTest = k2.findOrder("1111");
+		System.out.println(oTest.getOrderId() + " " + oTest.getDelDate());
 		
 
 		

@@ -49,6 +49,7 @@ public class Order {
 	public void addOrderRow(OrderRow aRow) {
 		this.ordRowList.put(aRow.getNumber(), aRow);
 	}
+	
 
 	public OrderRow findOrderRow(String number) {
 		for (OrderRow aRow : this.ordRowList.values()) {
