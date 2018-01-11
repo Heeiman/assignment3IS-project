@@ -154,7 +154,7 @@ public class Controller {
 			Customer c = customers.findCustomer(cNumber);
 			if ( c != null) {
 				Order o = c.findOrder(orderId);
-				if ( c != null) {
+				if ( o != null) {
 					OrderRow row = o.findOrderRow(number);
 					if (row != null) {
 						p.removeOrdRowP(number);
@@ -197,7 +197,7 @@ public class Controller {
 		   double amount = o.getOrdRowList().size();
 		   for (OrderRow or: o.getOrdRowList().values()) {
 			  String price = or.getProduct().getPrice();
-			  double sum = Double.parseDouble(price) * amount;
+			  double sum = Double.parseDouble(price) * (amount);
 			  return sum;
 		   }
 	   }
