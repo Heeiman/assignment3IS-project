@@ -48,12 +48,13 @@ public class CustomerRegister {
 
 		}
 	}
-	public void printOrders (String cNumber){
-	      Customer c = this.findCustomer(cNumber);
-	       if (c != null) {
-	                for (Order o: c.getOrderList().values()){
-	                       System.out.print (o.getOrderId() + " " + o.getDelDate());
-	                }
-	       }
+
+	public void printOrders(String cNumber) {
+		Customer c = this.findCustomer(cNumber);
+		if (c != null) {
+			for (Order o : c.getOrderList().values()) {
+				System.out.print(o.getOrderId() + " " + o.getDelDate());
+			}
+		}
 	}
 }

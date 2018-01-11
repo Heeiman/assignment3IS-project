@@ -2,7 +2,6 @@ package is3;
 
 import javax.swing.JFrame;
 
-import java.util.Collections;
 import java.util.HashMap;
 
 public class Controller {
@@ -56,8 +55,8 @@ public class Controller {
 		}
 		return null;
 	}
-	
-	public Order findorder (String orderId, String cNumber) {
+
+	public Order findorder(String orderId, String cNumber) {
 		Customer c = customers.findCustomer(cNumber);
 		Order newOrder = c.findOrder(orderId);
 		if (newOrder != null) {
@@ -77,14 +76,14 @@ public class Controller {
 		return null;
 	}
 
-	 public HashMap<String, Order> showCustomerOrder (String cNumber) {
-	        Customer newCustomer;
-	        newCustomer = this.findCustomer(cNumber);
-	        if (newCustomer != null) {
-	            return newCustomer.getOrderList();
-	        }
-	        return null;
-	    }
+	public HashMap<String, Order> showCustomerOrder(String cNumber) {
+		Customer newCustomer;
+		newCustomer = this.findCustomer(cNumber);
+		if (newCustomer != null) {
+			return newCustomer.getOrderList();
+		}
+		return null;
+	}
 
 	public void removeOrder(String cNumber, String orderId) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
@@ -99,8 +98,8 @@ public class Controller {
 		OrderRow oRow = new OrderRow(number, amount);
 		o.addOrderRow(oRow);
 		oRow.setOrder(o);
-		}
-//Hej
+	}
+
 	public void removeOrderRow(String cNumber, String orderId, String number) {
 		Customer tmpCustomer = customers.findCustomer(cNumber);
 		if (tmpCustomer != null) {
@@ -136,9 +135,9 @@ public class Controller {
 		Product p = products.findProduct(name);
 		if (p != null) {
 			Customer c = customers.findCustomer(cNumber);
-			if ( c != null) {
+			if (c != null) {
 				Order o = c.findOrder(orderId);
-				if ( o != null) {
+				if (o != null) {
 					OrderRow row = o.findOrderRow(number);
 					if (row != null) {
 						p.addOrdRowP(row);
@@ -148,13 +147,14 @@ public class Controller {
 			}
 		}
 	}
+
 	public void removeProductOrderRow(String name, String number, String orderId, String cNumber) {
 		Product p = products.findProduct(name);
 		if (p != null) {
 			Customer c = customers.findCustomer(cNumber);
-			if ( c != null) {
+			if (c != null) {
 				Order o = c.findOrder(orderId);
-				if ( o != null) {
+				if (o != null) {
 					OrderRow row = o.findOrderRow(number);
 					if (row != null) {
 						p.removeOrdRowP(number);
@@ -164,95 +164,50 @@ public class Controller {
 			}
 		}
 	}
-	
-	public String printStuff (String cNumber, String orderId, String number, String productName) {
+
+	public String printStuff(String cNumber, String orderId, String number, String productName) {
 		Customer c = customers.findCustomer(cNumber);
 		Order o = c.findOrder(orderId);
 		if (c != null) {
-			for (OrderRow or: o.getOrdRowList().values()) {
+			for (OrderRow or : o.getOrdRowList().values()) {
 				return or.getAmount();
-		}	
-		
-	}
+			}
+
+		}
 		return null;
 	}
-//	reg.getOwnerCarBrand("Owner", "DSA332")
-//    for (owner i : reg.getOwners().values()) {
-//           System.out.println(owner.getName());
-//           for (car bil: owner) {
-//                    System.out.println(bil.getRegNbr()+ " " + bil.getBrand());
-//                    
-//                    public String getOwnerCarBrand (String ownerNbr, String regNbr){
-//                        owner o = this.find (ownerNbr);
-//                        if (o != null){
-//                                car bil = o.find (regNbr);
-//                                if (bil != null) {
-//                                        return bil.getBrand
-//                                }
-//                public Owner find(String nr) {
-//                      return this.owners.get(nr);
-	public double getOrderProductPrice (String OrderId, String cNumber) {
-	       Order o = this.findorder(OrderId, cNumber);
-	       if (o != null) {
-	           double amount = o.getOrdRowList().size();
-	           for (OrderRow or: o.getOrdRowList().values()) {
-	              String price = or.getProduct().getPrice();
-	              double sum = Double.parseDouble(price) * (amount);
-	              return sum;
-	           }
-	       }
-	    return 0;
-	   }
-	 public HashMap<String, OrderRow> showOrderRows(String orderId, String cNumber) {
-	        Order newOrder;
-	        newOrder = this.findorder(orderId, cNumber);
-	        if (newOrder != null) {
-	            return newOrder.getOrdRowList();
-	        }
-	        return null;
-	    }
- 
-   
-//	public void printSum (String orderId, String cNumber) {
-//		Order o = this.findorder(orderId, cNumber);
-//		if (o != null) {
-//			for (OrderRow or: o.getOrdRowList().values()) {
-//				System.out.println(or.get)
-//			}
-//		}	
-//	}	
-	
-//	public HashMap<String, Item> printSumStuff (String orderId, String cNumber, String productname) {
-//		Order o = this.findorder(orderId, cNumber);
-//		Product p = products.findProduct(productname);
-//		if (o != null) {
-//			return o.getOrderValue();
-//			
-//		}
-//		o.getOrderValue();
-//		p.getPrice();
-//	}
-//	 public LinkedList<Account> showAccounts(String pNbr) {
-//	        Person newPerson;
-//	        newPerson = persons.findPerson(pNbr);
-//	        if (newPerson != null) {
-//	            return newPerson.getAccounts();
-//	        }
-//	        return null;
-//	    }
-	public String printOrders (String cNumber){
-	      Customer c = this.findCustomer(cNumber);
-	       if (c != null) {
-	                for (Order o: c.getOrderList().values()){
-	                       return o.getOrderId() + " " + o.getDelDate();
-	                }
-	       }
-	       return null;
+
+	public double getOrderProductPrice(String OrderId, String cNumber) {
+		Order o = this.findorder(OrderId, cNumber);
+		if (o != null) {
+			double amount = o.getOrdRowList().size();
+			for (OrderRow or : o.getOrdRowList().values()) {
+				String price = or.getProduct().getPrice();
+				double sum = Double.parseDouble(price) * (amount);
+				return sum;
+			}
+		}
+		return 0;
 	}
 
-	
-	
-	
+	public HashMap<String, OrderRow> showOrderRows(String orderId, String cNumber) {
+		Order newOrder;
+		newOrder = this.findorder(orderId, cNumber);
+		if (newOrder != null) {
+			return newOrder.getOrdRowList();
+		}
+		return null;
+	}
+
+	public String printOrders(String cNumber) {
+		Customer c = this.findCustomer(cNumber);
+		if (c != null) {
+			for (Order o : c.getOrderList().values()) {
+				return o.getOrderId() + " " + o.getDelDate();
+			}
+		}
+		return null;
+	}
 
 	public void removeProduct(String productName) {
 		products.removeProduct(productName);
@@ -282,4 +237,3 @@ public class Controller {
 	}
 
 }
-//NO U

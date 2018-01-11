@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 public class ProductRegister {
 
-
-
 	private HashMap<String, Product> productMap = new HashMap<String, Product>();
 
 	public void setProductMap(HashMap<String, Product> productMap) {
@@ -40,28 +38,14 @@ public class ProductRegister {
 			p.setPrice(price);
 		}
 	}
-	public void printProducts () {
-			productMap.forEach((key, value) -> System.out.println(key + ":" + value.getCategory() + " " + value.getPrice()));
+
+	public void printProducts() {
+		productMap
+				.forEach((key, value) -> System.out.println(key + ":" + value.getCategory() + " " + value.getPrice()));
 	}
-	public void getPrice () {
+
+	public void getPrice() {
 		productMap.forEach((key, value) -> value.getPrice().toString());
 	}
-//	public String getProductPrice (String pName, String regNbr){
-//        Product p = this.findProduct(pName);
-//        if (p != null){
-//                car bil = o.find (regNbr);
-//                if (bil != null) {
-//                        return bil.getBrand
-//                }
-//
-//	
-//	public void printProduct (String name){
-//	      Product p = this.findProduct(name);
-//	       if (p != null) {
-//	                for (Order o: c.getOrders ()){
-//	                       System.out.print (order.getOrderId() + " " + order.getDeldate());
-//}
-//	       }
-//	}
 
 }

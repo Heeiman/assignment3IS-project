@@ -64,18 +64,23 @@ public class Product {
 		}
 		return null;
 	}
-    public HashMap<String, OrderRow> getOrderRowP () {
-    	return this.ordRowP;
-    }
-    public void setOrdRowP (HashMap<String, OrderRow> ordRowP) {
-    	this.ordRowP = ordRowP;
-    }
-    public void addOrdRowP (OrderRow row) {
-    	this.ordRowP.put(row.getNumber(), row);
-    }
+
+	public HashMap<String, OrderRow> getOrderRowP() {
+		return this.ordRowP;
+	}
+
+	public void setOrdRowP(HashMap<String, OrderRow> ordRowP) {
+		this.ordRowP = ordRowP;
+	}
+
+	public void addOrdRowP(OrderRow row) {
+		this.ordRowP.put(row.getNumber(), row);
+	}
+
 	public void removeOrdRowP(String number) {
 		ordRowP.entrySet().removeIf(entry -> ordRowP.containsKey(number));
 	}
+
 	public Product() {
 
 	}

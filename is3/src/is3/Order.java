@@ -49,7 +49,7 @@ public class Order {
 	public void addOrderRow(OrderRow aRow) {
 		this.ordRowList.put(aRow.getNumber(), aRow);
 	}
-	
+
 	public OrderRow findOrderRow(String number) {
 		for (OrderRow aRow : this.ordRowList.values()) {
 			if (aRow.getNumber().equals(number)) {
@@ -62,10 +62,12 @@ public class Order {
 	public void removeOrderRow(String number) {
 		ordRowList.remove(number);
 	}
-	public void printOrderRows () {
+
+	public void printOrderRows() {
 		ordRowList.forEach((key, value) -> System.out.println(key + ":" + value.getAmount()));
-}
-	public void getOrderValue () {
+	}
+
+	public void getOrderValue() {
 		ordRowList.forEach((key, value) -> value.getAmount().toString());
-}
+	}
 }
