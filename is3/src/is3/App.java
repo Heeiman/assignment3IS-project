@@ -641,10 +641,10 @@ public class App {
 		btnSummaProdukter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String cNumber = textField_cNumber.getText();
-				String OrderId = textField_orderId.getText();
+				String orderId = textField_orderId.getText();
 				String pName = textField_pName.getText();
 				try {
-				int info = controller.getOrderProductPrice(OrderId, cNumber);
+				int info = controller.getOrderProductPrice(orderId, cNumber);
 				textPane.setText(String.valueOf(info));
 				} catch (Exception e1) {
 					textPane.setText("Produkt finns inte.");
