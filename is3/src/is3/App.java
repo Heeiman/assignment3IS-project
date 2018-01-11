@@ -561,6 +561,7 @@ public class App {
 							textPane.setText("");
 						}
 
+
 					} else {
 						lblResponse.setText("Fel: Skriv in namn, kategori och pris.");
 						textPane.setText("");
