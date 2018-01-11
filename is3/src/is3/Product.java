@@ -73,6 +73,9 @@ public class Product {
     public void addOrdRowP (OrderRow row) {
     	this.ordRowP.put(row.getNumber(), row);
     }
+	public void removeOrdRowP(String number) {
+		ordRowP.entrySet().removeIf(entry -> ordRowP.containsKey(number));
+	}
     
 	public Product() {
 
