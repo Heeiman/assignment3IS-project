@@ -194,8 +194,8 @@ public class Controller {
 	   if (o != null) {
 		   for (OrderRow or: o.getOrdRowList().values()) {
 			  String price = or.getProduct().getPrice();
-			  String amount = or.getAmount();
-			  double sum = Double.parseDouble(price) * Double.parseDouble(amount);
+			  double amount = o.getOrdRowList().size();
+			  double sum = Double.parseDouble(price) * (amount);
 			  return sum;
 		   }
 	   }
