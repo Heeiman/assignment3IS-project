@@ -60,7 +60,7 @@ public class Order {
 	}
 
 	public void removeOrderRow(String number) {
-		ordRowList.entrySet().removeIf(entry -> ordRowList.containsKey(number));
+		ordRowList.remove(number);
 	}
 	public void printOrderRows () {
 		ordRowList.forEach((key, value) -> System.out.println(key + ":" + value.getAmount()));
