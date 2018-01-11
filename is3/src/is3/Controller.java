@@ -138,11 +138,19 @@ public class Controller {
 
 	public void addProductOrderRow(String name, String number, String orderId, String cNumber) {
 		Product p = products.findProduct(name);
-		Customer c = customers.findCustomer(cNumber);
-		Order o = c.findOrder(orderId);
-		OrderRow row = o.findOrderRow(number);
-		p.addOrdRowP(row);
-		row.setProduct(p);
+		if (p != null) {
+			Customer c = customers.findCustomer(cNumber);
+			if ( c != null) {
+				Order o = c.findOrder(orderId);
+				if ( c != null) {
+					OrderRow row = o.findOrderRow(number);
+					if (row != null) {
+						p.addOrdRowP(row);
+						row.setProduct(p);
+					}
+				}
+			}
+		}
 	}
 	
 	public void printStuff (String cNumber, String orderId, String number, String productName) {
