@@ -163,16 +163,16 @@ public class Controller {
 		}
 	}
 	
-	public void printStuff (String cNumber, String orderId, String number, String productName) {
+	public String printStuff (String cNumber, String orderId, String number, String productName) {
 		Customer c = customers.findCustomer(cNumber);
 		Order o = c.findOrder(orderId);
-		Product p = products.findProduct(productName);
 		if (c != null) {
 			for (OrderRow or: o.getOrdRowList().values()) {
-				System.out.println(or.getAmount());
+				return or.getAmount();
 		}	
 		
 	}
+		return null;
 	}
 //	reg.getOwnerCarBrand("Owner", "DSA332")
 //    for (owner i : reg.getOwners().values()) {
