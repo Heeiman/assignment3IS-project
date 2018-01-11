@@ -564,14 +564,7 @@ public class App {
 				String orderId = textField_orderId.getText();
 				Product p = controller.findProduct(name);
 				if (p != null) {
-					if (name.length() > 0 && number.length() > 0) {
-						try {
-							controller.addProductOrderRow(name, number, orderId, cNumber);
-							textPane.setText("Produkt tillagd till orderrad.");
-						} catch (Exception e1) {
-							lblResponse.setText("Produkt ej tillagd");
-						}
-					} else if (price.length() > 0 && price.length() < 99 && category.length() > 0
+				 if (price.length() > 0 && price.length() < 99 && category.length() > 0
 							&& category.length() < 99) {
 						try {
 							controller.updateProduct(name, category, price);
@@ -660,6 +653,19 @@ public class App {
 		JButton btnLggTillProdukt = new JButton("L\u00E4gg till produkt");
 		btnLggTillProdukt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String number = textField_orderRadNummer.getText();
+				String amount = textField_orderRadAntal.getText();
+				String cNumber = textField_cNumber.getText();
+				String orderId = textField_orderId.getText();
+				String name = textField_pName.getText();
+				if (name.length() > 0 && number.length() > 0) {
+					try {
+						controller.addProductOrderRow(name, number, orderId, cNumber);
+						textPane.setText("Produkt tillagd till orderrad.");
+					} catch (Exception e1) {
+						lblResponse.setText("Produkt ej tillagd");
+					}
+				}
 			}
 		});
 		btnLggTillProdukt.setBounds(150, 113, 122, 23);
