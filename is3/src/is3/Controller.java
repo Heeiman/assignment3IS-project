@@ -1,6 +1,8 @@
 package is3;
 
 import javax.swing.JFrame;
+
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Controller {
@@ -192,10 +194,10 @@ public class Controller {
    public double getOrderProductPrice (String OrderId, String cNumber) {
 	   Order o = this.findorder(OrderId, cNumber);
 	   if (o != null) {
+		   double amount = o.getOrdRowList().size();
 		   for (OrderRow or: o.getOrdRowList().values()) {
 			  String price = or.getProduct().getPrice();
-			  String amount = or.getAmount();
-			  double sum = Double.parseDouble(price) * Double.parseDouble(amount);
+			  double sum = Double.parseDouble(price) * amount;
 			  return sum;
 		   }
 	   }
