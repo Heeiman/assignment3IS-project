@@ -184,7 +184,6 @@ public class App {
 					}
 				} else {
 					lblResponse.setText("Fel: Kund existerar redan.");
-					textField_cNumber.setText("");
 					textField_cName.setText("");
 					textField_cAdress.setText("");
 					textPane.setText("");
@@ -202,7 +201,6 @@ public class App {
 					Customer tmpCustomer = controller.findCustomer(cNumber);
 					String info =("Kundnummer: " + tmpCustomer.getcNumber() + "\nNamn: " + 
 					tmpCustomer.getName() + "\nAddress: " + tmpCustomer.getcAdress());
-					controller.showCustomerOrder(cNumber);
 					if (tmpCustomer != null) {
 						textPane.setText(info);
 						lblResponse.setText("");
@@ -251,7 +249,8 @@ public class App {
 				if (tmpCustomer != null) {
 					try {
 						controller.updateCustomerName(cNumber, cName, cAdress);
-						textPane.setText("Kund ändrad");
+						lblResponse.setText("Kund ändrad");
+						textPane.setText("Kundnummer: " + cNumber + "\nKundnamn: " + cName + "\nAdress: " + cAdress);
 						textField_cName.setText("");
 						textField_cAdress.setText("");
 					} catch (Exception e1) {
@@ -333,9 +332,10 @@ public class App {
 					controller.removeOrder(orderId, cNumber);
 					lblResponse.setText("Order borttagen");
 					textField_orderId.setText("");
-					textField_cNumber.setText("");
+					textPane.setText("");
 				} catch (Exception e1) {
-					textPane.setText("Fel: Skriv in orderid och kundnummer.");
+					lblResponse.setText("Fel: Skriv in orderid och kundnummer.");
+					textPane.setText("");
 				}
 			}
 		});
@@ -361,7 +361,6 @@ public class App {
 		textField_orderRadAntal.setColumns(10);
 
 		btn_orderradskapa = new JButton("Skapa orderrad");
-
 		btn_orderradskapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textField_orderRadNummer.getText();
@@ -373,19 +372,20 @@ public class App {
 					if (textField_orderRadNummer.getText().length() == 4) {
 						try {
 							controller.addOrderRow(number, amount, orderId, cNumber);
-							textPane.setText("Orderrad skapad.");
-							textField_orderRadNummer.setText("");
+							lblResponse.setText("Orderrad skapad.");
+							textPane.setText("Kundnummer: " + cNumber + "\nOrderID: " + orderId + "\nOrderradnummer: " + number);
 							textField_orderRadAntal.setText("");
-							textField_orderId.setText("");
-							textField_cNumber.setText("");
 						} catch (Exception e1) {
-							textPane.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
+							lblResponse.setText("Fel: Skriv in nummer, antal, orderid och kundnummer.");
+							textPane.setText("");
 						}
 					} else {
 						lblResponse.setText("Ett orderradsnummer måste vara 4-siffrigt.");
+						textPane.setText("");
 					}
 				} else {
 					lblResponse.setText("Den här kunden finns inte.");
+					textPane.setText("");
 				}
 			}
 		});
@@ -402,15 +402,16 @@ public class App {
 				if (textField_orderRadNummer.getText().length() == 4) {
 					try {
 						controller.removeOrderRow(cNumber, orderId, number);
-						textPane.setText("Orderrad borttagen");
+						lblResponse.setText("Orderrad borttagen");
 						textField_orderRadNummer.setText("");
-						textField_orderId.setText("");
-						textField_cNumber.setText("");
+						textPane.setText("");
 					} catch (Exception e1) {
-						textPane.setText("Fel: Skriv in nummer, orderid och kundnummer.");
+						lblResponse.setText("Fel: Skriv in nummer, orderid och kundnummer.");
+						textPane.setText("");
 					}
 				} else {
 					lblResponse.setText("Ordern finns inte.");
+					textPane.setText("");
 				}
 			}
 		});
@@ -450,12 +451,14 @@ public class App {
 						controller.removeItem(serNumber, name);
 						textField_serialnumber.setText(" ");
 						lblResponse.setText("Exemplar borttaget");
+						textPane.setText("");
 					} catch (Exception e1) {
 						lblResponse.setText("Fel: Skriv in serienummer/ skriv in namn på produkt");
+						textPane.setText("");
 					}
 				} else {
 					lblResponse.setText("Exemplaret finns inte.");
-
+					textPane.setText("");
 				}
 			}
 		});
@@ -474,7 +477,7 @@ public class App {
 					textField_serialnumber.setText("");
 					lblResponse.setText("Exemplar skapat.");
 				} catch (Exception e1) {
-					textPane.setText(" ");
+					textPane.setText("");
 					lblResponse.setText("Fel: Skriv in produktens namn/skapa produkten");
 				}
 			}
