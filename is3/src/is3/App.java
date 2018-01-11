@@ -202,7 +202,7 @@ public class App {
 					Customer tmpCustomer = controller.findCustomer(cNumber);
 					String info =("Kundnummer: " + tmpCustomer.getcNumber() + "\nNamn: " + 
 					tmpCustomer.getName() + "\nAddress: " + tmpCustomer.getcAdress());
-					controller.showCustomerOrders(cNumber, orderId)
+					controller.showCustomerOrder(cNumber);
 					if (tmpCustomer != null) {
 						textPane.setText(info);
 						lblResponse.setText("");

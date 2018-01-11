@@ -77,7 +77,7 @@ public class Controller {
 		return null;
 	}
 
-	 public HashMap<String, Order> showCustomerOrder (String orderId, String cNumber) {
+	 public HashMap<String, Order> showCustomerOrder (String cNumber) {
 	        Customer newCustomer;
 	        newCustomer = this.findCustomer(cNumber);
 	        if (newCustomer != null) {
