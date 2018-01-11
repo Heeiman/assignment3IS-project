@@ -3,6 +3,7 @@ package is3;
 import javax.swing.JFrame;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Controller {
 	CustomerRegister customers;
@@ -53,6 +54,15 @@ public class Controller {
 		newCustomer = customers.findCustomer(cNumber);
 		if (newCustomer != null) {
 			return newCustomer.getOrderList();
+		}
+		return null;
+	}
+	
+	public Order findorder (String orderId, String cNumber) {
+		Customer c = customers.findCustomer(cNumber);
+		Order newOrder = c.findOrder(orderId);
+		if (newOrder != null) {
+			return newOrder;
 		}
 		return null;
 	}
@@ -126,6 +136,57 @@ public class Controller {
 		p.addOrdRowP(row);
 		row.setProduct(p);
 	}
+	
+	public void printStuff (String cNumber, String orderId, String number, String productName) {
+		Customer c = customers.findCustomer(cNumber);
+		Order o = c.findOrder(orderId);
+		Product p = products.findProduct(productName);
+		if (c != null) {
+			for (OrderRow or: o.getOrdRowList().values()) {
+				System.out.println(or.getAmount());
+		}	
+		
+	}
+	}
+//	public void printSum (String orderId, String cNumber) {
+//		Order o = this.findorder(orderId, cNumber);
+//		if (o != null) {
+//			for (OrderRow or: o.getOrdRowList().values()) {
+//				System.out.println(or.get)
+//			}
+//		}	
+//	}	
+	
+//	public HashMap<String, Item> printSumStuff (String orderId, String cNumber, String productname) {
+//		Order o = this.findorder(orderId, cNumber);
+//		Product p = products.findProduct(productname);
+//		if (o != null) {
+//			return o.getOrderValue();
+//			
+//		}
+//		o.getOrderValue();
+//		p.getPrice();
+//	}
+//	 public LinkedList<Account> showAccounts(String pNbr) {
+//	        Person newPerson;
+//	        newPerson = persons.findPerson(pNbr);
+//	        if (newPerson != null) {
+//	            return newPerson.getAccounts();
+//	        }
+//	        return null;
+//	    }
+	public void printOrders (String cNumber){
+	      Customer c = this.findCustomer(cNumber);
+	       if (c != null) {
+	                for (Order o: c.getOrderList().values()){
+	                       System.out.print (o.getOrderId() + " " + o.getDelDate());
+	                }
+	       }
+	}
+
+	
+	
+	
 
 	public void removeProduct(String productName) {
 		products.removeProduct(productName);

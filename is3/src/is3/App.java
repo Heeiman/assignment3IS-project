@@ -15,6 +15,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
@@ -632,6 +633,19 @@ public class App {
 		});
 		btn_prodtabort.setBounds(18, 181, 122, 23);
 		panel_1.add(btn_prodtabort);
+		
+		JButton btnSummaProdukter = new JButton("Summa produkter");
+		btnSummaProdukter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String cNumber = textField_cNumber.getText();
+				String OrderId = textField_orderId.getText();
+				String pName = textField_pName.getText();
+				//LinkedList<OrderRow> sum_list = controller.printSumStuff(OrderId, cNumber, pName);
+			}
+		});
+		btnSummaProdukter.setBounds(18, 248, 122, 23);
+		panel_1.add(btnSummaProdukter);
+		
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(495, 154, 260, 102);

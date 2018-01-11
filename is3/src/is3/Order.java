@@ -62,4 +62,10 @@ public class Order {
 	public void removeOrderRow(String number) {
 		ordRowList.entrySet().removeIf(entry -> ordRowList.containsKey(number));
 	}
+	public void printOrderRows () {
+		ordRowList.forEach((key, value) -> System.out.println(key + ":" + value.getAmount()));
+}
+	public void getOrderValue () {
+		ordRowList.forEach((key, value) -> value.getAmount().toString());
+}
 }
