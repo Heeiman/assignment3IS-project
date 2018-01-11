@@ -76,7 +76,6 @@ public class Product {
 	public void removeOrdRowP(String number) {
 		ordRowP.entrySet().removeIf(entry -> ordRowP.containsKey(number));
 	}
-    
 	public Product() {
 
 	}

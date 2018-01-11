@@ -674,6 +674,7 @@ public class App {
 		JButton btnTaBortProdukt = new JButton("Ta bort produkt");
 		btnTaBortProdukt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		btnTaBortProdukt.setBounds(150, 147, 122, 23);
