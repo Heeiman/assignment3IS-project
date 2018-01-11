@@ -138,7 +138,7 @@ public class Controller {
 			Customer c = customers.findCustomer(cNumber);
 			if ( c != null) {
 				Order o = c.findOrder(orderId);
-				if ( c != null) {
+				if ( o != null) {
 					OrderRow row = o.findOrderRow(number);
 					if (row != null) {
 						p.addOrdRowP(row);
